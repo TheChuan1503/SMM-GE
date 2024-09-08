@@ -1,0 +1,111 @@
+[gd_scene load_steps=8 format=3 uid="uid://g6codoscguvv"]
+
+[ext_resource type="Script" path="res://scripts/launch_animation_scene.gd" id="1_pnb5l"]
+
+[sub_resource type="Animation" id="Animation_m1p6r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label2/Label2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(217, -512)]
+}
+
+[sub_resource type="Animation" id="Animation_ahhsy"]
+resource_name = "slideIn"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label2/Label2:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(217, -1503), Vector2(217, 80)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1wfbn"]
+_data = {
+"RESET": SubResource("Animation_m1p6r"),
+"slideIn": SubResource("Animation_ahhsy")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_8hkpu"]
+font_size = 86
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2lhsa"]
+font_size = 72
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4kwq"]
+font_size = 48
+font_color = Color(0.278431, 0.54902, 0.74902, 1)
+
+[node name="LaunchAnimationScene" type="CanvasLayer"]
+script = ExtResource("1_pnb5l")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.988235, 0.819608, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1wfbn")
+}
+autoplay = "slideIn"
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.0
+offset_top = -100.0
+offset_right = 271.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "MARIO MAKER"
+label_settings = SubResource("LabelSettings_8hkpu")
+
+[node name="Label" type="Label" parent="Label2"]
+layout_mode = 1
+offset_top = -69.0
+offset_right = 216.0
+offset_bottom = 13.0
+text = "SUPER"
+label_settings = SubResource("LabelSettings_2lhsa")
+
+[node name="Label2" type="Label" parent="Label2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -325.0
+offset_top = -1607.0
+offset_bottom = -1553.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "GODOT ENGINE"
+label_settings = SubResource("LabelSettings_g4kwq")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true

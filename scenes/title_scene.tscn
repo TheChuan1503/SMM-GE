@@ -1,0 +1,326 @@
+[gd_scene load_steps=18 format=3 uid="uid://cveotyrw8n1ek"]
+
+[ext_resource type="Texture2D" uid="uid://1nt8twt0kewg" path="res://src/tiles/blocks_smb.png" id="1_2ttu2"]
+[ext_resource type="Script" path="res://scripts/title_scene.gd" id="1_gixyt"]
+[ext_resource type="PackedScene" uid="uid://dydfei0sjb6ti" path="res://scenes/player_smb_0.tscn" id="2_3xhs3"]
+[ext_resource type="PackedScene" uid="uid://c3x2sq7uv0fk" path="res://scenes/items/item_action.tscn" id="4_3ij5n"]
+[ext_resource type="FontFile" uid="uid://dcfx770lvhqyb" path="res://src/fonts/MiSans-Medium.ttf" id="5_wtey8"]
+[ext_resource type="AudioStream" uid="uid://bl3tv6y6pb83b" path="res://src/musics/title_modern.ogg" id="6_50ftw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rovh6"]
+texture = ExtResource("1_2ttu2")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:12/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+10:12/0 = 0
+9:12/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_muaas"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_rovh6")
+
+[sub_resource type="LabelSettings" id="LabelSettings_0anr2"]
+font_size = 144
+
+[sub_resource type="LabelSettings" id="LabelSettings_8fb8n"]
+font_size = 128
+
+[sub_resource type="LabelSettings" id="LabelSettings_tm3y3"]
+font_size = 72
+font_color = Color(0.952941, 0.0823529, 0.12549, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h3gw1"]
+font_size = 31
+
+[sub_resource type="LabelSettings" id="LabelSettings_iqjur"]
+font_size = 39
+
+[sub_resource type="Animation" id="Animation_1eflx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_g44ah"]
+resource_name = "flicker"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tvx1w"]
+_data = {
+"RESET": SubResource("Animation_1eflx"),
+"flicker": SubResource("Animation_g44ah")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_gcgfn"]
+font = ExtResource("5_wtey8")
+font_size = 40
+
+[node name="TitleScene" type="Node2D"]
+script = ExtResource("1_gixyt")
+metadata/_edit_horizontal_guides_ = [0.0, -64.0]
+metadata/_edit_vertical_guides_ = [0.0, 24.0]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_muaas")
+format = 2
+layer_0/name = "bg"
+layer_0/tile_data = PackedInt32Array(-65527, 524288, 12, -131062, 524288, 12, -196597, 524288, 12, -262132, 524288, 12, -262130, 655360, 12, -196593, 655360, 12, -131056, 655360, 12, -65519, 655360, 12, -65526, 589824, 13, -65525, 589824, 13, -65524, 589824, 13, -65523, 589824, 13, -65522, 589824, 13, -65521, 589824, 13, -65520, 589824, 13, -131061, 589824, 13, -131060, 589824, 13, -131059, 589824, 13, -131058, 589824, 13, -131057, 589824, 13, -196596, 524288, 13, -196595, 589824, 13, -196594, 524288, 13, -262131, 524288, 13, -327667, 589824, 12, -196607, 655360, 12, -262144, 655360, 12, -196608, 655360, 13)
+layer_1/name = "Layer0"
+layer_1/tile_data = PackedInt32Array(-65536, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -65533, 0, 0, -131068, 0, 0, -65532, 0, 0, -131067, 0, 0, -65531, 0, 0, -196609, 0, 0, -262145, 0, 0, -327681, 0, 0, -393217, 0, 0, -458753, 0, 0, -524289, 0, 0, -589825, 0, 0, -655361, 0, 0, -720897, 0, 0, -786433, 0, 0, -851969, 0, 0, -917505, 0, 0, -983041, 0, 0, -1048577, 0, 0, -1114113, 0, 0, -1179649, 0, 0, -1245185, 0, 0, -1310721, 0, 0, -1376257, 0, 0, -1441793, 0, 0, -1507329, 0, 0, -1572865, 0, 0, -1638401, 0, 0, -1703937, 0, 0, -65519, 655360, 12, -327667, 589824, 12, -65535, 0, 0, -65534, 0, 0, -131073, 0, 0)
+
+[node name="PlayerSmb0" parent="." instance=ExtResource("2_3xhs3")]
+position = Vector2(56, -32)
+
+[node name="Camera2D" type="Camera2D" parent="PlayerSmb0"]
+position = Vector2(0, -8)
+zoom = Vector2(5, 5)
+limit_left = 0
+limit_bottom = 0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -496.0
+offset_right = 1048.0
+grow_vertical = 0
+color = Color(0.45098, 0.52549, 1, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.0
+offset_top = -190.0
+offset_right = 271.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "MARIO MAKER"
+label_settings = SubResource("LabelSettings_0anr2")
+
+[node name="Label" type="Label" parent="CanvasLayer/Label2"]
+layout_mode = 1
+offset_top = -115.0
+offset_right = 380.0
+offset_bottom = 29.0
+text = "SUPER"
+label_settings = SubResource("LabelSettings_8fb8n")
+
+[node name="Label2" type="Label" parent="CanvasLayer/Label2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -487.0
+offset_top = -20.0
+offset_bottom = 62.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "GODOT ENGINE"
+label_settings = SubResource("LabelSettings_tm3y3")
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -314.0
+offset_top = -116.0
+offset_right = -74.0
+offset_bottom = -44.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0, 0, 0, 0.498039)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -9.0
+offset_right = 45.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "v beta-1.0.0"
+label_settings = SubResource("LabelSettings_h3gw1")
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -262.5
+offset_top = -175.0
+offset_right = 262.5
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -218.0
+offset_top = -29.0
+offset_right = 218.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.988235, 0.819608, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureButton/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -22.5
+offset_right = 130.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press HERE"
+label_settings = SubResource("LabelSettings_iqjur")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/TextureButton"]
+libraries = {
+"": SubResource("AnimationLibrary_tvx1w")
+}
+autoplay = "flicker"
+
+[node name="startButton" type="TextureButton" parent="CanvasLayer/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -221.0
+offset_top = -29.5
+offset_right = 221.0
+offset_bottom = 29.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -255.5
+offset_top = -445.0
+offset_right = 255.5
+offset_bottom = -233.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ItemAction" parent="CanvasLayer/TextureButton2" instance=ExtResource("4_3ij5n")]
+layout_mode = 0
+offset_right = 227.0
+offset_bottom = 182.0
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureButton2/ItemAction"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -17.5
+offset_right = 64.0
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Make"
+label_settings = SubResource("LabelSettings_gcgfn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="makeButton" type="TextureButton" parent="CanvasLayer/TextureButton2/ItemAction"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ItemAction2" parent="CanvasLayer/TextureButton2" instance=ExtResource("4_3ij5n")]
+layout_mode = 0
+offset_left = 284.0
+offset_right = 511.0
+offset_bottom = 207.0
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureButton2/ItemAction2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -16.5
+offset_right = 64.0
+offset_bottom = 48.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+label_settings = SubResource("LabelSettings_gcgfn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="playButton" type="TextureButton" parent="CanvasLayer/TextureButton2/ItemAction2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_50ftw")
+autoplay = true
