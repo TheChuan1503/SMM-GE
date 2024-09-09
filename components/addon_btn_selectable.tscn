@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm3c5o2l4s31x"]
+
+[ext_resource type="Script" path="res://components/addon_btn_selectable.gd" id="1_h74sf"]
+
+[node name="SelectableButton" type="TextureButton"]
+offset_right = 128.0
+offset_bottom = 48.0
+script = ExtResource("1_h74sf")

@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://l7w34b7fkrkk"]
+[gd_scene load_steps=5 format=3 uid="uid://l7w34b7fkrkk"]
 
 [ext_resource type="Script" path="res://scripts/splash_scene.gd" id="1_xawgc"]
+[ext_resource type="FontFile" uid="uid://ddclxaa0c75i1" path="res://src/fonts/SuperMarioMaker2-Regular.ttf" id="2_t3npk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j6j2n"]
+font = ExtResource("2_t3npk")
 font_size = 81
 font_color = Color(0.847059, 0.0666667, 0.00392157, 1)
 outline_size = 2

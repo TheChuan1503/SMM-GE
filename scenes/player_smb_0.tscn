@@ -184,6 +184,9 @@ hframes = 3
 region_enabled = true
 region_rect = Rect2(0, 0, 48, 16)
 
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+position = Vector2(0, 8)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_v0ron")

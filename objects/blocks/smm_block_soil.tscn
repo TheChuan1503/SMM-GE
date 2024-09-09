@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbof7g4ukol6q"]
+
+[ext_resource type="PackedScene" uid="uid://7q88nuexg0u3" path="res://objects/blocks/smm_block_colidable.tscn" id="1_gxq8u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psemm"]
+size = Vector2(16, 16)
+
+[node name="SmmBlock" instance=ExtResource("1_gxq8u")]
+script = null
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_psemm")
+
+[node name="Label2" type="Label" parent="." index="2"]
+offset_right = 40.0
+offset_bottom = 18.0

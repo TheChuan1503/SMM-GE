@@ -1,3 +1,4 @@
+class_name SmmObject
 extends StaticBody2D
 
 var _id

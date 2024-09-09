@@ -1,11 +1,17 @@
-[gd_scene load_steps=20 format=3 uid="uid://cveotyrw8n1ek"]
+[gd_scene load_steps=28 format=3 uid="uid://cveotyrw8n1ek"]
 
 [ext_resource type="Texture2D" uid="uid://1nt8twt0kewg" path="res://src/tiles/blocks_smb.png" id="1_2ttu2"]
 [ext_resource type="Script" path="res://scripts/title_scene.gd" id="1_gixyt"]
 [ext_resource type="PackedScene" uid="uid://dydfei0sjb6ti" path="res://scenes/player_smb_0.tscn" id="2_3xhs3"]
+[ext_resource type="FontFile" uid="uid://ddclxaa0c75i1" path="res://src/fonts/SuperMarioMaker2-Regular.ttf" id="4_1g4al"]
 [ext_resource type="PackedScene" uid="uid://c3x2sq7uv0fk" path="res://scenes/items/item_action.tscn" id="4_3ij5n"]
 [ext_resource type="FontFile" uid="uid://njigu8kanj1q" path="res://src/fonts/text.ttf" id="5_hletk"]
 [ext_resource type="AudioStream" uid="uid://bl3tv6y6pb83b" path="res://src/musics/title_modern.ogg" id="6_50ftw"]
+[ext_resource type="Texture2D" uid="uid://cr8fb266qikl7" path="res://icon.png" id="6_jvkjt"]
+[ext_resource type="PackedScene" uid="uid://cm3c5o2l4s31x" path="res://components/addon_btn_selectable.tscn" id="8_fur8m"]
+[ext_resource type="Texture2D" uid="uid://dc40xlxhcpo6l" path="res://objects/blocks/SMB/soil/soil.png" id="9_v5ce3"]
+[ext_resource type="Texture2D" uid="uid://cheffq16qsy6c" path="res://src/images/action_4.png" id="10_8lwrx"]
+[ext_resource type="PackedScene" uid="uid://bg8vydrvhce4a" path="res://components/btn_back.tscn" id="11_4pflv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rovh6"]
 texture = ExtResource("1_2ttu2")
@@ -23,23 +29,27 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_rovh6")
 
 [sub_resource type="LabelSettings" id="LabelSettings_0anr2"]
+font = ExtResource("4_1g4al")
 font_size = 144
 
 [sub_resource type="LabelSettings" id="LabelSettings_8fb8n"]
+font = ExtResource("4_1g4al")
 font_size = 128
 
 [sub_resource type="LabelSettings" id="LabelSettings_tm3y3"]
+font = ExtResource("4_1g4al")
 font_size = 72
 font_color = Color(0.952941, 0.0823529, 0.12549, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wyygh"]
-bg_color = Color(0, 0, 0, 0.545098)
-corner_radius_top_left = 1024
-corner_radius_top_right = 1024
-corner_radius_bottom_right = 1024
-corner_radius_bottom_left = 1024
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tht7w"]
+bg_color = Color(0, 0, 0, 0.498039)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="LabelSettings" id="LabelSettings_h3gw1"]
+font = ExtResource("4_1g4al")
 font_size = 31
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qv3kb"]
@@ -50,7 +60,9 @@ corner_radius_bottom_right = 1024
 corner_radius_bottom_left = 1024
 
 [sub_resource type="LabelSettings" id="LabelSettings_iqjur"]
+font = ExtResource("4_1g4al")
 font_size = 39
+font_color = Color(0.352941, 0.0627451, 0.0627451, 1)
 
 [sub_resource type="Animation" id="Animation_1eflx"]
 length = 0.001
@@ -94,6 +106,17 @@ _data = {
 font = ExtResource("5_hletk")
 font_size = 40
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1mde"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_yb0ex"]
+font_size = 32
+font_color = Color(0.352941, 0.0627451, 0.0627451, 1)
+
 [node name="TitleScene" type="Node2D"]
 script = ExtResource("1_gixyt")
 metadata/_edit_horizontal_guides_ = [0.0, -64.0]
@@ -109,6 +132,9 @@ layer_1/tile_data = PackedInt32Array(-65536, 0, 0, -131072, 0, 0, -131071, 0, 0,
 
 [node name="PlayerSmb0" parent="." instance=ExtResource("2_3xhs3")]
 position = Vector2(56, -32)
+
+[node name="Camera2D" parent="PlayerSmb0/Sprite2D" index="0"]
+enabled = false
 
 [node name="Camera2D" type="Camera2D" parent="PlayerSmb0"]
 position = Vector2(0, -8)
@@ -131,16 +157,15 @@ color = Color(0.45098, 0.52549, 1, 1)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label2" type="Label" parent="CanvasLayer"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -271.0
-offset_top = -190.0
-offset_right = 271.0
-offset_bottom = -86.0
+offset_left = -452.5
+offset_top = -255.0
+offset_right = 452.5
+offset_bottom = -93.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "MARIO MAKER"
@@ -161,8 +186,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -487.0
+offset_left = -494.0
 offset_top = -20.0
+offset_right = -7.0
 offset_bottom = 62.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -181,7 +207,7 @@ offset_right = -74.0
 offset_bottom = -44.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_wyygh")
+theme_override_styles/panel = SubResource("StyleBoxFlat_tht7w")
 
 [node name="Label" type="Label" parent="CanvasLayer/ColorRect2"]
 layout_mode = 1
@@ -197,6 +223,35 @@ offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "ver. beta-1.0.0"
+label_settings = SubResource("LabelSettings_h3gw1")
+
+[node name="autherText" type="Panel" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -59.0
+offset_right = 192.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tht7w")
+
+[node name="Label" type="Label" parent="CanvasLayer/autherText"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -9.0
+offset_right = 45.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Made by TheChuan1503"
 label_settings = SubResource("LabelSettings_h3gw1")
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
@@ -338,6 +393,178 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="panelPlay" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -328.0
+offset_top = -475.0
+offset_right = 328.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+color = Color(0.145098, 0.145098, 0.145098, 0)
+
+[node name="Panel" type="Panel" parent="CanvasLayer/panelPlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = -161.5
+offset_right = 282.0
+offset_bottom = -68.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q1mde")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/panelPlay/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -36.0
+offset_right = 85.0
+offset_bottom = 36.0
+grow_vertical = 2
+texture = ExtResource("6_jvkjt")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/panelPlay/Panel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 1.0
+offset_right = 520.0
+offset_bottom = 94.0
+text = "Infinty Challenge (Test Game)"
+label_settings = SubResource("LabelSettings_yb0ex")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play_Action1" parent="CanvasLayer/panelPlay/Panel" instance=ExtResource("8_fur8m")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/panelPlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = -55.5
+offset_right = 282.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q1mde")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/panelPlay/Panel2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -36.0
+offset_right = 85.0
+offset_bottom = 36.0
+grow_vertical = 2
+texture = ExtResource("9_v5ce3")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/panelPlay/Panel2"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 1.0
+offset_right = 520.0
+offset_bottom = 94.0
+text = "Course World"
+label_settings = SubResource("LabelSettings_yb0ex")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play_Action2" parent="CanvasLayer/panelPlay/Panel2" instance=ExtResource("8_fur8m")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel3" type="Panel" parent="CanvasLayer/panelPlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = 52.5
+offset_right = 282.0
+offset_bottom = 145.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q1mde")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/panelPlay/Panel3"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -36.0
+offset_right = 85.0
+offset_bottom = 36.0
+grow_vertical = 2
+texture = ExtResource("10_8lwrx")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/panelPlay/Panel3"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 1.0
+offset_right = 520.0
+offset_bottom = 94.0
+text = "Coursebot"
+label_settings = SubResource("LabelSettings_yb0ex")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play_Action3" parent="CanvasLayer/panelPlay/Panel3" instance=ExtResource("8_fur8m")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="playBack" parent="CanvasLayer/panelPlay" instance=ExtResource("11_4pflv")]
+layout_mode = 0
+offset_left = -104.0
+offset_top = 222.0
+offset_right = 4.0
+offset_bottom = 330.0
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_50ftw")
 autoplay = true
+
+[editable path="PlayerSmb0"]

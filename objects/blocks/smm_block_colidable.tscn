@@ -1,12 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://7q88nuexg0u3"]
+[gd_scene load_steps=3 format=3 uid="uid://7q88nuexg0u3"]
 
 [ext_resource type="PackedScene" uid="uid://dknxm8xgtwdiv" path="res://objects/blocks/smm_block.tscn" id="1_ua0ga"]
+[ext_resource type="Script" path="res://objects/blocks/smm_block_colidable.gd" id="2_ugmgf"]
 
-[node name="SmmBlockColidable" type="StaticBody2D"]
+[node name="SmmBlock" instance=ExtResource("1_ua0ga")]
+script = ExtResource("2_ugmgf")
 
-[node name="SmmBlock" parent="." instance=ExtResource("1_ua0ga")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
-[editable path="SmmBlock"]
-[editable path="SmmBlock/SmmObject"]
+[node name="Label" type="Label" parent="." index="2"]
+offset_right = 40.0
+offset_bottom = 18.0

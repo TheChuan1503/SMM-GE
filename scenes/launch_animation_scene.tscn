@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://g6codoscguvv"]
+[gd_scene load_steps=9 format=3 uid="uid://g6codoscguvv"]
 
 [ext_resource type="Script" path="res://scripts/launch_animation_scene.gd" id="1_pnb5l"]
+[ext_resource type="FontFile" uid="uid://ddclxaa0c75i1" path="res://src/fonts/SuperMarioMaker2-Regular.ttf" id="2_rvbkt"]
 
 [sub_resource type="Animation" id="Animation_m1p6r"]
 length = 0.001
@@ -40,14 +41,17 @@ _data = {
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_8hkpu"]
+font = ExtResource("2_rvbkt")
 font_size = 86
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_2lhsa"]
+font = ExtResource("2_rvbkt")
 font_size = 72
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_g4kwq"]
+font = ExtResource("2_rvbkt")
 font_size = 48
 font_color = Color(0.278431, 0.54902, 0.74902, 1)
 
@@ -99,8 +103,8 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -325.0
-offset_top = -1607.0
-offset_bottom = -1553.0
+offset_top = -616.0
+offset_bottom = -562.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "GODOT ENGINE"
