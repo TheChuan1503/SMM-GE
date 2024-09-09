@@ -4,10 +4,12 @@ func onStartClick  () -> void:
 	$CanvasLayer/TextureButton.visible=false
 	$CanvasLayer/TextureButton2.visible=true
 func onMakeClick():
-	SceneChanger.gradient('res://scenes/maker_scene.tscn')
+	#SceneChanger.gradient('res://scenes/maker_scene.tscn')
+	DialogInfo.make('Info','The current MAKER is unavailable')
 	#DialogInfo.make('wo shi lao CHUAN','CHUAN ge zhi zao, hui ji quan qiu (bushi')
 func onPlayClick():
-	DialogInfo.make('Info','The current PLAY is unavailable')
+	pass
+	#DialogInfo.make('Info','The current PLAY is unavailable')
 
 func _ready() -> void:
 	

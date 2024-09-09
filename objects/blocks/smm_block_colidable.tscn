@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://7q88nuexg0u3"]
+
+[ext_resource type="PackedScene" uid="uid://dknxm8xgtwdiv" path="res://objects/blocks/smm_block.tscn" id="1_ua0ga"]
+
+[node name="SmmBlockColidable" type="StaticBody2D"]
+
+[node name="SmmBlock" parent="." instance=ExtResource("1_ua0ga")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[editable path="SmmBlock"]
+[editable path="SmmBlock/SmmObject"]

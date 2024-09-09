@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c78spir0dvt4j"]
+
+[ext_resource type="PackedScene" uid="uid://7q88nuexg0u3" path="res://objects/blocks/smm_block_colidable.tscn" id="1_n3cfx"]
+[ext_resource type="Texture2D" uid="uid://1nt8twt0kewg" path="res://src/tiles/blocks_smb.png" id="2_rugfa"]
+
+[node name="Soil" type="StaticBody2D"]
+
+[node name="SmmBlockColidable" parent="." instance=ExtResource("1_n3cfx")]
+
+[node name="Sprite2D" parent="SmmBlockColidable/SmmBlock/SmmObject" index="0"]
+texture = ExtResource("2_rugfa")
+
+[editable path="SmmBlockColidable"]
+[editable path="SmmBlockColidable/SmmBlock"]
+[editable path="SmmBlockColidable/SmmBlock/SmmObject"]

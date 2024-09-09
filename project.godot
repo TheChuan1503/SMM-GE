@@ -13,7 +13,7 @@ config_version=5
 config/name="SMM: GE"
 run/main_scene="res://scenes/splash_scene.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [autoload]
 
@@ -21,8 +21,8 @@ SceneChanger="*res://scenes/scene_changer.tscn"
 Global="*res://scripts/_global.gd"
 Player="*res://scripts/player.gd"
 DialogInfo="*res://scenes/dialog_info.tscn"
-SmmObject="*res://scripts/classes/smm_object.gd"
-SmmBlock="*res://scripts/classes/smm_block.gd"
+SmmObject="*res://objects/smm_object.tscn"
+SmmBlock="*res://objects/blocks/smm_block.tscn"
 
 [display]
 

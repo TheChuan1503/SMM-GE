@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcx0brskqmatu"]
+[gd_scene load_steps=12 format=3 uid="uid://dcx0brskqmatu"]
 
 [ext_resource type="Script" path="res://scripts/dialog_info.gd" id="1_vw76e"]
-[ext_resource type="FontFile" uid="uid://dcfx770lvhqyb" path="res://src/fonts/MiSans-Medium.ttf" id="2_5r4gx"]
+[ext_resource type="StyleBox" uid="uid://dgqkn5xuwwb0w" path="res://styles/radius_16_bottom.tres" id="2_6e4id"]
+[ext_resource type="FontFile" uid="uid://njigu8kanj1q" path="res://src/fonts/text.ttf" id="2_g25ft"]
+[ext_resource type="StyleBox" uid="uid://7w215qtdqrgt" path="res://styles/radius_8.tres" id="4_55mh7"]
 
 [sub_resource type="Animation" id="Animation_ksian"]
 length = 0.001
@@ -40,8 +42,15 @@ _data = {
 "fadeIn": SubResource("Animation_r4bgn")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a26ql"]
+bg_color = Color(0.988235, 0.819608, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [sub_resource type="LabelSettings" id="LabelSettings_0gaey"]
-font = ExtResource("2_5r4gx")
+font = ExtResource("2_g25ft")
 font_size = 24
 font_color = Color(0.184314, 0, 0, 1)
 
@@ -67,7 +76,7 @@ libraries = {
 "": SubResource("AnimationLibrary_oo5n4")
 }
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ColorRect2" type="Panel" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -79,9 +88,9 @@ offset_right = 512.0
 offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.988235, 0.819608, 0, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_a26ql")
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect2"]
+[node name="ColorRect" type="Panel" parent="ColorRect2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -89,6 +98,7 @@ anchor_bottom = 1.0
 offset_top = 68.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_6e4id")
 
 [node name="Label" type="Label" parent="ColorRect2/ColorRect"]
 layout_mode = 1
@@ -103,7 +113,7 @@ label_settings = SubResource("LabelSettings_0gaey")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect2/ColorRect"]
+[node name="ColorRect" type="Panel" parent="ColorRect2/ColorRect"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -116,7 +126,7 @@ offset_right = 170.0
 offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(0.988235, 0.819608, 0, 1)
+theme_override_styles/panel = ExtResource("4_55mh7")
 
 [node name="Label" type="Label" parent="ColorRect2/ColorRect/ColorRect"]
 layout_mode = 1

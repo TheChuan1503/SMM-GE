@@ -1,16 +1,54 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3x2sq7uv0fk"]
+[gd_scene load_steps=9 format=3 uid="uid://c3x2sq7uv0fk"]
 
-[ext_resource type="Texture2D" uid="uid://cn0gi0muf1k1k" path="res://src/images/action_0.png" id="1_x25bj"]
-[ext_resource type="Texture2D" uid="uid://dj4rotwm436aq" path="res://src/images/action_1.png" id="2_b6rxw"]
+[ext_resource type="Texture2D" uid="uid://bedkm4jnd1cd3" path="res://src/images/action_2.png" id="1_vgvwl"]
+[ext_resource type="Texture2D" uid="uid://dooqmvhx0r1o2" path="res://src/images/action_3.png" id="2_4esp2"]
 [ext_resource type="Script" path="res://scripts/item_action.gd" id="3_0exgd"]
 [ext_resource type="AudioStream" uid="uid://qpvwct0nmb67" path="res://src/musics/effect/action.ogg" id="4_d3trc"]
 [ext_resource type="AudioStream" uid="uid://35tbyer3sma5" path="res://src/musics/effect/select.ogg" id="5_rxq7w"]
 
+[sub_resource type="Animation" id="Animation_3ubj5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture_hover")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_4esp2")]
+}
+
+[sub_resource type="Animation" id="Animation_rqune"]
+resource_name = "action"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture_hover")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_vgvwl")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eteam"]
+_data = {
+"RESET": SubResource("Animation_3ubj5"),
+"action": SubResource("Animation_rqune")
+}
+
 [node name="ItemAction" type="TextureButton"]
-offset_right = 128.0
-offset_bottom = 72.0
-texture_normal = ExtResource("1_x25bj")
-texture_hover = ExtResource("2_b6rxw")
+offset_right = 256.0
+offset_bottom = 280.0
+texture_normal = ExtResource("1_vgvwl")
+texture_hover = ExtResource("2_4esp2")
+stretch_mode = 0
 script = ExtResource("3_0exgd")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -18,3 +56,8 @@ stream = ExtResource("4_d3trc")
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_rxq7w")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_eteam")
+}

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://db43cstk54cb2"]
+
+[ext_resource type="Script" path="res://objects/smm_object.gd" id="1_nltlx"]
+
+[node name="SmmObject" type="StaticBody2D"]
+script = ExtResource("1_nltlx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+region_enabled = true
+region_rect = Rect2(144, 112, 0, 0)

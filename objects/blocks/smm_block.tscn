@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dknxm8xgtwdiv"]
+
+[ext_resource type="Script" path="res://objects/blocks/smm_block.gd" id="1_khxey"]
+[ext_resource type="PackedScene" uid="uid://db43cstk54cb2" path="res://objects/smm_object.tscn" id="2_34624"]
+
+[node name="SmmBlock" type="StaticBody2D"]
+script = ExtResource("1_khxey")
+
+[node name="SmmObject" parent="." instance=ExtResource("2_34624")]
+
+[node name="Sprite2D" parent="SmmObject" index="0"]
+region_rect = Rect2(176, 128, 16, 16)
+
+[editable path="SmmObject"]
