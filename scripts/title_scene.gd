@@ -11,11 +11,13 @@ func onMakeClick():
 	#DialogInfo.make('wo shi lao CHUAN','CHUAN ge zhi zao, hui ji quan qiu (bushi')
 func onPlayClick():
 	$CanvasLayer/panelPlay.visible=true
+	$CanvasLayer/playBack.visible=true
 	$CanvasLayer/TextureButton2.visible=false
 	#SceneChanger.gradient('res://test/test_game.tscn')
 	pass
 func onPlayBackClick():
 	$CanvasLayer/panelPlay.visible=false
+	$CanvasLayer/playBack.visible=false
 	$CanvasLayer/TextureButton2.visible=true
 func onPlayAction1Click():
 	SceneChanger.gradient('res://test/test_game.tscn')
@@ -32,7 +34,7 @@ func _ready() -> void:
 	$CanvasLayer/panelPlay/Panel2/Play_Action2.setOnClick(notAvailable)
 	$CanvasLayer/panelPlay/Panel3/Play_Action3.setOnClick(notAvailable)
 	
-	$CanvasLayer/panelPlay/playBack.setOnClick(onPlayBackClick)
+	$CanvasLayer/playBack.setOnClick(onPlayBackClick)
 	pass
 
 func _process(delta: float) -> void:

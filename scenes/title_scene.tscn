@@ -556,12 +556,16 @@ offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="playBack" parent="CanvasLayer/panelPlay" instance=ExtResource("11_4pflv")]
-layout_mode = 0
-offset_left = -104.0
-offset_top = 222.0
-offset_right = 4.0
-offset_bottom = 330.0
+[node name="playBack" parent="CanvasLayer" instance=ExtResource("11_4pflv")]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -208.0
+offset_right = 208.0
+offset_bottom = -100.0
+grow_vertical = 0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_50ftw")
