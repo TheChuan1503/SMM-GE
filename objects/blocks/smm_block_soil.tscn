@@ -10,7 +10,3 @@ script = null
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("RectangleShape2D_psemm")
-
-[node name="Label2" type="Label" parent="." index="2"]
-offset_right = 40.0
-offset_bottom = 18.0

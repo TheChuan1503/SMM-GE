@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED_RUN=110
+const SPEED_RUN=120
 const SPEED_JUMP=-400
 const g=SPEED_RUN/0.175
 

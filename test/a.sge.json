@@ -1,26 +1,56 @@
 {
-    "manifest": {
-        "title": "测试地图",
-        "desc": "测试简介",
-        "version": 1,
-        "auther": "Chuan",
-        "world": {
-            "type": 0,
-            "world": 0,
-            "style": 0,
-            "width": 50
-        }
-    },
-    "data": [
-        {
-            "object": "block_soil",
-            "pos": [10, 5],
-            "value": 0,
-            "value2": 0,
-            "key": false,
-            "wing": false,
-            "active": false,
-            "inner": null
-        }
-    ]
+	"manifest": {
+		"title": "测试地图",
+		"desc": "测试简介",
+		"version": 1,
+		"auther": "Chuan",
+		"world": {
+			"type": "smb",
+			"world": 0,
+			"style": 0,
+			"width": 50
+		}
+	},
+	"data": [
+		{
+			"object": "block_soil",
+			"pos": [7, 1],
+		},
+		{
+			"object": "block_soil",
+			"pos": [8, 1],
+		},
+		{
+			"object": "block_soil",
+			"pos": [9, 1],
+		},
+		{
+			"object": "block_soil",
+			"pos": [10, 1],
+		},
+		{
+			"object": "block_soil",
+			"pos": [11, 1],
+		},
+		{
+			"object": "block_soil",
+			"pos": [12, 1],
+		},
+		{
+			"object": "block_soil",
+			"pos": [13, 1],
+		},
+		{
+			"object": "block_soil",
+			"pos": [14, 1],
+		},
+		{
+			"object": "block_soil",
+			"pos": [15, 1],
+		},
+		{
+			"object": "block_brick",
+			"pos": [8, 4],
+		}
+	]
 }

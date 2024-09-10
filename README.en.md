@@ -20,6 +20,7 @@ Using Godot's imitation of Super Mario Maker
 - [ ] Startup Animation
 - [x] "Start" Screen
 - [ ] Play Levels
+  - [x] Load Level Files(Primarily)
   - [ ] Load Level Files
   - [ ] Play Levels
   - [ ] Global Levels

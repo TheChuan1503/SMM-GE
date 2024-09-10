@@ -186,6 +186,9 @@ region_rect = Rect2(0, 0, 48, 16)
 
 [node name="Camera2D" type="Camera2D" parent="Sprite2D"]
 position = Vector2(0, 8)
+limit_left = 0
+limit_bottom = 0
+drag_vertical_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7.5)
