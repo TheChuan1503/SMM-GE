@@ -3,6 +3,7 @@ extends Node2D
 @onready var gameover=false
 
 func _ready() -> void:
+	$AudioStreamPlayer.finished.connect(playMusic)
 	var json:JSON=JSON.new()
 	json.parse(FileAccess.open('res://test/a.sge.json',FileAccess.READ).get_as_text())
 	var data:Array=json.data['data']
@@ -19,3 +20,5 @@ func  _process(delta: float) -> void:
 
 func onGameOver():
 	SceneChanger.gradient('res://scenes/title_scene.tscn')
+func playMusic():
+	$AudioStreamPlayer.play()

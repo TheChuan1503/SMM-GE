@@ -3,6 +3,31 @@
 [ext_resource type="Script" path="res://components/addon_btn_selectable.gd" id="1_h74sf"]
 
 [node name="SelectableButton" type="TextureButton"]
-offset_right = 128.0
-offset_bottom = 48.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_h74sf")
+
+[node name="ColorRect" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="ColorRect"]
+position = Vector2(-152, -72)
+scale = Vector2(1, 1)
+color = Color(0.988235, 0.819608, 0, 1)
+polygon = PackedVector2Array(128, 48, 176, 48, 128, 96)
+
+[node name="Polygon2D2" type="Polygon2D" parent="ColorRect"]
+position = Vector2(232, -72)
+scale = Vector2(1, 1)
+color = Color(0.988235, 0.819608, 0, 1)
+polygon = PackedVector2Array(128, 48, 176, 48, 176, 96)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

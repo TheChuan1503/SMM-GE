@@ -1,7 +1,7 @@
 {
 	"manifest": {
-		"title": "测试地图",
-		"desc": "测试简介",
+		"title": "TBIndev",
+		"desc": "by TheChuan1503",
 		"version": 1,
 		"auther": "Chuan",
 		"world": {
@@ -49,8 +49,180 @@
 			"pos": [15, 1],
 		},
 		{
+			"object": "block_soil",
+			"pos": [7, 2],
+		},
+		{
+			"object": "block_soil",
+			"pos": [8, 2],
+		},
+		{
+			"object": "block_soil",
+			"pos": [9, 2],
+		},
+		{
+			"object": "block_soil",
+			"pos": [10, 2],
+		},
+		{
+			"object": "block_soil",
+			"pos": [11, 2],
+		},
+		{
+			"object": "block_soil",
+			"pos": [12, 2],
+		},
+		{
+			"object": "block_soil",
+			"pos": [13, 2],
+		},
+		{
+			"object": "block_soil",
+			"pos": [14, 2],
+		},
+		{
+			"object": "block_soil",
+			"pos": [15, 2],
+		},
+		{
+			"object": "block_soil",
+			"pos": [16, 1],
+		},
+		{
+			"object": "block_soil",
+			"pos": [17, 1],
+		},
+		{
+			"object": "block_soil",
+			"pos": [18, 1],
+		},
+		{
+			"object": "block_soil",
+			"pos": [19, 1],
+		},
+		{
+			"object": "block_soil",
+			"pos": [20, 1],
+		},
+		{
+			"object": "block_soil",
+			"pos": [21, 1],
+		},
+		{
+			"object": "block_soil",
+			"pos": [22, 1],
+		},
+		{
+			"object": "block_soil",
+			"pos": [23, 1],
+		},
+		{
+			"object": "block_soil",
+			"pos": [24, 1],
+		},
+		{
+			"object": "block_soil",
+			"pos": [16, 2],
+		},
+		{
+			"object": "block_soil",
+			"pos": [17, 2],
+		},
+		{
+			"object": "block_soil",
+			"pos": [18, 2],
+		},
+		{
+			"object": "block_soil",
+			"pos": [19, 2],
+		},
+		{
+			"object": "block_soil",
+			"pos": [20, 2],
+		},
+		{
+			"object": "block_soil",
+			"pos": [21, 2],
+		},
+		{
+			"object": "block_soil",
+			"pos": [22, 2],
+		},
+		{
+			"object": "block_soil",
+			"pos": [23, 2],
+		},
+		{
+			"object": "block_soil",
+			"pos": [24, 2],
+		},
+		{
 			"object": "block_brick",
-			"pos": [8, 4],
+			"pos": [8, 6],
+		},
+		{
+			"object": "block_brick",
+			"pos": [9, 7],
+		},
+		{
+			"object": "block_brick",
+			"pos": [10, 8],
+		},
+		{
+			"object": "block_brick",
+			"pos": [14, 8],
+		},
+		{
+			"object": "block_brick",
+			"pos": [15, 9],
+		},
+		{
+			"object": "block_brick",
+			"pos": [16, 10],
+		},
+		{
+			"object": "block_brick",
+			"pos": [20, 10],
+		},
+		{
+			"object": "block_brick",
+			"pos": [21, 11],
+		},
+		{
+			"object": "block_brick",
+			"pos": [22, 12],
+		},
+		{
+			"object": "block_soil",
+			"pos": [26, 12],
+		},
+		{
+			"object": "block_soil",
+			"pos": [27, 12],
+		},
+		{
+			"object": "block_soil",
+			"pos": [28, 12],
+		},
+		{
+			"object": "block_soil",
+			"pos": [29, 12],
+		},
+		{
+			"object": "block_soil",
+			"pos": [30, 12],
+		},
+		{
+			"object": "block_brick",
+			"pos": [27, 16],
+		},
+		{
+			"object": "block_brick",
+			"pos": [28, 16],
+		},
+		{
+			"object": "block_brick",
+			"pos": [29, 16],
 		}
 	]
 }

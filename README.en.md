@@ -1,7 +1,7 @@
 # Super Mario Maker: Godot Engine
 
 ### ↓ 在下方选择你的语言 ↓
-[简体中文](README.md) | English
+[简体中文](README.md) | English | [español](README.es.md)
 
 Using Godot's imitation of Super Mario Maker
 
@@ -30,3 +30,7 @@ Using Godot's imitation of Super Mario Maker
   - [ ] Load Level Files
   - [ ] Save Level Files
   - [ ] Play Levels
+- [ ] Mario Physics
+- [ ] Multi-world Type
+- [ ] Multi-world Style
+- [ ] ~~World~~

@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=4 format=3 uid="uid://d1hn0ukr45bu1"]
 
 [ext_resource type="PackedScene" uid="uid://b47t06tq6h2i2" path="res://objects/blocks/SMB/soil/soil.tscn" id="1_3sq14"]
-[ext_resource type="PackedScene" uid="uid://s3ktbee5u1yi" path="res://objects/blocks/SMB/brick/brick.tscn" id="2_mtgeb"]
+[ext_resource type="PackedScene" uid="uid://rwq7n2j7r8nv" path="res://objects/blocks/SMB/brick/brick.tscn" id="2_mtgeb"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_nxyvv"]
 resource_name = "SMB"

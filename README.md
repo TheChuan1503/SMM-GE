@@ -1,7 +1,7 @@
 # Super Mario Maker: Godot Engine
 
 ### ↓ Select your language below ↓
-简体中文 | [English](README.en.md)
+简体中文 | [English](README.en.md) | [español](README.es.md)
 
 使用Godot仿制的Super Mario Maker
 
@@ -30,3 +30,7 @@
   - [ ] 读取关卡文件
   - [ ] 保存关卡文件
   - [ ] 游玩关卡
+- [ ] 马里奥物理
+- [ ] 多世界类型
+- [ ] 多世界样式
+- [ ] ~~世界~~

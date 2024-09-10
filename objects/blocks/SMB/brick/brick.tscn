@@ -1,10 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://s3ktbee5u1yi"]
+[gd_scene load_steps=3 format=3 uid="uid://rwq7n2j7r8nv"]
 
-[ext_resource type="PackedScene" uid="uid://dbof7g4ukol6q" path="res://objects/blocks/smm_block_soil.tscn" id="1_uciul"]
+[ext_resource type="PackedScene" uid="uid://dp0amhcfxah1i" path="res://objects/blocks/smm_block_hittable.tscn" id="1_be3jl"]
 [ext_resource type="Texture2D" uid="uid://0q8y01tqs3gk" path="res://objects/blocks/SMB/brick/brick.png" id="2_2ofri"]
 
-[node name="SmmBlock" instance=ExtResource("1_uciul")]
+[node name="SmmBlock" instance=ExtResource("1_be3jl")]
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_2ofri")
-region_enabled = false

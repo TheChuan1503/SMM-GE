@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dydfei0sjb6ti"]
+[gd_scene load_steps=10 format=3 uid="uid://dydfei0sjb6ti"]
 
 [ext_resource type="Script" path="res://scripts/player_smb_0.gd" id="1_lp2v1"]
 [ext_resource type="Texture2D" uid="uid://dxtmf3auw22gs" path="res://src/tiles/player_smb.png" id="1_m2ogj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0ron"]
-size = Vector2(14, 15)
+size = Vector2(14, 14)
 
 [sub_resource type="Animation" id="Animation_qdan5"]
 length = 0.001
@@ -174,6 +174,9 @@ _data = {
 "running": SubResource("Animation_hl8uq")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pipov"]
+size = Vector2(14, 1)
+
 [node name="PlayerSmb0" type="CharacterBody2D"]
 script = ExtResource("1_lp2v1")
 
@@ -191,7 +194,7 @@ limit_bottom = 0
 drag_vertical_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7.5)
+position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_v0ron")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -199,3 +202,15 @@ root_node = NodePath("../CollisionShape2D")
 libraries = {
 "": SubResource("AnimationLibrary_a2peh")
 }
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -14.5)
+shape = SubResource("RectangleShape2D_pipov")
+debug_color = Color(0.794326, 0.41422, 0.27002, 0.42)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 1.5

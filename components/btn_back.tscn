@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bg8vydrvhce4a"]
+[gd_scene load_steps=7 format=3 uid="uid://bg8vydrvhce4a"]
 
 [ext_resource type="PackedScene" uid="uid://cm3c5o2l4s31x" path="res://components/addon_btn_selectable.tscn" id="1_qa27i"]
 [ext_resource type="Script" path="res://components/btn_back.gd" id="1_qcdki"]
+[ext_resource type="AudioStream" uid="uid://dnjlp4c0v13xi" path="res://src/musics/effect/back.ogg" id="3_sy8jh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vhiis"]
 bg_color = Color(1, 1, 1, 1)
@@ -68,3 +69,6 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_sy8jh")
