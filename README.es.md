@@ -1,9 +1,11 @@
-# Super Mario Maker: Motor Godot
+# Super Mario Maker: Godot Engine
 
 ### ↓ 在下方选择你的语言 ↓
 [简体中文](README.md) | [English](README.en.md) | español
 
 Se utiliza Super Mario Maker, una réplica de Godot
+
+Este proyecto utilizó recursos de proyectos que incluyen `SMM: WE`
 
 ## Este artículo es una traducción automática
 

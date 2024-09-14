@@ -21,6 +21,8 @@ func onPlayBackClick():
 	$CanvasLayer/TextureButton2.visible=true
 func onPlayAction1Click():
 	SceneChanger.gradient('res://test/test_game.tscn')
+func onPlayAction3Click():
+	SceneChanger.gradient('res://scenes/coursebot_scene.tscn')
 
 func _ready() -> void:
 	$CanvasLayer/Label2.visible=true
@@ -32,7 +34,7 @@ func _ready() -> void:
 	
 	$CanvasLayer/panelPlay/Panel/Play_Action1.setOnClick(onPlayAction1Click)
 	$CanvasLayer/panelPlay/Panel2/Play_Action2.setOnClick(notAvailable)
-	$CanvasLayer/panelPlay/Panel3/Play_Action3.setOnClick(notAvailable)
+	$CanvasLayer/panelPlay/Panel3/Play_Action3.setOnClick(onPlayAction3Click)
 	
 	$CanvasLayer/playBack.setOnClick(onPlayBackClick)
 	pass

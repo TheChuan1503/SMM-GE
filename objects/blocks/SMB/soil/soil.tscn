@@ -5,6 +5,6 @@
 
 [node name="SmmBlock" instance=ExtResource("1_4lrgu")]
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_wvhru")
-region_enabled = false
+region_rect = Rect2(144, 112, 0, 0)

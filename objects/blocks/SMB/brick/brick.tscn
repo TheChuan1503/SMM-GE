@@ -5,5 +5,23 @@
 
 [node name="SmmBlock" instance=ExtResource("1_be3jl")]
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="Sprite2D6" type="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_2ofri")
+region_enabled = true
+region_rect = Rect2(144, 112, 0, 0)
+
+[node name="Sprite2D7" type="Sprite2D" parent="." index="2"]
+region_enabled = true
+region_rect = Rect2(144, 112, 0, 0)
+
+[node name="Sprite2D8" type="Sprite2D" parent="." index="6"]
+region_enabled = true
+region_rect = Rect2(144, 112, 0, 0)
+
+[node name="Sprite2D9" type="Sprite2D" parent="." index="8"]
+region_enabled = true
+region_rect = Rect2(144, 112, 0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="10"]
+region_enabled = true
+region_rect = Rect2(144, 112, 0, 0)

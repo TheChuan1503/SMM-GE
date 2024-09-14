@@ -137,6 +137,9 @@ position = Vector2(56, -32)
 [node name="Camera2D" parent="PlayerSmb0/Sprite2D" index="0"]
 enabled = false
 
+[node name="CollisionShape2D" parent="PlayerSmb0/Area2D" index="0"]
+visible = false
+
 [node name="Camera2D" type="Camera2D" parent="PlayerSmb0"]
 position = Vector2(0, -8)
 zoom = Vector2(5, 5)

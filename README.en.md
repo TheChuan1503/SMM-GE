@@ -5,6 +5,8 @@
 
 Using Godot's imitation of Super Mario Maker
 
+This project utilized resources from projects including `SMM: WE`
+
 ### Disclaimer
 - This is a fan-made game.
 - It is not licensed by Nintendo.

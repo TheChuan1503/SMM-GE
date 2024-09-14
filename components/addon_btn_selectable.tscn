@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cm3c5o2l4s31x"]
+[gd_scene load_steps=4 format=3 uid="uid://cm3c5o2l4s31x"]
 
 [ext_resource type="Script" path="res://components/addon_btn_selectable.gd" id="1_h74sf"]
+[ext_resource type="Texture2D" uid="uid://b8hog8ea4tgyo" path="res://src/images/selected_border.png" id="2_pjk7y"]
+[ext_resource type="AudioStream" uid="uid://35tbyer3sma5" path="res://src/musics/effect/select.ogg" id="3_hg57r"]
 
 [node name="SelectableButton" type="TextureButton"]
 anchors_preset = 15
@@ -10,24 +12,59 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h74sf")
 
-[node name="ColorRect" type="Label" parent="."]
+[node name="leftTop" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 8.0
+offset_bottom = 8.0
+texture = ExtResource("2_pjk7y")
+
+[node name="rightTop" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -8.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 8.0
+grow_horizontal = 0
+texture = ExtResource("2_pjk7y")
+flip_h = true
+
+[node name="leftBottom" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 16.0
+grow_vertical = 0
+texture = ExtResource("2_pjk7y")
+flip_v = true
+
+[node name="rightBottom" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_pjk7y")
+flip_h = true
+flip_v = true
 
-[node name="Polygon2D" type="Polygon2D" parent="ColorRect"]
-position = Vector2(-152, -72)
-scale = Vector2(1, 1)
-color = Color(0.988235, 0.819608, 0, 1)
-polygon = PackedVector2Array(128, 48, 176, 48, 128, 96)
-
-[node name="Polygon2D2" type="Polygon2D" parent="ColorRect"]
-position = Vector2(232, -72)
-scale = Vector2(1, 1)
-color = Color(0.988235, 0.819608, 0, 1)
-polygon = PackedVector2Array(128, 48, 176, 48, 176, 96)
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hg57r")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
