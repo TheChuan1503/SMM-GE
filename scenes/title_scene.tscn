@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cveotyrw8n1ek"]
+[gd_scene load_steps=30 format=3 uid="uid://cveotyrw8n1ek"]
 
 [ext_resource type="Texture2D" uid="uid://1nt8twt0kewg" path="res://src/tiles/blocks_smb.png" id="1_2ttu2"]
 [ext_resource type="Script" path="res://scripts/title_scene.gd" id="1_gixyt"]
@@ -7,10 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://c3x2sq7uv0fk" path="res://scenes/items/item_action.tscn" id="4_3ij5n"]
 [ext_resource type="FontFile" uid="uid://njigu8kanj1q" path="res://src/fonts/text.ttf" id="5_hletk"]
 [ext_resource type="AudioStream" uid="uid://bl3tv6y6pb83b" path="res://src/musics/title_modern.ogg" id="6_50ftw"]
-[ext_resource type="Texture2D" uid="uid://cr8fb266qikl7" path="res://icon.png" id="6_jvkjt"]
+[ext_resource type="PackedScene" uid="uid://b8c1q3ci0ia0s" path="res://components/btn_option.tscn" id="7_dbyjb"]
+[ext_resource type="Texture2D" uid="uid://b88585nlkyhuv" path="res://src/images/play_action_challenge.png" id="8_7gb5i"]
 [ext_resource type="PackedScene" uid="uid://cm3c5o2l4s31x" path="res://components/addon_btn_selectable.tscn" id="8_fur8m"]
-[ext_resource type="Texture2D" uid="uid://dc40xlxhcpo6l" path="res://objects/blocks/SMB/soil/soil.png" id="9_v5ce3"]
-[ext_resource type="Texture2D" uid="uid://cheffq16qsy6c" path="res://src/images/action_4.png" id="10_8lwrx"]
+[ext_resource type="Texture2D" uid="uid://cixtdj4p51frg" path="res://src/images/play_action_world.png" id="9_0ucm5"]
+[ext_resource type="Texture2D" uid="uid://cyfu4asxtpug4" path="res://src/images/play_action_coursebot.png" id="10_yvgum"]
 [ext_resource type="PackedScene" uid="uid://bg8vydrvhce4a" path="res://components/btn_back.tscn" id="11_4pflv"]
 [ext_resource type="Texture2D" uid="uid://0q8y01tqs3gk" path="res://objects/blocks/SMB/brick/brick.png" id="11_5w8tl"]
 
@@ -413,131 +414,36 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 color = Color(0.145098, 0.145098, 0.145098, 0)
 
-[node name="Panel" type="Panel" parent="CanvasLayer/panelPlay"]
+[node name="Panel" parent="CanvasLayer/panelPlay" instance=ExtResource("7_dbyjb")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -282.0
-offset_top = -161.5
-offset_right = 282.0
-offset_bottom = -68.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_q1mde")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/panelPlay/Panel"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 13.0
-offset_top = -36.0
-offset_right = 85.0
-offset_bottom = 36.0
-grow_vertical = 2
-texture = ExtResource("6_jvkjt")
-expand_mode = 1
+[node name="TextureRect" parent="CanvasLayer/panelPlay/Panel" index="0"]
+texture = ExtResource("8_7gb5i")
 
-[node name="Label" type="Label" parent="CanvasLayer/panelPlay/Panel"]
-layout_mode = 0
-offset_left = 100.0
-offset_top = 1.0
-offset_right = 520.0
-offset_bottom = 94.0
+[node name="Label" parent="CanvasLayer/panelPlay/Panel" index="1"]
 text = "Infinty Challenge (Test Game)"
-label_settings = SubResource("LabelSettings_yb0ex")
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Play_Action1" parent="CanvasLayer/panelPlay/Panel" instance=ExtResource("8_fur8m")]
+[node name="Panel2" parent="CanvasLayer/panelPlay" instance=ExtResource("7_dbyjb")]
 layout_mode = 1
+offset_top = -56.5
+offset_bottom = 36.5
 
-[node name="Panel2" type="Panel" parent="CanvasLayer/panelPlay"]
+[node name="TextureRect" parent="CanvasLayer/panelPlay/Panel2" index="0"]
+texture = ExtResource("9_0ucm5")
+
+[node name="Label" parent="CanvasLayer/panelPlay/Panel2" index="1"]
+text = "World Course"
+
+[node name="Panel3" parent="CanvasLayer/panelPlay" instance=ExtResource("7_dbyjb")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -282.0
-offset_top = -55.5
-offset_right = 282.0
-offset_bottom = 37.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_q1mde")
+offset_top = 48.5
+offset_bottom = 141.5
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/panelPlay/Panel2"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 13.0
-offset_top = -36.0
-offset_right = 85.0
-offset_bottom = 36.0
-grow_vertical = 2
-texture = ExtResource("9_v5ce3")
-expand_mode = 1
+[node name="TextureRect" parent="CanvasLayer/panelPlay/Panel3" index="0"]
+texture = ExtResource("10_yvgum")
 
-[node name="Label" type="Label" parent="CanvasLayer/panelPlay/Panel2"]
-layout_mode = 0
-offset_left = 100.0
-offset_top = 1.0
-offset_right = 520.0
-offset_bottom = 94.0
-text = "Course World"
-label_settings = SubResource("LabelSettings_yb0ex")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Play_Action2" parent="CanvasLayer/panelPlay/Panel2" instance=ExtResource("8_fur8m")]
-layout_mode = 1
-
-[node name="Panel3" type="Panel" parent="CanvasLayer/panelPlay"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -282.0
-offset_top = 52.5
-offset_right = 282.0
-offset_bottom = 145.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_q1mde")
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/panelPlay/Panel3"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 13.0
-offset_top = -36.0
-offset_right = 85.0
-offset_bottom = 36.0
-grow_vertical = 2
-texture = ExtResource("10_8lwrx")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="CanvasLayer/panelPlay/Panel3"]
-layout_mode = 0
-offset_left = 100.0
-offset_top = 1.0
-offset_right = 520.0
-offset_bottom = 94.0
+[node name="Label" parent="CanvasLayer/panelPlay/Panel3" index="1"]
 text = "Coursebot"
-label_settings = SubResource("LabelSettings_yb0ex")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Play_Action3" parent="CanvasLayer/panelPlay/Panel3" instance=ExtResource("8_fur8m")]
-layout_mode = 1
 
 [node name="Panel4" type="Panel" parent="CanvasLayer/panelPlay"]
 visible = false
@@ -598,3 +504,9 @@ stream = ExtResource("6_50ftw")
 autoplay = true
 
 [editable path="PlayerSmb0"]
+[editable path="CanvasLayer/panelPlay/Panel"]
+[editable path="CanvasLayer/panelPlay/Panel/Play_Action1"]
+[editable path="CanvasLayer/panelPlay/Panel2"]
+[editable path="CanvasLayer/panelPlay/Panel2/Play_Action1"]
+[editable path="CanvasLayer/panelPlay/Panel3"]
+[editable path="CanvasLayer/panelPlay/Panel3/Play_Action1"]

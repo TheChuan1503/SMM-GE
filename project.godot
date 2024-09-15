@@ -20,6 +20,7 @@ config/icon="res://icon.png"
 SceneChanger="*res://scenes/scene_changer.tscn"
 Global="*res://scripts/_global.gd"
 DialogInfo="*res://scenes/dialog_info.tscn"
+MainMenu="*res://scenes/main_menu.tscn"
 
 [display]
 

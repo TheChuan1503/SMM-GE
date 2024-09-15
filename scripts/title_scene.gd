@@ -33,8 +33,8 @@ func _ready() -> void:
 	$CanvasLayer/TextureButton2/ItemAction2.pressed.connect(onPlayClick)
 	
 	$CanvasLayer/panelPlay/Panel/Play_Action1.setOnClick(onPlayAction1Click)
-	$CanvasLayer/panelPlay/Panel2/Play_Action2.setOnClick(notAvailable)
-	$CanvasLayer/panelPlay/Panel3/Play_Action3.setOnClick(onPlayAction3Click)
+	$CanvasLayer/panelPlay/Panel2/Play_Action1.setOnClick(notAvailable)
+	$CanvasLayer/panelPlay/Panel3/Play_Action1.setOnClick(onPlayAction3Click)
 	
 	$CanvasLayer/playBack.setOnClick(onPlayBackClick)
 	pass

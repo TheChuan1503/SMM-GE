@@ -1,10 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1lvoshccjdwg"]
+[gd_scene load_steps=10 format=3 uid="uid://c1lvoshccjdwg"]
 
 [ext_resource type="Texture2D" uid="uid://btpg14ikmem70" path="res://src/images/coursebot_background.png" id="1_gq5gm"]
 [ext_resource type="Script" path="res://scripts/coursebot_scene.gd" id="1_w0w28"]
 [ext_resource type="Texture2D" uid="uid://d066uvs4hysoq" path="res://src/images/coursebot_head.png" id="2_a38py"]
 [ext_resource type="FontFile" uid="uid://ddclxaa0c75i1" path="res://src/fonts/SuperMarioMaker2-Regular.ttf" id="3_lilpj"]
 [ext_resource type="AudioStream" uid="uid://crf3u8lfa4ekt" path="res://src/musics/guardabot.ogg" id="5_217j3"]
+[ext_resource type="PackedScene" uid="uid://dh101gml8kdi4" path="res://components/btn_menu.tscn" id="6_dhuf6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b6xk1"]
+bg_color = Color(0.215686, 0.309804, 0.458824, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_3bmga"]
+font_size = 40
 
 [sub_resource type="LabelSettings" id="LabelSettings_o2w3u"]
 font = ExtResource("3_lilpj")
@@ -29,6 +38,57 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_gq5gm")
 stretch_mode = 6
+
+[node name="virtualBackground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1201.0
+offset_right = 1199.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+texture = ExtResource("1_gq5gm")
+stretch_mode = 6
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -791.0
+offset_top = 150.0
+offset_right = 789.0
+offset_bottom = 251.0
+grow_horizontal = 2
+color = Color(0.623529, 0.623529, 0.694118, 1)
+
+[node name="Panel" type="Panel" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b6xk1")
+
+[node name="Label" type="Label" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.5
+offset_top = -36.0
+offset_right = 195.5
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Own Courses"
+label_settings = SubResource("LabelSettings_3bmga")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="head" type="TextureRect" parent="."]
 layout_mode = 1
@@ -61,5 +121,21 @@ label_settings = SubResource("LabelSettings_o2w3u")
 [node name="bgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_217j3")
 autoplay = true
+
+[node name="menu" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -165.0
+offset_bottom = 330.0
+grow_horizontal = 0
+color = Color(0, 0, 0, 0)
+
+[node name="BtnMenu" parent="menu" instance=ExtResource("6_dhuf6")]
+layout_mode = 1
+offset_top = 45.0
+offset_right = -65.0
+offset_bottom = -185.0
 
 [connection signal="finished" from="bgm" to="." method="_on_bgm_finished"]

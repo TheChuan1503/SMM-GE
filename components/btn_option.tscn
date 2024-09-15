@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8c1q3ci0ia0s"]
+
+[ext_resource type="Texture2D" uid="uid://cr8fb266qikl7" path="res://icon.png" id="1_4u0fw"]
+[ext_resource type="Script" path="res://components/btn_option.gd" id="1_nyuux"]
+[ext_resource type="PackedScene" uid="uid://cm3c5o2l4s31x" path="res://components/addon_btn_selectable.tscn" id="2_32xxd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1mde"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_yb0ex"]
+font_size = 32
+font_color = Color(0.352941, 0.0627451, 0.0627451, 1)
+
+[node name="Panel" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = -161.5
+offset_right = 282.0
+offset_bottom = -68.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q1mde")
+script = ExtResource("1_nyuux")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -36.0
+offset_right = 85.0
+offset_bottom = 36.0
+grow_vertical = 2
+texture = ExtResource("1_4u0fw")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 1.0
+offset_right = 520.0
+offset_bottom = 94.0
+label_settings = SubResource("LabelSettings_yb0ex")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play_Action1" parent="." instance=ExtResource("2_32xxd")]
+layout_mode = 1
+
+[editable path="Play_Action1"]

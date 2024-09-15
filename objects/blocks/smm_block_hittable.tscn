@@ -72,7 +72,19 @@ region_rect = Rect2(144, 112, 0, 0)
 region_enabled = true
 region_rect = Rect2(144, 112, 0, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="6"]
+[node name="Sprite2D6" type="Sprite2D" parent="." index="6"]
+region_enabled = true
+region_rect = Rect2(144, 112, 0, 0)
+
+[node name="Sprite2D7" type="Sprite2D" parent="." index="7"]
+region_enabled = true
+region_rect = Rect2(144, 112, 0, 0)
+
+[node name="Sprite2D8" type="Sprite2D" parent="." index="8"]
+region_enabled = true
+region_rect = Rect2(144, 112, 0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="9"]
 region_enabled = true
 region_rect = Rect2(144, 112, 0, 0)
 

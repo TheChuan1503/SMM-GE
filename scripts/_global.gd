@@ -1,6 +1,7 @@
 extends Node
 
-const isDebug = true;
+const isDebug = true
+var scene = 'start'
 
 func getTileIndex(world:String, id:String):
 	var json:JSON=JSON.new()

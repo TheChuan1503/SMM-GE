@@ -4,8 +4,6 @@ extends TextureButton
 @onready var left_bottom: TextureRect = $leftBottom
 @onready var right_bottom: TextureRect = $rightBottom
 
-func setOnClick(fun:Callable):
-	pressed.connect(fun)
 func _ready() -> void:
 	setBorderVisible(false)
 func _on_mouse_entered() -> void:
@@ -21,3 +19,6 @@ func setBorderVisible(status):
 	left_bottom.visible=status
 	right_bottom.visible=status
 	right_top.visible=status
+
+func setOnClick(fun:Callable):
+	pressed.connect(fun)

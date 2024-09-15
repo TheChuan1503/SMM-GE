@@ -1,0 +1,144 @@
+[gd_scene load_steps=9 format=3 uid="uid://5n2p1dja4x5n"]
+
+[ext_resource type="FontFile" uid="uid://ddclxaa0c75i1" path="res://src/fonts/SuperMarioMaker2-Regular.ttf" id="1_6g0pu"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ho3u1"]
+[ext_resource type="PackedScene" uid="uid://b8c1q3ci0ia0s" path="res://components/btn_option.tscn" id="3_lqf8s"]
+[ext_resource type="Texture2D" uid="uid://deyuxws4njq6k" path="res://src/images/play_action_maker.png" id="4_cyapp"]
+[ext_resource type="Texture2D" uid="uid://b88585nlkyhuv" path="res://src/images/play_action_challenge.png" id="5_cy5jm"]
+[ext_resource type="Texture2D" uid="uid://cixtdj4p51frg" path="res://src/images/play_action_world.png" id="6_6u4a7"]
+[ext_resource type="Texture2D" uid="uid://cyfu4asxtpug4" path="res://src/images/play_action_coursebot.png" id="7_tfl1v"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jg0fn"]
+font = ExtResource("1_6g0pu")
+font_size = 78
+font_color = Color(0.368627, 0.109804, 0.105882, 1)
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_ho3u1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.25098)
+
+[node name="TextureButton" type="TextureButton" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -672.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.996078, 0.8, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.0
+offset_top = -232.0
+offset_right = 304.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="makerOption" parent="ColorRect2/ColorRect3" instance=ExtResource("3_lqf8s")]
+layout_mode = 1
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 0.0
+offset_bottom = 93.0
+grow_vertical = 1
+
+[node name="TextureRect" parent="ColorRect2/ColorRect3/makerOption" index="0"]
+texture = ExtResource("4_cyapp")
+
+[node name="Label" parent="ColorRect2/ColorRect3/makerOption" index="1"]
+text = "Course Maker"
+
+[node name="challengeOption" parent="ColorRect2/ColorRect3" instance=ExtResource("3_lqf8s")]
+layout_mode = 1
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 112.0
+offset_bottom = 205.0
+grow_vertical = 1
+
+[node name="TextureRect" parent="ColorRect2/ColorRect3/challengeOption" index="0"]
+texture = ExtResource("5_cy5jm")
+
+[node name="Label" parent="ColorRect2/ColorRect3/challengeOption" index="1"]
+text = "Endless Challenge"
+
+[node name="worldOption" parent="ColorRect2/ColorRect3" instance=ExtResource("3_lqf8s")]
+layout_mode = 1
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 224.0
+offset_bottom = 317.0
+grow_vertical = 1
+
+[node name="TextureRect" parent="ColorRect2/ColorRect3/worldOption" index="0"]
+texture = ExtResource("6_6u4a7")
+
+[node name="Label" parent="ColorRect2/ColorRect3/worldOption" index="1"]
+text = "Course World"
+
+[node name="coursebotOption" parent="ColorRect2/ColorRect3" instance=ExtResource("3_lqf8s")]
+layout_mode = 1
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 336.0
+offset_bottom = 429.0
+grow_vertical = 1
+
+[node name="TextureRect" parent="ColorRect2/ColorRect3/coursebotOption" index="0"]
+texture = ExtResource("7_tfl1v")
+
+[node name="Label" parent="ColorRect2/ColorRect3/coursebotOption" index="1"]
+text = "Coursebot"
+
+[node name="Label" type="Label" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -190.5
+offset_top = 32.0
+offset_right = 190.5
+offset_bottom = 121.0
+grow_horizontal = 2
+text = "MAIN MENU"
+label_settings = SubResource("LabelSettings_jg0fn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ColorRect/TextureButton" to="." method="_on_texture_button_pressed"]
+
+[editable path="ColorRect2/ColorRect3/makerOption"]
+[editable path="ColorRect2/ColorRect3/makerOption/Play_Action1"]
+[editable path="ColorRect2/ColorRect3/challengeOption"]
+[editable path="ColorRect2/ColorRect3/challengeOption/Play_Action1"]
+[editable path="ColorRect2/ColorRect3/worldOption"]
+[editable path="ColorRect2/ColorRect3/worldOption/Play_Action1"]
+[editable path="ColorRect2/ColorRect3/coursebotOption"]
+[editable path="ColorRect2/ColorRect3/coursebotOption/Play_Action1"]
