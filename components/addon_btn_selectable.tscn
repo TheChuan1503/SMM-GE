@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://components/addon_btn_selectable.gd" id="1_h74sf"]
 [ext_resource type="Texture2D" uid="uid://b8hog8ea4tgyo" path="res://src/images/selected_border.png" id="2_pjk7y"]
-[ext_resource type="AudioStream" uid="uid://35tbyer3sma5" path="res://src/musics/effect/select.ogg" id="3_hg57r"]
+[ext_resource type="AudioStream" uid="uid://1mxxad4g6gx0" path="res://src/musics/effect/select.ogg" id="3_hg57r"]
 
 [node name="SelectableButton" type="TextureButton"]
 anchors_preset = 15

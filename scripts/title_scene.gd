@@ -1,5 +1,13 @@
 extends Node2D
 
+func i18n():
+	Global.i18n($CanvasLayer/TextureButton/ColorRect/Label)
+	Global.i18n($CanvasLayer/TextureButton2/ItemAction/Label)
+	Global.i18n($CanvasLayer/TextureButton2/ItemAction2/Label)
+	Global.i18n($CanvasLayer/panelPlay/Panel/text)
+	Global.i18n($CanvasLayer/panelPlay/Panel2/text)
+	Global.i18n($CanvasLayer/panelPlay/Panel3/text)
+
 func notAvailable():
 	DialogInfo.make('Info','This action is unavailable')
 func onStartClick  () -> void:
@@ -25,6 +33,8 @@ func onPlayAction3Click():
 	SceneChanger.gradient('res://scenes/coursebot_scene.tscn')
 
 func _ready() -> void:
+	i18n()
+	Global.scene='start'
 	$CanvasLayer/Label2.visible=true
 	$CanvasLayer/panelPlay.visible=false
 	$CanvasLayer/TextureButton2.visible=false
@@ -32,9 +42,9 @@ func _ready() -> void:
 	$CanvasLayer/TextureButton2/ItemAction.pressed.connect(onMakeClick)
 	$CanvasLayer/TextureButton2/ItemAction2.pressed.connect(onPlayClick)
 	
-	$CanvasLayer/panelPlay/Panel/Play_Action1.setOnClick(onPlayAction1Click)
-	$CanvasLayer/panelPlay/Panel2/Play_Action1.setOnClick(notAvailable)
-	$CanvasLayer/panelPlay/Panel3/Play_Action1.setOnClick(onPlayAction3Click)
+	$CanvasLayer/panelPlay/Panel.setOnClick(onPlayAction1Click)
+	$CanvasLayer/panelPlay/Panel2.setOnClick(notAvailable)
+	$CanvasLayer/panelPlay/Panel3.setOnClick(onPlayAction3Click)
 	
 	$CanvasLayer/playBack.setOnClick(onPlayBackClick)
 	pass

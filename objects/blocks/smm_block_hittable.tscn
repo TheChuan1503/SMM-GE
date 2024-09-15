@@ -46,46 +46,15 @@ _data = {
 [node name="SmmBlockHittable" instance=ExtResource("1_litpr")]
 script = ExtResource("2_mj11b")
 
-[node name="Sprite2D2" type="Sprite2D" parent="." index="0"]
-region_rect = Rect2(144, 112, 0, 0)
-
-[node name="Sprite2D3" type="Sprite2D" parent="." index="1"]
-region_enabled = true
-region_rect = Rect2(144, 112, 0, 0)
-
-[node name="Area2D" type="Area2D" parent="." index="2"]
+[node name="Area2D" type="Area2D" parent="." index="0"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource("RectangleShape2D_v804d")
 debug_color = Color(0.794326, 0.41422, 0.27002, 0.42)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 libraries = {
 "": SubResource("AnimationLibrary_wmphu")
 }
-
-[node name="Sprite2D4" type="Sprite2D" parent="." index="4"]
-region_enabled = true
-region_rect = Rect2(144, 112, 0, 0)
-
-[node name="Sprite2D5" type="Sprite2D" parent="." index="5"]
-region_enabled = true
-region_rect = Rect2(144, 112, 0, 0)
-
-[node name="Sprite2D6" type="Sprite2D" parent="." index="6"]
-region_enabled = true
-region_rect = Rect2(144, 112, 0, 0)
-
-[node name="Sprite2D7" type="Sprite2D" parent="." index="7"]
-region_enabled = true
-region_rect = Rect2(144, 112, 0, 0)
-
-[node name="Sprite2D8" type="Sprite2D" parent="." index="8"]
-region_enabled = true
-region_rect = Rect2(144, 112, 0, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="." index="9"]
-region_enabled = true
-region_rect = Rect2(144, 112, 0, 0)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

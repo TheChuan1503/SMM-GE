@@ -72,7 +72,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b6xk1")
 
-[node name="Label" type="Label" parent="ColorRect/Panel"]
+[node name="own" type="Label" parent="ColorRect/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -85,7 +85,7 @@ offset_right = 195.5
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Own Courses"
+text = "text_coursebot_own"
 label_settings = SubResource("LabelSettings_3bmga")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -115,7 +115,7 @@ offset_right = 114.5
 offset_bottom = 43.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Coursebot"
+text = "text_play_coursebot"
 label_settings = SubResource("LabelSettings_o2w3u")
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]

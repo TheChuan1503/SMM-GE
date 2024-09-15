@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cveotyrw8n1ek"]
+[gd_scene load_steps=36 format=3 uid="uid://cveotyrw8n1ek"]
 
 [ext_resource type="Texture2D" uid="uid://1nt8twt0kewg" path="res://src/tiles/blocks_smb.png" id="1_2ttu2"]
 [ext_resource type="Script" path="res://scripts/title_scene.gd" id="1_gixyt"]
@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://b8c1q3ci0ia0s" path="res://components/btn_option.tscn" id="7_dbyjb"]
 [ext_resource type="Texture2D" uid="uid://b88585nlkyhuv" path="res://src/images/play_action_challenge.png" id="8_7gb5i"]
 [ext_resource type="PackedScene" uid="uid://cm3c5o2l4s31x" path="res://components/addon_btn_selectable.tscn" id="8_fur8m"]
-[ext_resource type="Texture2D" uid="uid://cixtdj4p51frg" path="res://src/images/play_action_world.png" id="9_0ucm5"]
-[ext_resource type="Texture2D" uid="uid://cyfu4asxtpug4" path="res://src/images/play_action_coursebot.png" id="10_yvgum"]
+[ext_resource type="Texture2D" uid="uid://cixtdj4p51frg" path="res://src/images/play_action_world.png" id="9_sxrwh"]
+[ext_resource type="Texture2D" uid="uid://cyfu4asxtpug4" path="res://src/images/play_action_coursebot.png" id="10_1kdyq"]
 [ext_resource type="PackedScene" uid="uid://bg8vydrvhce4a" path="res://components/btn_back.tscn" id="11_4pflv"]
 [ext_resource type="Texture2D" uid="uid://0q8y01tqs3gk" path="res://objects/blocks/SMB/brick/brick.png" id="11_5w8tl"]
 
@@ -42,17 +42,6 @@ font_size = 128
 font = ExtResource("4_1g4al")
 font_size = 72
 font_color = Color(0.952941, 0.0823529, 0.12549, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tht7w"]
-bg_color = Color(0, 0, 0, 0.498039)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="LabelSettings" id="LabelSettings_h3gw1"]
-font = ExtResource("4_1g4al")
-font_size = 31
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qv3kb"]
 bg_color = Color(0.988235, 0.819608, 0, 1)
@@ -108,6 +97,48 @@ _data = {
 font = ExtResource("5_hletk")
 font_size = 40
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vr208"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.25098)
+shadow_size = 1
+shadow_offset = Vector2(0, 7.5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dgri7"]
+font_size = 32
+font_color = Color(0.352941, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ol4q"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.25098)
+shadow_size = 1
+shadow_offset = Vector2(0, 7.5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8v8h1"]
+font_size = 32
+font_color = Color(0.352941, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsu3p"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.25098)
+shadow_size = 1
+shadow_offset = Vector2(0, 7.5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kxdqn"]
+font_size = 32
+font_color = Color(0.352941, 0.0627451, 0.0627451, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1mde"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
@@ -118,6 +149,17 @@ corner_radius_bottom_left = 16
 [sub_resource type="LabelSettings" id="LabelSettings_yb0ex"]
 font_size = 32
 font_color = Color(0.352941, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tht7w"]
+bg_color = Color(0, 0, 0, 0.498039)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_h3gw1"]
+font = ExtResource("4_1g4al")
+font_size = 31
 
 [node name="TitleScene" type="Node2D"]
 script = ExtResource("1_gixyt")
@@ -200,65 +242,6 @@ grow_vertical = 0
 text = "GODOT ENGINE"
 label_settings = SubResource("LabelSettings_tm3y3")
 
-[node name="ColorRect2" type="Panel" parent="CanvasLayer"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -314.0
-offset_top = -103.0
-offset_right = -74.0
-offset_bottom = -44.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_tht7w")
-
-[node name="Label" type="Label" parent="CanvasLayer/ColorRect2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -45.0
-offset_top = -9.0
-offset_right = 45.0
-offset_bottom = 9.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "ver. beta-1.0.0"
-label_settings = SubResource("LabelSettings_h3gw1")
-
-[node name="autherText" type="Panel" parent="CanvasLayer"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -192.0
-offset_top = -59.0
-offset_right = 192.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_tht7w")
-
-[node name="Label" type="Label" parent="CanvasLayer/autherText"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -45.0
-offset_top = -9.0
-offset_right = 45.0
-offset_bottom = 9.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Made by TheChuan1503"
-label_settings = SubResource("LabelSettings_h3gw1")
-
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
 anchors_preset = 7
 anchor_left = 0.5
@@ -300,7 +283,7 @@ offset_right = 130.0
 offset_bottom = 22.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Press HERE"
+text = "text_title_press_here"
 label_settings = SubResource("LabelSettings_iqjur")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -359,7 +342,7 @@ offset_right = 64.0
 offset_bottom = 73.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Make"
+text = "text_make"
 label_settings = SubResource("LabelSettings_gcgfn")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -388,7 +371,7 @@ offset_right = 64.0
 offset_bottom = 73.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Play"
+text = "text_play"
 label_settings = SubResource("LabelSettings_gcgfn")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -416,34 +399,40 @@ color = Color(0.145098, 0.145098, 0.145098, 0)
 
 [node name="Panel" parent="CanvasLayer/panelPlay" instance=ExtResource("7_dbyjb")]
 layout_mode = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_vr208")
 
-[node name="TextureRect" parent="CanvasLayer/panelPlay/Panel" index="0"]
+[node name="icon" parent="CanvasLayer/panelPlay/Panel" index="0"]
 texture = ExtResource("8_7gb5i")
 
-[node name="Label" parent="CanvasLayer/panelPlay/Panel" index="1"]
-text = "Infinty Challenge (Test Game)"
+[node name="text" parent="CanvasLayer/panelPlay/Panel" index="1"]
+text = "text_play_challenge"
+label_settings = SubResource("LabelSettings_dgri7")
 
 [node name="Panel2" parent="CanvasLayer/panelPlay" instance=ExtResource("7_dbyjb")]
 layout_mode = 1
 offset_top = -56.5
 offset_bottom = 36.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ol4q")
 
-[node name="TextureRect" parent="CanvasLayer/panelPlay/Panel2" index="0"]
-texture = ExtResource("9_0ucm5")
+[node name="icon" parent="CanvasLayer/panelPlay/Panel2" index="0"]
+texture = ExtResource("9_sxrwh")
 
-[node name="Label" parent="CanvasLayer/panelPlay/Panel2" index="1"]
-text = "World Course"
+[node name="text" parent="CanvasLayer/panelPlay/Panel2" index="1"]
+text = "text_play_world"
+label_settings = SubResource("LabelSettings_8v8h1")
 
 [node name="Panel3" parent="CanvasLayer/panelPlay" instance=ExtResource("7_dbyjb")]
 layout_mode = 1
 offset_top = 48.5
 offset_bottom = 141.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_jsu3p")
 
-[node name="TextureRect" parent="CanvasLayer/panelPlay/Panel3" index="0"]
-texture = ExtResource("10_yvgum")
+[node name="icon" parent="CanvasLayer/panelPlay/Panel3" index="0"]
+texture = ExtResource("10_1kdyq")
 
-[node name="Label" parent="CanvasLayer/panelPlay/Panel3" index="1"]
-text = "Coursebot"
+[node name="text" parent="CanvasLayer/panelPlay/Panel3" index="1"]
+text = "text_play_coursebot"
+label_settings = SubResource("LabelSettings_kxdqn")
 
 [node name="Panel4" type="Panel" parent="CanvasLayer/panelPlay"]
 visible = false
@@ -498,6 +487,77 @@ offset_top = -208.0
 offset_right = 208.0
 offset_bottom = -100.0
 grow_vertical = 0
+
+[node name="botomTexts" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -119.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(1, 1, 1, 0)
+
+[node name="versionText" type="Panel" parent="CanvasLayer/botomTexts"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -304.0
+offset_top = -59.0
+offset_right = -64.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tht7w")
+
+[node name="Label" type="Label" parent="CanvasLayer/botomTexts/versionText"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -9.0
+offset_right = 45.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ver. beta-1.0.0"
+label_settings = SubResource("LabelSettings_h3gw1")
+
+[node name="autherText" type="Panel" parent="CanvasLayer/botomTexts"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -59.0
+offset_right = 192.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tht7w")
+
+[node name="Label" type="Label" parent="CanvasLayer/botomTexts/autherText"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -9.0
+offset_right = 45.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Made by TheChuan1503"
+label_settings = SubResource("LabelSettings_h3gw1")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_50ftw")

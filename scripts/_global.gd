@@ -1,6 +1,9 @@
 extends Node
 
+@onready var lang=OS.get_locale_language()
 const isDebug = true
+const COLOR_YELLOW = Color('fecc00')
+const COLOR_RED = Color('5a1010')
 var scene = 'start'
 
 func getTileIndex(world:String, id:String):
@@ -18,3 +21,20 @@ func getExDir() -> String:
 func getLevelsDir() -> String:
 	DirAccess.open(getExDir()).make_dir('levels/');
 	return getExDir()+'/levels/'
+func i18n(label:Label):
+	var text=label.text
+	if FileAccess.file_exists('res://lang/'+lang+'.json'):
+		var json=JSON.new()
+		json.parse(FileAccess.open('res://lang/'+lang+'.json',FileAccess.READ).get_as_text())
+		if not json.data.has(text):
+			print('not has '+text)
+		else:
+			label.text=json.data[text]
+	else:
+		var defLang = FileAccess.open('res://lang/_default.txt',FileAccess.READ).get_as_text()
+		var json=JSON.new()
+		json.parse(FileAccess.open('res://lang/'+defLang+'.json',FileAccess.READ).get_as_text())
+		if not json.data.has(text):
+			print('not has '+text)
+		else:
+			label.text=json.data[text]
