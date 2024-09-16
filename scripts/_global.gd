@@ -1,10 +1,13 @@
 extends Node
 
 @onready var lang=OS.get_locale_language()
+
 const isDebug = true
 const COLOR_YELLOW = Color('fecc00')
 const COLOR_RED = Color('5a1010')
+
 var scene = 'start'
+var level:String = ''
 
 func getTileIndex(world:String, id:String):
 	var json:JSON=JSON.new()

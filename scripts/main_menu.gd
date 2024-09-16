@@ -5,7 +5,10 @@ func i18n():
 	Global.i18n($ColorRect2/ColorRect3/challengeOption/text)
 	Global.i18n($ColorRect2/ColorRect3/coursebotOption/text)
 
+var opened=false
+
 func exit():
+	self.opened=false
 	SceneChanger.gradient('res://scenes/title_scene.tscn')
 	self.hide()
 func _ready() -> void:
@@ -27,6 +30,7 @@ func initDisabled():
 	willBeDisabled["theme_override_styles/panel"]["bg_color"]=Global.COLOR_RED
 
 func make():
+	self.opened=true
 	$audioOpen.play()
 	initDisabled()
 	self.show()

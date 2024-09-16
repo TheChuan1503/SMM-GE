@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://birqkw8tvucet"]
+[gd_scene load_steps=13 format=3 uid="uid://birqkw8tvucet"]
 
 [ext_resource type="Script" path="res://scripts/level_info.gd" id="1_er4oj"]
 [ext_resource type="PackedScene" uid="uid://bbwsxk7ees7pq" path="res://components/btn_close.tscn" id="2_epcqu"]
 [ext_resource type="Texture2D" uid="uid://dxivnebfn0y1i" path="res://src/images/game_bg/smb_ground.png" id="3_0pl61"]
 [ext_resource type="PackedScene" uid="uid://dhvpspiyofi1x" path="res://components/btn.tscn" id="4_mb5xa"]
+[ext_resource type="AudioStream" uid="uid://rwqpu88h6bw8" path="res://src/musics/effect/coursebot_select.ogg" id="5_o1xrl"]
+[ext_resource type="AudioStream" uid="uid://c1er4n6la2oqu" path="res://src/musics/effect/coursebot_close.ogg" id="6_qh75w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1i1cp"]
 bg_color = Color(0.121569, 0.164706, 0.270588, 1)
@@ -212,6 +214,12 @@ grow_vertical = 0
 text = "Desc"
 label_settings = SubResource("LabelSettings_evuol")
 vertical_alignment = 1
+
+[node name="AudioSelect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_o1xrl")
+
+[node name="AudioClose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_qh75w")
 
 [editable path="ColorRect2/buttons/Btn"]
 [editable path="ColorRect2/buttons/Btn2"]
