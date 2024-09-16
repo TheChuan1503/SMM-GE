@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwiuugvinku54"]
+
+[ext_resource type="Script" path="res://components/level_card.gd" id="1_7xwlf"]
+[ext_resource type="Texture2D" uid="uid://dxivnebfn0y1i" path="res://src/images/game_bg/smb_ground.png" id="1_kqtwj"]
+[ext_resource type="PackedScene" uid="uid://cm3c5o2l4s31x" path="res://components/addon_btn_selectable.tscn" id="3_akk00"]
+[ext_resource type="AudioStream" uid="uid://dj5yf6m4yanft" path="res://src/musics/effect/coursebot_open.ogg" id="4_f417e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_loqol"]
+bg_color = Color(0.623529, 0.623529, 0.694118, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbees"]
+bg_color = Color(0.898039, 0.894118, 0.941176, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_qfatp"]
+font_size = 30
+font_color = Color(0.294118, 0.294118, 0.419608, 1)
+
+[node name="LevelCard" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 328.0
+offset_bottom = 264.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_7xwlf")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 320.0
+offset_bottom = 256.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_loqol")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 296.0
+offset_bottom = 173.5
+texture = ExtResource("1_kqtwj")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ColorRect" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 184.0
+offset_right = 296.0
+offset_bottom = 232.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bbees")
+
+[node name="Label" type="Label" parent="Panel/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Title"
+label_settings = SubResource("LabelSettings_qfatp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectableButton" parent="." instance=ExtResource("3_akk00")]
+layout_mode = 1
+offset_right = -4.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_f417e")

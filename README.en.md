@@ -23,7 +23,7 @@ This project utilized resources from projects including `SMM: WE`
 - [x] "Start" Screen
 - [ ] Play Levels
   - [x] Load Level Files(Primarily)
-  - [ ] Load Level Files
+  - [x] Load Level Files
   - [ ] Play Levels
   - [ ] Global Levels
   - [ ] ~~Multiplayer Battle~~

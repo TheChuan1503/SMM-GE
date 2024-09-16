@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhvpspiyofi1x"]
+
+[ext_resource type="Script" path="res://components/btn.gd" id="1_wxeum"]
+[ext_resource type="PackedScene" uid="uid://cm3c5o2l4s31x" path="res://components/addon_btn_selectable.tscn" id="2_oliwt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ysy24"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 8)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qunij"]
+font_size = 48
+font_color = Color(0.121569, 0.164706, 0.270588, 1)
+
+[node name="Btn" type="Panel"]
+offset_right = 500.0
+offset_bottom = 88.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ysy24")
+script = ExtResource("1_wxeum")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Text"
+label_settings = SubResource("LabelSettings_qunij")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectableButton" parent="." instance=ExtResource("2_oliwt")]
+layout_mode = 1

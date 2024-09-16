@@ -1,11 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://c1lvoshccjdwg"]
+[gd_scene load_steps=15 format=3 uid="uid://c1lvoshccjdwg"]
 
 [ext_resource type="Texture2D" uid="uid://btpg14ikmem70" path="res://src/images/coursebot_background.png" id="1_gq5gm"]
 [ext_resource type="Script" path="res://scripts/coursebot_scene.gd" id="1_w0w28"]
 [ext_resource type="Texture2D" uid="uid://d066uvs4hysoq" path="res://src/images/coursebot_head.png" id="2_a38py"]
-[ext_resource type="FontFile" uid="uid://ddclxaa0c75i1" path="res://src/fonts/SuperMarioMaker2-Regular.ttf" id="3_lilpj"]
 [ext_resource type="AudioStream" uid="uid://crf3u8lfa4ekt" path="res://src/musics/guardabot.ogg" id="5_217j3"]
+[ext_resource type="FontFile" uid="uid://ddclxaa0c75i1" path="res://src/fonts/SuperMarioMaker2-Regular.ttf" id="6_7lmrh"]
 [ext_resource type="PackedScene" uid="uid://dh101gml8kdi4" path="res://components/btn_menu.tscn" id="6_dhuf6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wix5"]
+bg_color = Color(0.623529, 0.623529, 0.694118, 1)
+shadow_color = Color(0, 0, 0, 0.454902)
+shadow_size = 1
+shadow_offset = Vector2(0, 10)
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b6xk1"]
 bg_color = Color(0.215686, 0.309804, 0.458824, 1)
@@ -13,12 +20,77 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 
 [sub_resource type="LabelSettings" id="LabelSettings_3bmga"]
-font_size = 40
+font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_o2w3u"]
-font = ExtResource("3_lilpj")
-font_size = 48
+font_size = 32
 font_color = Color(1, 0.843137, 0.352941, 1)
+
+[sub_resource type="Animation" id="Animation_elrjx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(341, 71)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:label_settings:font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.843137, 0.352941, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_n6eo0"]
+resource_name = "bot"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(400, 71), Vector2(410, 71), Vector2(400, 71)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:label_settings:font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 0.843137, 0.352941, 1), Color(0.276779, 1, 0.693644, 1), Color(1, 0.843137, 0.352941, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m1g7g"]
+_data = {
+"RESET": SubResource("Animation_elrjx"),
+"bot": SubResource("Animation_n6eo0")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_ebiba"]
+font = ExtResource("6_7lmrh")
+font_size = 62
 
 [node name="CoursebotScene" type="Control"]
 layout_mode = 3
@@ -28,6 +100,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w0w28")
+metadata/_edit_vertical_guides_ = [-632.0, -320.0, -600.0, 981.0, 981.0, 1011.0]
 
 [node name="background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -51,7 +124,24 @@ grow_horizontal = 2
 texture = ExtResource("1_gq5gm")
 stretch_mode = 6
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ownCoursesList" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -663.0
+offset_top = -289.5
+offset_right = 663.0
+offset_bottom = 491.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = -256
+columns = 4
+
+[node name="ColorRect" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -61,7 +151,7 @@ offset_top = 150.0
 offset_right = 789.0
 offset_bottom = 251.0
 grow_horizontal = 2
-color = Color(0.623529, 0.623529, 0.694118, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_6wix5")
 
 [node name="Panel" type="Panel" parent="ColorRect"]
 layout_mode = 1
@@ -109,10 +199,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -114.5
-offset_top = -11.0
-offset_right = 114.5
-offset_bottom = 43.0
+offset_left = -151.5
+offset_top = 1.0
+offset_right = 152.5
+offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "text_play_coursebot"
@@ -137,5 +227,27 @@ layout_mode = 1
 offset_top = 45.0
 offset_right = -65.0
 offset_bottom = -185.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../head/title")
+libraries = {
+"": SubResource("AnimationLibrary_m1g7g")
+}
+autoplay = "bot"
+
+[node name="levelCount" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 550.0
+offset_top = 25.0
+offset_right = 724.0
+offset_bottom = 108.0
+grow_horizontal = 2
+text = "99"
+label_settings = SubResource("LabelSettings_ebiba")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="finished" from="bgm" to="." method="_on_bgm_finished"]

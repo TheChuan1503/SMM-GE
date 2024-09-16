@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cr8fb266qikl7" path="res://icon.png" id="1_4u0fw"]
 [ext_resource type="Script" path="res://components/btn_option.gd" id="1_nyuux"]
 [ext_resource type="PackedScene" uid="uid://cm3c5o2l4s31x" path="res://components/addon_btn_selectable.tscn" id="2_32xxd"]
-[ext_resource type="AudioStream" uid="uid://cc7medgyq5el1" path="res://src/musics/effect/selected.ogg" id="4_hv2he"]
+[ext_resource type="AudioStream" uid="uid://d2wmvdqpvx0xo" path="res://src/musics/effect/selected.ogg" id="4_hv2he"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1mde"]
 bg_color = Color(1, 1, 1, 1)
@@ -11,7 +11,7 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.25098)
+shadow_color = Color(0, 0, 0, 0.12549)
 shadow_size = 1
 shadow_offset = Vector2(0, 7.5)
 

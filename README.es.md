@@ -25,7 +25,7 @@ Este proyecto utilizó recursos de proyectos que incluyen `SMM: WE`
 - [x] Pantalla de inicio
 - [ ] Juega el nivel
   - [x] Archivos de nivel de lectura (preliminar)
-  - [ ] Leer el fichero de nivel
+  - [x] Leer el fichero de nivel
   - [ ] Juega el nivel
   - [ ] Niveles globales
   - [ ] ~~Batallas multijugador~~

@@ -11,13 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://fh36qkrougk0" path="res://components/btn_small.tscn" id="8_b5snf"]
 [ext_resource type="AudioStream" uid="uid://bext1k2lwmj7m" path="res://src/musics/effect/menu_close.ogg" id="9_0vfa6"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_en5qh"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ikkmx"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.25098)
+shadow_color = Color(0, 0, 0, 0.12549)
 shadow_size = 1
 shadow_offset = Vector2(0, 7.5)
 
@@ -25,13 +25,13 @@ shadow_offset = Vector2(0, 7.5)
 font_size = 32
 font_color = Color(0.352941, 0.0627451, 0.0627451, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i5jne"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mb62r"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.25098)
+shadow_color = Color(0, 0, 0, 0.12549)
 shadow_size = 1
 shadow_offset = Vector2(0, 7.5)
 
@@ -39,13 +39,13 @@ shadow_offset = Vector2(0, 7.5)
 font_size = 32
 font_color = Color(0.352941, 0.0627451, 0.0627451, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ycrs1"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1brcw"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.25098)
+shadow_color = Color(0, 0, 0, 0.12549)
 shadow_size = 1
 shadow_offset = Vector2(0, 7.5)
 
@@ -53,13 +53,13 @@ shadow_offset = Vector2(0, 7.5)
 font_size = 32
 font_color = Color(0.352941, 0.0627451, 0.0627451, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjj6x"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w04nb"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.25098)
+shadow_color = Color(0, 0, 0, 0.12549)
 shadow_size = 1
 shadow_offset = Vector2(0, 7.5)
 
@@ -124,7 +124,7 @@ anchor_bottom = 0.0
 offset_top = 0.0
 offset_bottom = 93.0
 grow_vertical = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_en5qh")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ikkmx")
 
 [node name="icon" parent="ColorRect2/ColorRect3/makerOption" index="0"]
 texture = ExtResource("3_v7obe")
@@ -141,7 +141,7 @@ anchor_bottom = 0.0
 offset_top = 112.0
 offset_bottom = 205.0
 grow_vertical = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_i5jne")
+theme_override_styles/panel = SubResource("StyleBoxFlat_mb62r")
 
 [node name="icon" parent="ColorRect2/ColorRect3/challengeOption" index="0"]
 texture = ExtResource("4_4rtww")
@@ -158,7 +158,7 @@ anchor_bottom = 0.0
 offset_top = 224.0
 offset_bottom = 317.0
 grow_vertical = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_ycrs1")
+theme_override_styles/panel = SubResource("StyleBoxFlat_1brcw")
 
 [node name="icon" parent="ColorRect2/ColorRect3/worldOption" index="0"]
 texture = ExtResource("5_7m161")
@@ -175,7 +175,7 @@ anchor_bottom = 0.0
 offset_top = 336.0
 offset_bottom = 429.0
 grow_vertical = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_kjj6x")
+theme_override_styles/panel = SubResource("StyleBoxFlat_w04nb")
 
 [node name="icon" parent="ColorRect2/ColorRect3/coursebotOption" index="0"]
 texture = ExtResource("6_i52at")

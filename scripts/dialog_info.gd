@@ -2,7 +2,7 @@ extends CanvasLayer
 func _ready() -> void:
 	self.hide()
 func ok(cb:Callable):
-	cb.bind()
+	cb.call()
 	self.hide()
 func make(title, desc, callback:Callable = _ready):
 	$ColorRect2/Label.text=title

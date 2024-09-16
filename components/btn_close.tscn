@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbwsxk7ees7pq"]
+
+[ext_resource type="Script" path="res://components/btn_close.gd" id="1_ogu5q"]
+[ext_resource type="FontFile" uid="uid://ddclxaa0c75i1" path="res://src/fonts/SuperMarioMaker2-Regular.ttf" id="1_vqtsb"]
+[ext_resource type="PackedScene" uid="uid://cm3c5o2l4s31x" path="res://components/addon_btn_selectable.tscn" id="2_cfjr6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxn2o"]
+bg_color = Color(0.121569, 0.164706, 0.270588, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kalbm"]
+font = ExtResource("1_vqtsb")
+font_size = 64
+outline_size = 4
+
+[node name="BtnClose" type="Panel"]
+offset_right = 72.0
+offset_bottom = 72.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vxn2o")
+script = ExtResource("1_ogu5q")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5
+offset_top = -36.0
+offset_right = 30.5
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "×"
+label_settings = SubResource("LabelSettings_kalbm")
+
+[node name="SelectableButton" parent="." instance=ExtResource("2_cfjr6")]
+layout_mode = 1

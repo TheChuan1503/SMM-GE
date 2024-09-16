@@ -1,10 +1,11 @@
-[gd_scene load_steps=36 format=3 uid="uid://cveotyrw8n1ek"]
+[gd_scene load_steps=39 format=3 uid="uid://cveotyrw8n1ek"]
 
 [ext_resource type="Texture2D" uid="uid://1nt8twt0kewg" path="res://src/tiles/blocks_smb.png" id="1_2ttu2"]
 [ext_resource type="Script" path="res://scripts/title_scene.gd" id="1_gixyt"]
 [ext_resource type="PackedScene" uid="uid://dydfei0sjb6ti" path="res://scenes/player_smb_0.tscn" id="2_3xhs3"]
 [ext_resource type="FontFile" uid="uid://ddclxaa0c75i1" path="res://src/fonts/SuperMarioMaker2-Regular.ttf" id="4_1g4al"]
 [ext_resource type="PackedScene" uid="uid://c3x2sq7uv0fk" path="res://scenes/items/item_action.tscn" id="4_3ij5n"]
+[ext_resource type="Texture2D" uid="uid://dxivnebfn0y1i" path="res://src/images/game_bg/smb_ground.png" id="4_7awkm"]
 [ext_resource type="FontFile" uid="uid://njigu8kanj1q" path="res://src/fonts/text.ttf" id="5_hletk"]
 [ext_resource type="AudioStream" uid="uid://bl3tv6y6pb83b" path="res://src/musics/title_modern.ogg" id="6_50ftw"]
 [ext_resource type="PackedScene" uid="uid://b8c1q3ci0ia0s" path="res://components/btn_option.tscn" id="7_dbyjb"]
@@ -33,10 +34,12 @@ sources/0 = SubResource("TileSetAtlasSource_rovh6")
 [sub_resource type="LabelSettings" id="LabelSettings_0anr2"]
 font = ExtResource("4_1g4al")
 font_size = 144
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_8fb8n"]
 font = ExtResource("4_1g4al")
 font_size = 128
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_tm3y3"]
 font = ExtResource("4_1g4al")
@@ -97,13 +100,13 @@ _data = {
 font = ExtResource("5_hletk")
 font_size = 40
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vr208"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_itwjq"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.25098)
+shadow_color = Color(0, 0, 0, 0.12549)
 shadow_size = 1
 shadow_offset = Vector2(0, 7.5)
 
@@ -111,13 +114,13 @@ shadow_offset = Vector2(0, 7.5)
 font_size = 32
 font_color = Color(0.352941, 0.0627451, 0.0627451, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ol4q"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66fl3"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.25098)
+shadow_color = Color(0, 0, 0, 0.12549)
 shadow_size = 1
 shadow_offset = Vector2(0, 7.5)
 
@@ -125,13 +128,13 @@ shadow_offset = Vector2(0, 7.5)
 font_size = 32
 font_color = Color(0.352941, 0.0627451, 0.0627451, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsu3p"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_esb0w"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-shadow_color = Color(0, 0, 0, 0.25098)
+shadow_color = Color(0, 0, 0, 0.12549)
 shadow_size = 1
 shadow_offset = Vector2(0, 7.5)
 
@@ -151,15 +154,23 @@ font_size = 32
 font_color = Color(0.352941, 0.0627451, 0.0627451, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tht7w"]
-bg_color = Color(0, 0, 0, 0.498039)
+bg_color = Color(0, 0, 0, 0.25098)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="LabelSettings" id="LabelSettings_h3gw1"]
-font = ExtResource("4_1g4al")
 font_size = 31
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ds0ra"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_145b6"]
+font_size = 31
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+shadow_color = Color(1, 1, 1, 0.611765)
 
 [node name="TitleScene" type="Node2D"]
 script = ExtResource("1_gixyt")
@@ -170,9 +181,8 @@ metadata/_edit_vertical_guides_ = [0.0, 24.0]
 tile_set = SubResource("TileSet_muaas")
 format = 2
 layer_0/name = "bg"
-layer_0/tile_data = PackedInt32Array(-65527, 524288, 12, -131062, 524288, 12, -196597, 524288, 12, -262132, 524288, 12, -262130, 655360, 12, -196593, 655360, 12, -131056, 655360, 12, -65519, 655360, 12, -65526, 589824, 13, -65525, 589824, 13, -65524, 589824, 13, -65523, 589824, 13, -65522, 589824, 13, -65521, 589824, 13, -65520, 589824, 13, -131061, 589824, 13, -131060, 589824, 13, -131059, 589824, 13, -131058, 589824, 13, -131057, 589824, 13, -196596, 524288, 13, -196595, 589824, 13, -196594, 524288, 13, -262131, 524288, 13, -327667, 589824, 12, -196607, 655360, 12, -262144, 655360, 12, -196608, 655360, 13)
 layer_1/name = "Layer0"
-layer_1/tile_data = PackedInt32Array(-65536, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -65533, 0, 0, -131068, 0, 0, -65532, 0, 0, -131067, 0, 0, -65531, 0, 0, -196609, 0, 0, -262145, 0, 0, -327681, 0, 0, -393217, 0, 0, -458753, 0, 0, -524289, 0, 0, -589825, 0, 0, -655361, 0, 0, -720897, 0, 0, -786433, 0, 0, -851969, 0, 0, -917505, 0, 0, -983041, 0, 0, -1048577, 0, 0, -1114113, 0, 0, -1179649, 0, 0, -1245185, 0, 0, -1310721, 0, 0, -1376257, 0, 0, -1441793, 0, 0, -1507329, 0, 0, -1572865, 0, 0, -1638401, 0, 0, -1703937, 0, 0, -65519, 655360, 12, -327667, 589824, 12, -65535, 0, 0, -65534, 0, 0, -131073, 0, 0)
+layer_1/tile_data = PackedInt32Array(-65536, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -65533, 0, 0, -131068, 0, 0, -65532, 0, 0, -131067, 0, 0, -65531, 0, 0, -196609, 0, 0, -262145, 0, 0, -327681, 0, 0, -393217, 0, 0, -458753, 0, 0, -524289, 0, 0, -589825, 0, 0, -655361, 0, 0, -720897, 0, 0, -786433, 0, 0, -851969, 0, 0, -917505, 0, 0, -983041, 0, 0, -1048577, 0, 0, -1114113, 0, 0, -1179649, 0, 0, -1245185, 0, 0, -1310721, 0, 0, -1376257, 0, 0, -1441793, 0, 0, -1507329, 0, 0, -1572865, 0, 0, -1638401, 0, 0, -1703937, 0, 0, -65535, 0, 0, -65534, 0, 0, -131073, 0, 0)
 
 [node name="PlayerSmb0" parent="." instance=ExtResource("2_3xhs3")]
 position = Vector2(56, -32)
@@ -191,15 +201,30 @@ limit_bottom = 0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 z_index = -1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -496.0
-offset_right = 1048.0
+offset_top = -432.0
+offset_right = 512.0
 grow_vertical = 0
-color = Color(0.45098, 0.52549, 1, 1)
+texture = ExtResource("4_7awkm")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="ColorRect2" type="TextureRect" parent="."]
+z_index = -1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 512.0
+offset_top = -432.0
+offset_right = 1024.0
+grow_vertical = 0
+texture = ExtResource("4_7awkm")
+expand_mode = 1
+stretch_mode = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -399,7 +424,7 @@ color = Color(0.145098, 0.145098, 0.145098, 0)
 
 [node name="Panel" parent="CanvasLayer/panelPlay" instance=ExtResource("7_dbyjb")]
 layout_mode = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_vr208")
+theme_override_styles/panel = SubResource("StyleBoxFlat_itwjq")
 
 [node name="icon" parent="CanvasLayer/panelPlay/Panel" index="0"]
 texture = ExtResource("8_7gb5i")
@@ -412,7 +437,7 @@ label_settings = SubResource("LabelSettings_dgri7")
 layout_mode = 1
 offset_top = -56.5
 offset_bottom = 36.5
-theme_override_styles/panel = SubResource("StyleBoxFlat_1ol4q")
+theme_override_styles/panel = SubResource("StyleBoxFlat_66fl3")
 
 [node name="icon" parent="CanvasLayer/panelPlay/Panel2" index="0"]
 texture = ExtResource("9_sxrwh")
@@ -425,7 +450,7 @@ label_settings = SubResource("LabelSettings_8v8h1")
 layout_mode = 1
 offset_top = 48.5
 offset_bottom = 141.5
-theme_override_styles/panel = SubResource("StyleBoxFlat_jsu3p")
+theme_override_styles/panel = SubResource("StyleBoxFlat_esb0w")
 
 [node name="icon" parent="CanvasLayer/panelPlay/Panel3" index="0"]
 texture = ExtResource("10_1kdyq")
@@ -506,9 +531,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -304.0
+offset_left = -320.0
 offset_top = -59.0
-offset_right = -64.0
+offset_right = -48.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tht7w")
@@ -541,7 +566,7 @@ offset_top = -59.0
 offset_right = 192.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_tht7w")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ds0ra")
 
 [node name="Label" type="Label" parent="CanvasLayer/botomTexts/autherText"]
 layout_mode = 1
@@ -556,8 +581,8 @@ offset_right = 45.0
 offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Made by TheChuan1503"
-label_settings = SubResource("LabelSettings_h3gw1")
+text = "©️ 2024 TheChuan1503"
+label_settings = SubResource("LabelSettings_145b6")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_50ftw")

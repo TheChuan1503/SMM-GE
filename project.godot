@@ -21,6 +21,7 @@ SceneChanger="*res://scenes/scene_changer.tscn"
 Global="*res://scripts/_global.gd"
 DialogInfo="*res://scenes/dialog_info.tscn"
 MainMenu="*res://scenes/main_menu.tscn"
+LevelInfo="*res://scenes/level_info.tscn"
 
 [display]
 

@@ -6,5 +6,8 @@
 	"text_play_challenge":"马力欧耐力挑战 (测试游戏)",
 	"text_play_world":"世界关卡",
 	"text_play_coursebot":"关卡机器人",
-	"text_coursebot_own":"自己的关卡"
+	"text_coursebot_own":"自己的关卡",
+	"text_upload_level":"发表",
+	"text_level_name":"关卡名",
+	"text_level_desc":"关卡说明"
 }
