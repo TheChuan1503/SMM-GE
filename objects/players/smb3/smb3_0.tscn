@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dydfei0sjb6ti"]
+[gd_scene load_steps=10 format=3 uid="uid://bsma5rajbqo8h"]
 
-[ext_resource type="Script" path="res://objects/players/smb_0.gd" id="1_lp2v1"]
-[ext_resource type="Texture2D" uid="uid://dxtmf3auw22gs" path="res://src/tiles/player_smb.png" id="1_m2ogj"]
+[ext_resource type="Script" path="res://objects/players/smb3/smb3_0.gd" id="1_yk7e5"]
+[ext_resource type="Texture2D" uid="uid://dxtmf3auw22gs" path="res://src/tiles/player_smb.png" id="2_qcak6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0ron"]
 size = Vector2(14, 14)
@@ -178,11 +178,11 @@ _data = {
 size = Vector2(14, 1)
 
 [node name="PlayerSmb0" type="CharacterBody2D"]
-script = ExtResource("1_lp2v1")
+script = ExtResource("1_yk7e5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
-texture = ExtResource("1_m2ogj")
+texture = ExtResource("2_qcak6")
 hframes = 3
 region_enabled = true
 region_rect = Rect2(0, 0, 48, 16)

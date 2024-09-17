@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://1nt8twt0kewg" path="res://src/tiles/blocks_smb.png" id="1_2ttu2"]
 [ext_resource type="Script" path="res://scripts/title_scene.gd" id="1_gixyt"]
-[ext_resource type="PackedScene" uid="uid://dydfei0sjb6ti" path="res://objects/players/smb_0.tscn" id="2_3xhs3"]
+[ext_resource type="PackedScene" uid="uid://dydfei0sjb6ti" path="res://objects/players/smb/smb_0.tscn" id="2_3xhs3"]
 [ext_resource type="FontFile" uid="uid://ddclxaa0c75i1" path="res://src/fonts/SuperMarioMaker2-Regular.ttf" id="4_1g4al"]
 [ext_resource type="PackedScene" uid="uid://c3x2sq7uv0fk" path="res://scenes/items/item_action.tscn" id="4_3ij5n"]
 [ext_resource type="Texture2D" uid="uid://dxivnebfn0y1i" path="res://src/images/game_bg/smb_ground.png" id="4_7awkm"]
@@ -169,8 +169,11 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="LabelSettings" id="LabelSettings_145b6"]
 font_size = 31
 font_color = Color(0, 0, 0, 1)
-outline_size = 4
-shadow_color = Color(1, 1, 1, 0.611765)
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 8
+shadow_color = Color(1, 1, 1, 0.752941)
+shadow_offset = Vector2(0, 0)
 
 [node name="TitleScene" type="Node2D"]
 script = ExtResource("1_gixyt")

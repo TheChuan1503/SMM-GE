@@ -8,8 +8,12 @@ func _ready() -> void:
 	var json:JSON=JSON.new()
 	json.parse(FileAccess.open(Global.getLevelsDir()+Global.level,FileAccess.READ).get_as_text())
 	var data:Array=json.data['data']
+	$ParallaxBackground/background/background.texture=load("res://src/images/game_bg/"+json.data['manifest']['world']['type']+"_"+json.data['manifest']['world']['world']+".png")
 	for obj:Dictionary in data:
-		$TileMapLayer.set_cell(Vector2(obj['pos'][0]-1,0 - obj['pos'][1]),0,Vector2(0,0),Global.getTileIndex(json.data['manifest']['world']['type'],obj['object']))
+		$TileMapLayer.set_cell(Vector2(obj['pos'][0]-1,0 - obj['pos'][1]),Global.getTileClassId(json.data['manifest']['world']['type']),Vector2(0,0),Global.getTileIndex(json.data['manifest']['world']['type'],obj['object']))
+	for i1 in range(2):
+		for i2 in range(7):
+			$TileMapLayer.set_cell(Vector2(i2,0 - i1 - 1),Global.getTileClassId(json.data['manifest']['world']['type']),Vector2(0,0),Global.getTileIndex(json.data['manifest']['world']['type'],'block_soil'))
 
 func  _process(delta: float) -> void:
 	if not PauseMenu.opened:

@@ -1,18 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://l7w34b7fkrkk"]
 
 [ext_resource type="Script" path="res://scripts/splash_scene.gd" id="1_xawgc"]
-[ext_resource type="FontFile" uid="uid://ddclxaa0c75i1" path="res://src/fonts/SuperMarioMaker2-Regular.ttf" id="2_t3npk"]
+[ext_resource type="FontFile" uid="uid://njigu8kanj1q" path="res://src/fonts/text.ttf" id="2_qpidd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j6j2n"]
-font = ExtResource("2_t3npk")
-font_size = 81
+font = ExtResource("2_qpidd")
+font_size = 56
 font_color = Color(0.847059, 0.0666667, 0.00392157, 1)
-outline_size = 2
+outline_size = 4
 outline_color = Color(0.847059, 0.0666667, 0.00392157, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_bojmj"]
-line_spacing = -8.0
-font_size = 36
+line_spacing = 0.0
+font_size = 56
 
 [node name="SplashScene" type="CanvasLayer"]
 script = ExtResource("1_xawgc")
@@ -25,41 +25,33 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = 8
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -244.5
-offset_top = -179.0
-offset_right = 244.5
-offset_bottom = -47.0
+offset_left = -111.0
+offset_top = 187.0
+offset_right = 111.0
+offset_bottom = 241.0
 grow_horizontal = 2
-grow_vertical = 2
 size_flags_horizontal = 4
-text = "Disclaimer"
+text = "text_disclaimer_title"
 label_settings = SubResource("LabelSettings_j6j2n")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="Label"]
+[node name="Label" type="Label" parent="ColorRect/Label"]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 1.0
 offset_left = -379.0
-offset_top = 19.0
+offset_top = 101.0
 offset_right = 379.0
-offset_bottom = 157.0
+offset_bottom = 319.0
 grow_horizontal = 2
-grow_vertical = 0
-text = "This game is a fangame.
-Not authorized by Nintendo.
-Resources are 
-copyrighted by Nintendo."
+text = "text_disclaimer"
 label_settings = SubResource("LabelSettings_bojmj")
 horizontal_alignment = 1
 

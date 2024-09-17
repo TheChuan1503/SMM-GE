@@ -9,6 +9,13 @@ const COLOR_RED = Color('5a1010')
 var scene = 'start'
 var level:String = ''
 
+func getTileClassId(world:String):
+	match world:
+		'smb':
+			return 0
+		'smb3':
+			return 1
+	return 0
 func getTileIndex(world:String, id:String):
 	var json:JSON=JSON.new()
 	json.parse(FileAccess.open('res://objects_tables/'+world+'.json',FileAccess.READ).get_as_text())

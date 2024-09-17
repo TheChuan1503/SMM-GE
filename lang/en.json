@@ -9,5 +9,7 @@
 	"text_coursebot_own":"Own Courses",
 	"text_upload_level":"Upload",
 	"text_level_name":"Level Name",
-	"text_level_desc":"Desc"
+	"text_level_desc":"Level Desc",
+	"text_disclaimer_title":"Disclaimer",
+	"text_disclaimer":"This game is a fangame.\nNot authorized by Nintendo.\nResources are\ncopyrighted by Nintendo."
 }

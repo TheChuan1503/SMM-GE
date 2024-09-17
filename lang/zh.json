@@ -1,5 +1,5 @@
 {
-	"text_title_press_here":"点击这里",
+	"text_title_press_here":"按下此区域",
 	"text_make":"创作",
 	"text_play":"游玩",
 	"text_play_maker":"创作关卡",
@@ -9,5 +9,7 @@
 	"text_coursebot_own":"自己的关卡",
 	"text_upload_level":"发表",
 	"text_level_name":"关卡名",
-	"text_level_desc":"关卡说明"
+	"text_level_desc":"关卡说明",
+	"text_disclaimer_title": "免责声明",
+    "text_disclaimer": "本游戏为同人游戏\n未获得任天堂授权\n资源版权归任天堂所有"
 }
