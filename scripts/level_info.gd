@@ -15,6 +15,7 @@ func close():
 	$AudioClose.play()
 	self.hide()
 func _ready() -> void:
+	i18n()
 	$ColorRect2/ColorRect/BtnClose.setOnClick(close)
 	btn.setDisabled(true)
 	btn_3.setDisabled(true)
@@ -22,14 +23,13 @@ func _ready() -> void:
 	btn_5.setDisabled(true)
 	self.hide()
 func make(name:String,data:Dictionary):
-	i18n()
 	$ColorRect2/ColorRect/title.text=data['title']
 	$ColorRect2/desc.text=data['desc']
 	btn_2.setOnClick(play.bind(name))
+	Global.level=name
 	self.show()
 	self.set_layer(100)
 func play(name:String):
 	$AudioSelect.play()
-	Global.level=name
 	SceneChanger.gradient('res://scenes/level_preload.tscn')
 	self.hide()

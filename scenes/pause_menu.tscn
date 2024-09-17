@@ -11,6 +11,7 @@ font = ExtResource("7_wk5vp")
 font_size = 78
 
 [node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_3rol5")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -67,6 +68,7 @@ grow_vertical = 0
 color = Color(0, 0, 0, 0)
 
 [node name="BtnSmall" parent="ColorRect2/ColorRect4" instance=ExtResource("8_pm0x6")]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0

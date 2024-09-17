@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://dmeh1q8vu5bqh"]
+[gd_scene load_steps=6 format=4 uid="uid://dmeh1q8vu5bqh"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_053n3"]
 [ext_resource type="PackedScene" uid="uid://dydfei0sjb6ti" path="res://objects/players/smb_0.tscn" id="2_yfnst"]
 [ext_resource type="AudioStream" uid="uid://bpkvy3q3omk6v" path="res://src/musics/smb_ground.ogg" id="3_yccom"]
 [ext_resource type="TileSet" uid="uid://d1hn0ukr45bu1" path="res://tilesets/smb.tres" id="4_o7ybc"]
+[ext_resource type="Texture2D" uid="uid://dxivnebfn0y1i" path="res://src/images/game_bg/smb_ground.png" id="5_avg5v"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_053n3")
@@ -23,5 +24,14 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAQABAP//AAAAAAAAAQACAP//AAAAAAAAAQADAP//AAAAAAAAAQAEAP//AAAAAAAAAQAFAP//AAAAAAAAAQAFAP7/AAAAAAAAAQAEAP7/AAAAAAAAAQADAP7/AAAAAAAAAQACAP7/AAAAAAAAAQABAP7/AAAAAAAAAQAAAP7/AAAAAAAAAQD/////AAAAAAAAAQD//wAAAAAAAAAAAQAAAAAAAAAAAAAAAQABAAAAAAAAAAAAAQACAAAAAAAAAAAAAQADAAAAAAAAAAAAAQAEAAAAAAAAAAAAAQAFAAAAAAAAAAAAAQD///7/AAAAAAAAAQD///3/AAAAAAAAAQD///z/AAAAAAAAAQD///v/AAAAAAAAAQD///r/AAAAAAAAAQD///n/AAAAAAAAAQD///j/AAAAAAAAAQD///f/AAAAAAAAAQD///b/AAAAAAAAAQD///X/AAAAAAAAAQD///T/AAAAAAAAAQD///P/AAAAAAAAAQD///L/AAAAAAAAAQD///H/AAAAAAAAAQD///D/AAAAAAAAAQD//+//AAAAAAAAAQD//+7/AAAAAAAAAQD//+3/AAAAAAAAAQA=")
 tile_set = ExtResource("4_o7ybc")
 collision_visibility_mode = 1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="background" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(512, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/background"]
+position = Vector2(256, -216)
+texture = ExtResource("5_avg5v")
 
 [editable path="PlayerSmb0"]
