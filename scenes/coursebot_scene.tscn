@@ -113,6 +113,7 @@ texture = ExtResource("1_gq5gm")
 stretch_mode = 6
 
 [node name="virtualBackground" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -249,5 +250,13 @@ text = "99"
 label_settings = SubResource("LabelSettings_ebiba")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="pathViewer" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+editable = false
 
 [connection signal="finished" from="bgm" to="." method="_on_bgm_finished"]

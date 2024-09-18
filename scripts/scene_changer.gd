@@ -18,6 +18,7 @@ func gradient (path):
 	animation.play('gradient')
 	await animation.animation_finished
 	get_tree().change_scene_to_file(path)
+	get_tree().paused=false
 	animation.play_backwards('gradient')
 	await animation.animation_finished
 	self.set_layer(-1)

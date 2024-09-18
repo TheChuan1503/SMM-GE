@@ -42,7 +42,7 @@ func _ready() -> void:
 	$CanvasLayer/TextureButton2/ItemAction.pressed.connect(onMakeClick)
 	$CanvasLayer/TextureButton2/ItemAction2.pressed.connect(onPlayClick)
 	
-	$CanvasLayer/panelPlay/Panel.setOnClick(onPlayAction1Click)
+	$CanvasLayer/panelPlay/Panel.setOnClick(notAvailable)
 	$CanvasLayer/panelPlay/Panel2.setOnClick(notAvailable)
 	$CanvasLayer/panelPlay/Panel3.setOnClick(onPlayAction3Click)
 	

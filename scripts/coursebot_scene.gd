@@ -2,6 +2,7 @@ extends Control
 @onready var virtual_background: TextureRect = $virtualBackground
 @onready var own_courses_list: GridContainer = $ownCoursesList
 @onready var level_count: Label = $levelCount
+@onready var path_viewer: LineEdit = $pathViewer
 
 func i18n():
 	Global.i18n($head/title)
@@ -20,6 +21,7 @@ func getLevels():
 func _ready() -> void:
 	Global.scene='coursebot'
 	i18n()
+	path_viewer.text=Global.getLevelsDir()
 	virtual_background.visible=false
 	var levels:Array=getLevels()
 	level_count.text=str(levels.size())

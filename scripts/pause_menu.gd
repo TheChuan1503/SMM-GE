@@ -17,12 +17,6 @@ func _ready() -> void:
 	$ColorRect2/ColorRect4/BtnSmall.setOnClick(exit)
 	self.hide()
 	pass
-func _process(delta: float) -> void:
-	if PauseMenu.opened and Global.scene == 'game':
-		if Input.is_action_pressed("pause"):
-			get_tree().paused=false
-			opened=false
-			close()
 func initDisabled():
 	#$ColorRect2/ColorRect3/coursebotOption/text["label_settings"]["font_color"]=Global.COLOR_RED
 	#$ColorRect2/ColorRect3/coursebotOption["theme_override_styles/panel"]["bg_color"]=Color.WHITE

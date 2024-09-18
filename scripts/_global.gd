@@ -27,10 +27,11 @@ func getExDir() -> String:
 		DirAccess.open("/storage/emulated/0/").make_dir("SMM_GE/");
 		return "/storage/emulated/0/SMM_GE/"
 	else:
-		return OS.get_data_dir()
+		DirAccess.open(OS.get_data_dir()).make_dir("SMM_GE/");
+		return OS.get_data_dir()+'/SMM_GE/'
 func getLevelsDir() -> String:
 	DirAccess.open(getExDir()).make_dir('levels/');
-	return getExDir()+'/levels/'
+	return getExDir()+'levels/'
 func i18n(label:Label):
 	var text=label.text
 	if FileAccess.file_exists('res://lang/'+lang+'.json'):

@@ -1,0 +1,111 @@
+{
+	"manifest": {
+		"title": "TBIndev_SMB",
+		"desc": "by TheChuan1503",
+		"version": 3,
+		"auther_id": "THEC HUAN 1503",
+		"auther_name": "TheChuan1503",
+		"level_id": "LQWR 8JMP K2BT",
+		"world": {
+			"type": "smb",
+			"world": "ground",
+			"style": 0,
+			"start_height": 4,
+			"end_height": 10,
+			"width": 50
+		}
+	},
+	"soil": [
+	    [7, 1],
+		[8, 1],
+		[9, 1],
+		[10, 1],
+		[11, 1],
+		[12, 1],
+		[13, 1],
+		[14, 1],
+		[15, 1],
+		[7, 2],
+		[8, 2],
+		[9, 2],
+		[10, 2],
+		[11, 2],
+		[12, 2],
+		[13, 2],
+		[14, 2],
+		[15, 2],
+		[16, 1],
+		[17, 1],
+		[18, 1],
+		[19, 1],
+		[20, 1],
+		[21, 1],
+		[22, 1],
+		[23, 1],
+		[24, 1],
+		[16, 2],
+		[17, 2],
+		[18, 2],
+		[19, 2],
+		[20, 2],
+		[21, 2],
+		[22, 2],
+		[23, 2],
+		[24, 2],
+		[26, 12],
+		[27, 12],
+		[28, 12],
+		[29, 12],
+		[30, 12]
+	],
+	"data": [
+		{
+			"object": "block_brick",
+			"pos": [8, 6]
+		},
+		{
+			"object": "block_brick",
+			"pos": [9, 7]
+		},
+		{
+			"object": "block_brick",
+			"pos": [10, 8]
+		},
+		{
+			"object": "block_brick",
+			"pos": [14, 8]
+		},
+		{
+			"object": "block_brick",
+			"pos": [15, 9]
+		},
+		{
+			"object": "block_brick",
+			"pos": [16, 10]
+		},
+		{
+			"object": "block_brick",
+			"pos": [20, 10]
+		},
+		{
+			"object": "block_brick",
+			"pos": [21, 11]
+		},
+		{
+			"object": "block_brick",
+			"pos": [22, 12]
+		},
+		{
+			"object": "block_brick",
+			"pos": [27, 16]
+		},
+		{
+			"object": "block_brick",
+			"pos": [28, 16]
+		},
+		{
+			"object": "block_brick",
+			"pos": [29, 16]
+		}
+	]
+}

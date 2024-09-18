@@ -40,6 +40,7 @@ _data = {
 }
 
 [node name="SceneChanger" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_3u505")
 
 [node name="ColorRect" type="ColorRect" parent="."]
