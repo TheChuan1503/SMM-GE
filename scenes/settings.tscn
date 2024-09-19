@@ -1,0 +1,163 @@
+[gd_scene load_steps=13 format=3 uid="uid://ftnl3w32hhqy"]
+
+[ext_resource type="Script" path="res://scripts/settings.gd" id="1_fk6cj"]
+[ext_resource type="StyleBox" uid="uid://dgqkn5xuwwb0w" path="res://styles/radius_16_bottom.tres" id="2_bs326"]
+[ext_resource type="FontFile" uid="uid://njigu8kanj1q" path="res://src/fonts/text.ttf" id="3_je5wu"]
+[ext_resource type="StyleBox" uid="uid://7w215qtdqrgt" path="res://styles/radius_8.tres" id="4_troly"]
+[ext_resource type="FontFile" uid="uid://ddclxaa0c75i1" path="res://src/fonts/SuperMarioMaker2-Regular.ttf" id="5_40pdp"]
+
+[sub_resource type="Animation" id="Animation_ksian"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_r4bgn"]
+resource_name = "fadeIn"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.627451)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oo5n4"]
+_data = {
+"RESET": SubResource("Animation_ksian"),
+"fadeIn": SubResource("Animation_r4bgn")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a26ql"]
+bg_color = Color(0.988235, 0.819608, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_0gaey"]
+font = ExtResource("3_je5wu")
+font_size = 24
+font_color = Color(0.184314, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tpraf"]
+font = ExtResource("5_40pdp")
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_db7hu"]
+font = ExtResource("5_40pdp")
+font_size = 36
+
+[node name="DialogInfo" type="CanvasLayer"]
+script = ExtResource("1_fk6cj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_oo5n4")
+}
+
+[node name="ColorRect2" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -256.0
+offset_right = 512.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a26ql")
+
+[node name="ColorRect" type="Panel" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_bs326")
+
+[node name="Label" type="Label" parent="ColorRect2/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -132.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DESC"
+label_settings = SubResource("LabelSettings_0gaey")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="Panel" parent="ColorRect2/ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -108.0
+offset_right = 170.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = ExtResource("4_troly")
+
+[node name="Label" type="Label" parent="ColorRect2/ColorRect/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "OK"
+label_settings = SubResource("LabelSettings_tpraf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="okButton" type="TextureButton" parent="ColorRect2/ColorRect/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 68.0
+grow_horizontal = 2
+text = "TITLE"
+label_settings = SubResource("LabelSettings_db7hu")
+horizontal_alignment = 1
+vertical_alignment = 1

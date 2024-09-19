@@ -25,7 +25,17 @@ func _ready() -> void:
 		startHeight=25
 	for i1 in range(startHeight):
 		for i2 in range(7):
-			$TileMapLayer.set_cell(Vector2(i2,0 - i1 - 1),Global.getTileClassId(manifest['world']['type']),Vector2(0,0),Global.getTileIndex(manifest['world']['type'],'block_soil'))
+			$TileMapLayer.set_cell(Vector2(i2,0 - i1 - 1),Global.getTileClassId(worldType),Vector2(0,0),Global.getTileIndex(worldType,'block_soil'))
+	
+	# init start soil
+	var endHeight=manifest['world']['end_height']
+	if endHeight<1:
+		endHeight=1
+	if endHeight>12:
+		endHeight=12
+	for i1 in range(endHeight):
+		for i2 in range(10):
+			$TileMapLayer.set_cell(Vector2(manifest['world']['width'] - i2,0 - i1 - 1),Global.getTileClassId(worldType),Vector2(0,0),Global.getTileIndex(worldType,'block_soil'))
 	
 	# load mario
 	var mario:Node

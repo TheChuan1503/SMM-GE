@@ -215,3 +215,5 @@ debug_color = Color(0.794326, 0.41422, 0.27002, 0.42)
 
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 1.5
+
+[node name="Timer3" type="Timer" parent="."]

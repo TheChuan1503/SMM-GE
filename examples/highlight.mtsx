@@ -1,0 +1,109 @@
+{
+    name: ["GDScript", ".gd"]
+    comment: {startsWith: "#"}
+    colors: [
+        "bg", #1D2228, #1D2228
+        "modifier", #FFB273, #FFB273
+        "keyword", #FF7085, #FF7085
+        "built-in class", #49FDC2, #49FDC2
+        "func", #69E4FB, #69E4FB
+        "func1", #A3A3F5, #A3A3F5
+        "funcName", #66E5FF, #66E5FF
+        "userFunc", #57B2FF, #57B2FF
+        "type", #42FFC2, #42FFC2
+        "operator", #ABC9FF, #ABC9FF
+        "string", #FFEDA1, #FFEDA1
+        "number", #A1FFE0, #A1FFE0
+        "node", #63C259, #63C259
+        "注释", #75787D, #75787D
+	]
+    contains: {
+        // 引用节点
+        {
+            color: "node"
+            start : {match: /\$/}
+            end: {match: /\.|\n|\)|\s|=|-|\+|\*|\\/}
+            contains: [
+                {match: /(?s)\\(([0-3]?[0-7])?[0-7]|u[0-9a-fA-F]{4}|.)/, 0: "strEscape"}
+            ]
+        }
+        
+        // 注释
+        {match: /#\s+(\w+)\n/, 0: "注释"}
+        // 属性
+        {match: /\.[^. \t\n\r\f\v+\-*=(),\[\]'"]+/, 0: "operator"}
+        
+        {
+            color: "string"
+            start : {match: /'''/}
+            end: {match: /'''|$/}
+            contains: [
+                {builtin: #JAVA_ESCAPED_CHAR#}
+            ]
+        }
+        {
+            color: "string"
+            start : {match: /"/}
+            end: {match: /(?m)"|$/}
+            contains: [
+                {match: /(?s)\\(([0-3]?[0-7])?[0-7]|u[0-9a-fA-F]{4}|.)/, 0: "strEscape"}
+            ]
+        }
+        {
+            color: "string"
+            start : {match: /'/}
+            end: {match: /(?m)'|$/}
+            contains: [
+                {match: /(?s)\\(([0-3]?[0-7])?[0-7]|u[0-9a-fA-F]{4}|.)/, 0: "strEscape"}
+            ]
+        }
+        {
+            number: "(-)(2|8|10|16|F|E|P|_)"
+            iSuffixes: "l"
+            fSuffixes: "f|d"
+        }
+        // 修饰符
+        {match: keywordsToRegex(
+                "@onready @export"
+            ), 0: "modifier"}
+        // 运算符
+        {match: keywordsToRegex(
+                "( ) -> + - * / = : ."
+            ), 0: "operator"}
+        // 内置类
+        {match: keywordsToRegex(
+                "Color Vector OS Array Dictionary JSON AnimationPlayer Node FileAccess DirAccess CanvasLayer Label TextureRect ColorRect Node2D Node3D Panel TextureButton Button EditText Vector2 Vector2i TileMap TileMapLayer StaticBody2D CharacterBody2D AnimatedSprite2D Sprite2D AudioStreamPlayer Callable Control"
+            ), 0: "built-in class"}
+        // 数据类型
+        {match: keywordsToRegex(
+                "int float long complex String bool unicode list tuple bytearray buffer void"
+                "xrange set frozenset dict bool"
+            ), 0: "type"}
+        // 关键词
+        {match: keywordsToRegex(
+                "true false var self and not while const"
+                "as elif global or with assert else if pass yield break except import extends class_name"
+                "in raise continue finally match is return func for lambda try await"
+            ), 0: "keyword"}
+        // 声明函数名
+        {match: /func\s+(\w+)\(/, 0: "funcName"}
+        // 内置函数名1
+        {match: keywordsToRegex(
+                "print range"
+            ), 0: "func1"}
+        // 内置函数名
+        {match: keywordsToRegex(
+                "new"
+            ), 0: "func"}
+        // 用户调用函数
+        {match: /(\w+)(?=\s*\()/, 0: "userFunc"}
+        {
+            color: "string"
+            start : {match: /"""/}
+            end: {match: /"""|$/}
+            contains: [
+                {builtin: #JAVA_ESCAPED_CHAR#}
+            ]
+        }
+    }
+}
