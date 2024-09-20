@@ -1,0 +1,112 @@
+[gd_scene load_steps=4 format=3 uid="uid://bciu5xwyalhh0"]
+
+[ext_resource type="Script" path="res://components/hud_pad.gd" id="1_wgnkm"]
+[ext_resource type="Texture2D" uid="uid://btux1she050gc" path="res://src/images/joypad/move.png" id="2_indvj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dnxjg"]
+radius = 16.0
+
+[node name="HudPad" type="Control"]
+z_index = 100
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wgnkm")
+metadata/_edit_vertical_guides_ = [182.0, 314.0]
+metadata/_edit_horizontal_guides_ = [876.0, 744.0, 752.0]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="leftButtons" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 58.0
+offset_top = -460.0
+offset_right = 447.0
+offset_bottom = -72.0
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="Control/leftButtons"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control/leftButtons"]
+position = Vector2(0, 256)
+rotation = -1.5708
+scale = Vector2(4, 4)
+texture_normal = ExtResource("2_indvj")
+shape = SubResource("CircleShape2D_dnxjg")
+action = "move_left"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Control/leftButtons"]
+position = Vector2(132, -3.05176e-05)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("2_indvj")
+shape = SubResource("CircleShape2D_dnxjg")
+action = "move_up"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="Control/leftButtons"]
+position = Vector2(388, 132)
+rotation = 1.5708
+scale = Vector2(4, 4)
+texture_normal = ExtResource("2_indvj")
+shape = SubResource("CircleShape2D_dnxjg")
+action = "move_right"
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="Control/leftButtons"]
+position = Vector2(256, 388)
+rotation = 3.14159
+scale = Vector2(4, 4)
+texture_normal = ExtResource("2_indvj")
+shape = SubResource("CircleShape2D_dnxjg")
+action = "move_down"
+
+[node name="rightButtons" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -388.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control/rightButtons"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control/rightButtons"]
+position = Vector2(112, 735)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("2_indvj")
+shape = SubResource("CircleShape2D_dnxjg")
+action = "jump"
+
+[connection signal="mouse_entered" from="Control/leftButtons" to="." method="_on_left_buttons_mouse_entered"]
+[connection signal="mouse_exited" from="Control/leftButtons" to="." method="_on_left_buttons_mouse_exited"]
+[connection signal="mouse_entered" from="Control/rightButtons" to="." method="_on_left_buttons_mouse_entered"]
+[connection signal="mouse_exited" from="Control/rightButtons" to="." method="_on_left_buttons_mouse_exited"]

@@ -27,6 +27,7 @@ DialogInfo="*res://scenes/dialog_info.tscn"
 MainMenu="*res://scenes/main_menu.tscn"
 LevelInfo="*res://scenes/level_info.tscn"
 PauseMenu="*res://scenes/pause_menu.tscn"
+Settings="*res://scenes/settings.tscn"
 
 [display]
 

@@ -63,7 +63,7 @@ font_size = 36
 font = ExtResource("5_40pdp")
 font_size = 36
 
-[node name="DialogInfo" type="CanvasLayer"]
+[node name="Settings" type="CanvasLayer"]
 script = ExtResource("1_fk6cj")
 
 [node name="ColorRect" type="ColorRect" parent="."]

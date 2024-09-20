@@ -14,9 +14,16 @@ var isJumping=false
 @onready var animationPlayer:AnimationPlayer=$AnimationPlayer
 @onready var sprite2D:Sprite2D=$Sprite2D
 @onready var jumpHoldTimer: Timer = $Timer3
+@onready var camera_2d: Camera2D = $Sprite2D/Camera2D
 
 var gravity=ProjectSettings.get('physics/2d/default_gravity')
-
+func _ready() -> void:
+	if Global.scene == 'game':
+		var json:JSON=JSON.new()
+		json.parse(FileAccess.open(Global.getLevelsDir()+Global.level,FileAccess.READ).get_as_text())
+		var manifest:Dictionary=json.data['manifest']
+		var world=manifest['world']
+		camera_2d.set_limit(SIDE_RIGHT,( world['width'] + 1 ) * 16)
 func _physics_process(delta: float) -> void:
 	var direction=Input.get_axis('move_left','move_right')
 	if not is_zero_approx(direction) and $Timer.is_stopped():

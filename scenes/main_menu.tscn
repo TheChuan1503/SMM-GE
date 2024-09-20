@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://5n2p1dja4x5n"]
+[gd_scene load_steps=24 format=3 uid="uid://5n2p1dja4x5n"]
 
 [ext_resource type="FontFile" uid="uid://ddclxaa0c75i1" path="res://src/fonts/SuperMarioMaker2-Regular.ttf" id="1_6g0pu"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ho3u1"]
@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://fh36qkrougk0" path="res://components/btn_small.tscn" id="8_b5snf"]
 [ext_resource type="AudioStream" uid="uid://bext1k2lwmj7m" path="res://src/musics/effect/menu_close.ogg" id="9_0vfa6"]
 [ext_resource type="Texture2D" uid="uid://c5bicw0irb20k" path="res://src/images/main_menu_exit.png" id="9_ncb3q"]
+[ext_resource type="Texture2D" uid="uid://c2eelpu2f4tj2" path="res://src/images/main_menu_dove.png" id="10_0cfyj"]
+[ext_resource type="Texture2D" uid="uid://chseoj6gxknvm" path="res://src/images/main_menu_bell.png" id="11_ygstj"]
+[ext_resource type="Texture2D" uid="uid://cuxyhhv7ghgij" path="res://src/images/main_menu_settings.png" id="12_hmaxv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ikkmx"]
 bg_color = Color(1, 1, 1, 1)
@@ -70,6 +73,7 @@ font_color = Color(0.352941, 0.0627451, 0.0627451, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_jg0fn"]
 font = ExtResource("1_6g0pu")
+font_size = 72
 font_color = Color(0.368627, 0.109804, 0.105882, 1)
 
 [node name="MainMenu" type="CanvasLayer"]
@@ -211,7 +215,7 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0, 0, 0, 0)
 
-[node name="BtnSmall" parent="ColorRect2/ColorRect4" instance=ExtResource("8_b5snf")]
+[node name="BtnExit" parent="ColorRect2/ColorRect4" instance=ExtResource("8_b5snf")]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -225,12 +229,77 @@ offset_bottom = -14.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="TextureRect" parent="ColorRect2/ColorRect4/BtnSmall" index="0"]
+[node name="TextureRect" parent="ColorRect2/ColorRect4/BtnExit" index="0"]
 offset_left = -24.0
 offset_top = -25.5
 offset_right = 24.0
 offset_bottom = 25.5
 texture = ExtResource("9_ncb3q")
+
+[node name="BtnAccount" parent="ColorRect2/ColorRect4" instance=ExtResource("8_b5snf")]
+layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 54.0
+offset_top = -142.0
+offset_right = 182.0
+offset_bottom = -14.0
+grow_horizontal = 1
+grow_vertical = 0
+
+[node name="TextureRect" parent="ColorRect2/ColorRect4/BtnAccount" index="0"]
+offset_left = -24.0
+offset_top = -25.5
+offset_right = 24.0
+offset_bottom = 25.5
+texture = ExtResource("10_0cfyj")
+
+[node name="BtnBell" parent="ColorRect2/ColorRect4" instance=ExtResource("8_b5snf")]
+layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 212.0
+offset_top = -78.0
+offset_right = 276.0
+offset_bottom = -14.0
+grow_horizontal = 1
+grow_vertical = 0
+
+[node name="TextureRect" parent="ColorRect2/ColorRect4/BtnBell" index="0"]
+offset_left = -24.0
+offset_top = -25.5
+offset_right = 24.0
+offset_bottom = 25.5
+texture = ExtResource("11_ygstj")
+
+[node name="BtnSettings" parent="ColorRect2/ColorRect4" instance=ExtResource("8_b5snf")]
+layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 296.0
+offset_top = -78.0
+offset_right = 360.0
+offset_bottom = -14.0
+grow_horizontal = 1
+grow_vertical = 0
+
+[node name="TextureRect" parent="ColorRect2/ColorRect4/BtnSettings" index="0"]
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+texture = ExtResource("12_hmaxv")
+expand_mode = 4
+stretch_mode = 0
 
 [node name="audioOpen" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_3kmvn")
@@ -248,4 +317,7 @@ stream = ExtResource("9_0vfa6")
 [editable path="ColorRect2/ColorRect3/worldOption/Play_Action1"]
 [editable path="ColorRect2/ColorRect3/coursebotOption"]
 [editable path="ColorRect2/ColorRect3/coursebotOption/Play_Action1"]
-[editable path="ColorRect2/ColorRect4/BtnSmall"]
+[editable path="ColorRect2/ColorRect4/BtnExit"]
+[editable path="ColorRect2/ColorRect4/BtnAccount"]
+[editable path="ColorRect2/ColorRect4/BtnBell"]
+[editable path="ColorRect2/ColorRect4/BtnSettings"]

@@ -18,7 +18,7 @@ func _ready() -> void:
 		$TileMapLayer.set_cell(Vector2(obj['pos'][0]-1,0 - obj['pos'][1]),Global.getTileClassId(worldType),Vector2(0,0),Global.getTileIndex(worldType,obj['object']))
 	
 	# init start soil
-	var startHeight=manifest['world']['start_height']
+	var startHeight=world['start_height']
 	if startHeight<1:
 		startHeight=1
 	if startHeight>25:
@@ -28,7 +28,7 @@ func _ready() -> void:
 			$TileMapLayer.set_cell(Vector2(i2,0 - i1 - 1),Global.getTileClassId(worldType),Vector2(0,0),Global.getTileIndex(worldType,'block_soil'))
 	
 	# init start soil
-	var endHeight=manifest['world']['end_height']
+	var endHeight=world['end_height']
 	if endHeight<1:
 		endHeight=1
 	if endHeight>12:

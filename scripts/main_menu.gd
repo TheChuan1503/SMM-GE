@@ -1,4 +1,6 @@
 extends CanvasLayer
+@onready var btn_settings: Panel = $ColorRect2/ColorRect4/BtnSettings
+@onready var btn_exit: Panel = $ColorRect2/ColorRect4/BtnExit
 func i18n():
 	Global.i18n($ColorRect2/ColorRect3/makerOption/text)
 	Global.i18n($ColorRect2/ColorRect3/worldOption/text)
@@ -13,7 +15,8 @@ func exit():
 	self.hide()
 func _ready() -> void:
 	i18n()
-	$ColorRect2/ColorRect4/BtnSmall.setOnClick(exit)
+	btn_exit.setOnClick(exit)
+	btn_settings.setOnClick(Settings.make)
 	self.hide()
 	pass
 func initDisabled():
