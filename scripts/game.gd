@@ -4,6 +4,7 @@ extends Node2D
 
 func _ready() -> void:
 	Global.scene='game'
+	#Global.tilemap=$TileMapLayer
 	$AudioStreamPlayer.finished.connect(playMusic)
 	var json:JSON=JSON.new()
 	json.parse(FileAccess.open(Global.getLevelsDir()+Global.level,FileAccess.READ).get_as_text())

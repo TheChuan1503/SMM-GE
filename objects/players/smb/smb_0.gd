@@ -52,6 +52,7 @@ func _physics_process(delta: float) -> void:
 		jumpHoldTimer.stop()
 		jumpHoldTimer.start()
 		velocity.y+=SPEED_JUMP
+		$jumpAudio.play()
 	if isJumping and not is_on_floor():
 		velocity.y-=0*jumpHoldTimer.time_left / JUMP_HOLD_TIME
 	if is_on_floor():

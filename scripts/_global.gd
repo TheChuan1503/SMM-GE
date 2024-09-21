@@ -7,6 +7,7 @@ const COLOR_YELLOW = Color('fecc00')
 const COLOR_RED = Color('5a1010')
 
 var scene = 'start'
+#var tilemap:TileMapLayer
 var level:String = ''
 
 func getTileClassId(world:String):
@@ -49,3 +50,10 @@ func i18n(label:Label):
 			print('not has '+text)
 		else:
 			label.text=json.data[text]
+func fillZero(origin, zeroCount:int) -> String:
+	var o = str(origin)
+	if o.length() >= zeroCount:
+		return o
+	for e in range(zeroCount - o.length()):
+		o = '0' + o
+	return o

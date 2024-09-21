@@ -17,6 +17,7 @@
         "node", #63C259, #63C259
         "注释", #75787D, #75787D
 	]
+	lineBackground: {match: /.*/, color: "bg"}
     contains: {
         // 引用节点
         {

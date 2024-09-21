@@ -1,14 +1,16 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://d1hn0ukr45bu1"]
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://d1hn0ukr45bu1"]
 
 [ext_resource type="PackedScene" uid="uid://b47t06tq6h2i2" path="res://objects/blocks/SMB/soil/soil.tscn" id="1_3sq14"]
-[ext_resource type="PackedScene" uid="uid://rwq7n2j7r8nv" path="res://objects/blocks/SMB/brick/brick.tscn" id="2_mtgeb"]
+[ext_resource type="PackedScene" uid="uid://cl81t8swjq1c7" path="res://objects/blocks/SMB/brick/brick.tscn" id="2_fpw0s"]
 [ext_resource type="PackedScene" uid="uid://dbjlnhemy3e5n" path="res://objects/blocks/SMB3/brick/brick.tscn" id="3_i2cj5"]
+[ext_resource type="PackedScene" uid="uid://bv84jyl0e2fb8" path="res://objects/blocks/SMB/coin/coin.tscn" id="4_2irql"]
 [ext_resource type="PackedScene" uid="uid://dp3182gp1ia14" path="res://objects/blocks/SMB3/soil/soil.tscn" id="4_f4qxt"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_nxyvv"]
 resource_name = "SMB"
 scenes/1/scene = ExtResource("1_3sq14")
-scenes/2/scene = ExtResource("2_mtgeb")
+scenes/2/scene = ExtResource("2_fpw0s")
+scenes/3/scene = ExtResource("4_2irql")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_npljk"]
 resource_name = "SMB3"

@@ -33,9 +33,9 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 58.0
-offset_top = -460.0
-offset_right = 447.0
-offset_bottom = -72.0
+offset_top = -563.334
+offset_right = 524.8
+offset_bottom = -97.734
 grow_vertical = 0
 
 [node name="Panel" type="Panel" parent="Control/leftButtons"]
@@ -49,32 +49,32 @@ grow_vertical = 2
 metadata/_edit_lock_ = true
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Control/leftButtons"]
-position = Vector2(0, 256)
+position = Vector2(0, 307.2)
 rotation = -1.5708
-scale = Vector2(4, 4)
+scale = Vector2(4.8, 4.8)
 texture_normal = ExtResource("2_indvj")
 shape = SubResource("CircleShape2D_dnxjg")
 action = "move_left"
 
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="Control/leftButtons"]
-position = Vector2(132, -3.05176e-05)
-scale = Vector2(4, 4)
+position = Vector2(158.4, 0)
+scale = Vector2(4.8, 4.8)
 texture_normal = ExtResource("2_indvj")
 shape = SubResource("CircleShape2D_dnxjg")
 action = "move_up"
 
 [node name="TouchScreenButton3" type="TouchScreenButton" parent="Control/leftButtons"]
-position = Vector2(388, 132)
+position = Vector2(465.6, 158.4)
 rotation = 1.5708
-scale = Vector2(4, 4)
+scale = Vector2(4.8, 4.8)
 texture_normal = ExtResource("2_indvj")
 shape = SubResource("CircleShape2D_dnxjg")
 action = "move_right"
 
 [node name="TouchScreenButton4" type="TouchScreenButton" parent="Control/leftButtons"]
-position = Vector2(256, 388)
+position = Vector2(307.2, 465.6)
 rotation = 3.14159
-scale = Vector2(4, 4)
+scale = Vector2(4.8, 4.8)
 texture_normal = ExtResource("2_indvj")
 shape = SubResource("CircleShape2D_dnxjg")
 action = "move_down"

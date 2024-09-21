@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dydfei0sjb6ti"]
+[gd_scene load_steps=11 format=3 uid="uid://dydfei0sjb6ti"]
 
 [ext_resource type="Script" path="res://objects/players/smb/smb_0.gd" id="1_lp2v1"]
 [ext_resource type="Texture2D" uid="uid://dxtmf3auw22gs" path="res://src/tiles/player_smb.png" id="1_m2ogj"]
+[ext_resource type="AudioStream" uid="uid://hbwfc2kb2ova" path="res://src/musics/effect/smb/smb_jump.ogg" id="3_ipdcc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0ron"]
 size = Vector2(14, 14)
@@ -177,7 +178,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pipov"]
 size = Vector2(14, 1)
 
-[node name="PlayerSmb0" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_lp2v1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -217,3 +218,6 @@ debug_color = Color(0.794326, 0.41422, 0.27002, 0.42)
 wait_time = 1.5
 
 [node name="Timer3" type="Timer" parent="."]
+
+[node name="jumpAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ipdcc")

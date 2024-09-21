@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://bv84jyl0e2fb8"]
+
+[ext_resource type="PackedScene" uid="uid://dknxm8xgtwdiv" path="res://objects/blocks/smm_block.tscn" id="1_rqjfl"]
+[ext_resource type="Script" path="res://objects/blocks/SMB/coin/coin.gd" id="2_rd32l"]
+[ext_resource type="Texture2D" uid="uid://bohy77w14rx6i" path="res://objects/blocks/SMB/coin/frames/1.png" id="2_s1qkb"]
+[ext_resource type="Texture2D" uid="uid://bcyohthodbl0f" path="res://objects/blocks/SMB/coin/frames/2.png" id="3_3o1ym"]
+[ext_resource type="Texture2D" uid="uid://dbgey7h5ut4o3" path="res://objects/blocks/SMB/coin/frames/3.png" id="4_j8f5g"]
+[ext_resource type="Texture2D" uid="uid://b3yfnaa81b814" path="res://objects/blocks/SMB/coin/frames/4.png" id="5_thd7f"]
+
+[sub_resource type="Animation" id="Animation_km48h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_s1qkb")]
+}
+
+[sub_resource type="Animation" id="Animation_u1o0a"]
+resource_name = "filck"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_s1qkb"), ExtResource("3_3o1ym"), ExtResource("4_j8f5g"), ExtResource("5_thd7f")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g3xxq"]
+_data = {
+"RESET": SubResource("Animation_km48h"),
+"filck": SubResource("Animation_u1o0a")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1n8y"]
+size = Vector2(16, 16)
+
+[node name="SmmObject" instance=ExtResource("1_rqjfl")]
+script = ExtResource("2_rd32l")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_s1qkb")
+region_enabled = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_g3xxq")
+}
+autoplay = "filck"
+
+[node name="Area2D" type="Area2D" parent="." index="2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_a1n8y")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
