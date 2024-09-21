@@ -53,7 +53,7 @@ func  _process(delta: float) -> void:
 		if Input.is_action_pressed("pause"):
 			get_tree().paused=true
 			PauseMenu.make()
-	if $PlayerSmb0.position.y > -2 and gameover==false:
+	if $Player.position.y > -2 and gameover==false:
 		gameover=true
 		DialogInfo.make('Game Over','Press OK to retry',onGameOver)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bv84jyl0e2fb8"]
+[gd_scene load_steps=12 format=3 uid="uid://bv84jyl0e2fb8"]
 
 [ext_resource type="PackedScene" uid="uid://dknxm8xgtwdiv" path="res://objects/blocks/smm_block.tscn" id="1_rqjfl"]
 [ext_resource type="Script" path="res://objects/blocks/SMB/coin/coin.gd" id="2_rd32l"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bcyohthodbl0f" path="res://objects/blocks/SMB/coin/frames/2.png" id="3_3o1ym"]
 [ext_resource type="Texture2D" uid="uid://dbgey7h5ut4o3" path="res://objects/blocks/SMB/coin/frames/3.png" id="4_j8f5g"]
 [ext_resource type="Texture2D" uid="uid://b3yfnaa81b814" path="res://objects/blocks/SMB/coin/frames/4.png" id="5_thd7f"]
+[ext_resource type="AudioStream" uid="uid://hraiari146fy" path="res://src/musics/effect/smb/coin.ogg" id="7_h14xd"]
 
 [sub_resource type="Animation" id="Animation_km48h"]
 length = 0.001
@@ -65,6 +66,9 @@ autoplay = "filck"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource("RectangleShape2D_a1n8y")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("7_h14xd")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
