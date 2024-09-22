@@ -2,7 +2,7 @@ extends Node
 
 @onready var lang=OS.get_locale_language()
 
-const isDebug = true
+const isDebug = false
 const COLOR_YELLOW = Color('fecc00')
 const COLOR_RED = Color('5a1010')
 
@@ -43,7 +43,7 @@ func i18n(label:Label):
 		else:
 			label.text=json.data[text]
 	else:
-		var defLang = FileAccess.open('res://lang/_default.txt',FileAccess.READ).get_as_text()
+		var defLang = FileAccess.open('res://lang/_default.json',FileAccess.READ).get_as_text()
 		var json=JSON.new()
 		json.parse(FileAccess.open('res://lang/'+defLang+'.json',FileAccess.READ).get_as_text())
 		if not json.data.has(text):

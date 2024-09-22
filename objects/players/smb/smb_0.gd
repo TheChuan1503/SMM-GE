@@ -8,6 +8,7 @@ const JUMP_HOLD_TIME=1
 var g=SPEED_RUN/0.175
 
 var isRun=false
+var dead=false
 var nowSpeed=SPEED_RUN
 var isJumping=false
 
@@ -18,6 +19,7 @@ var isJumping=false
 
 var gravity=ProjectSettings.get('physics/2d/default_gravity')
 func _ready() -> void:
+	gravity=900
 	if Global.scene == 'game':
 		var json:JSON=JSON.new()
 		json.parse(FileAccess.open(Global.getLevelsDir()+Global.level,FileAccess.READ).get_as_text())
@@ -25,6 +27,8 @@ func _ready() -> void:
 		var world=manifest['world']
 		camera_2d.set_limit(SIDE_RIGHT,( world['width'] + 1 ) * 16)
 func _physics_process(delta: float) -> void:
+	if dead:
+		return
 	var direction=Input.get_axis('move_left','move_right')
 	if not is_zero_approx(direction) and $Timer.is_stopped():
 		$Timer.start()
@@ -65,3 +69,12 @@ func _physics_process(delta: float) -> void:
 	else:
 		animationPlayer.play('jump')
 	move_and_slide()
+func die(cb):
+	dead=true
+	gravity=0
+	$deadAudio.play()
+	GameStatus.initDead()
+	animationPlayer.play('dead')
+	await animationPlayer.animation_finished
+	if cb is Callable:
+		cb.call()

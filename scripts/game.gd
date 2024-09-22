@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var gameover=false
 
+var mario:Node
 func _ready() -> void:
 	Global.scene='game'
 	#Global.tilemap=$TileMapLayer
@@ -39,7 +40,7 @@ func _ready() -> void:
 			$TileMapLayer.set_cell(Vector2(manifest['world']['width'] - i2,0 - i1 - 1),Global.getTileClassId(worldType),Vector2(0,0),Global.getTileIndex(worldType,'block_soil'))
 	
 	# load mario
-	var mario:Node
+	
 	match worldType:
 		'smb':
 			mario=preload("res://objects/players/smb/smb_0.tscn").instantiate()
@@ -55,9 +56,10 @@ func  _process(delta: float) -> void:
 			PauseMenu.make()
 	if $Player.position.y > -2 and gameover==false:
 		gameover=true
-		DialogInfo.make('Game Over','Press OK to retry',onGameOver)
+		$AudioStreamPlayer.stop()
+		mario.die(onGameOver)
 
 func onGameOver():
-	SceneChanger.gradient('res://scenes/title_scene.tscn')
+	SceneChanger.gradient('res://scenes/game.tscn')
 func playMusic():
 	$AudioStreamPlayer.play()

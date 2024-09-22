@@ -1,6 +1,7 @@
 extends CanvasLayer
 var animated=false
 func _ready() -> void:
+	OS.request_permissions()
 	await $AnimationPlayer.animation_finished
 	animated=true
 	$Timer.start()
