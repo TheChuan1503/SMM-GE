@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://olckh7pt2oyk"]
-
-[ext_resource type="Script" path="res://scripts/maker_scene.gd" id="1_qtxrx"]
-[ext_resource type="PackedScene" uid="uid://bqd6asvwxxtqm" path="res://scenes/items/game.tscn" id="1_v1rpx"]
-
-[node name="MakerScene" type="Node2D"]
-script = ExtResource("1_qtxrx")
-
-[node name="Game" parent="." instance=ExtResource("1_v1rpx")]

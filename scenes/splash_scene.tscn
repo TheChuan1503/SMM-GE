@@ -11,7 +11,7 @@ outline_size = 4
 outline_color = Color(0.847059, 0.0666667, 0.00392157, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_bojmj"]
-line_spacing = 0.0
+line_spacing = 4.0
 font_size = 56
 
 [node name="SplashScene" type="CanvasLayer"]
@@ -49,7 +49,7 @@ anchor_right = 0.5
 offset_left = -379.0
 offset_top = 101.0
 offset_right = 379.0
-offset_bottom = 319.0
+offset_bottom = 505.0
 grow_horizontal = 2
 text = "text_disclaimer"
 label_settings = SubResource("LabelSettings_bojmj")

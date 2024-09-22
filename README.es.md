@@ -21,7 +21,7 @@ Este proyecto utilizó recursos de proyectos que incluyen `SMM: WE`
 
 ### Progreso del desarrollo
 - [x] Iniciar el desarrollo
-- [ ] Iniciar la animación
+- [x] Iniciar la animación
 - [x] Pantalla de inicio
 - [ ] Juega el nivel
   - [x] Archivos de nivel de lectura (preliminar)

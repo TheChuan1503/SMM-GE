@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cveotyrw8n1ek"]
+[gd_scene load_steps=40 format=3 uid="uid://cveotyrw8n1ek"]
 
 [ext_resource type="Texture2D" uid="uid://1nt8twt0kewg" path="res://src/tiles/blocks_smb.png" id="1_2ttu2"]
 [ext_resource type="Script" path="res://scripts/title_scene.gd" id="1_gixyt"]
@@ -45,6 +45,11 @@ font_color = Color(0, 0, 0, 1)
 font = ExtResource("4_1g4al")
 font_size = 72
 font_color = Color(0.952941, 0.0823529, 0.12549, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0csm8"]
+font = ExtResource("4_1g4al")
+font_size = 72
+font_color = Color(0.278431, 0.54902, 0.74902, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qv3kb"]
 bg_color = Color(0.988235, 0.819608, 0, 1)
@@ -267,8 +272,24 @@ offset_right = -7.0
 offset_bottom = 62.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "GODOT ENGINE"
+text = "                ENGINE"
 label_settings = SubResource("LabelSettings_tm3y3")
+
+[node name="Label3" type="Label" parent="CanvasLayer/Label2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -494.0
+offset_top = -20.0
+offset_right = -7.0
+offset_bottom = 62.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "GODOT"
+label_settings = SubResource("LabelSettings_0csm8")
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
 anchors_preset = 7

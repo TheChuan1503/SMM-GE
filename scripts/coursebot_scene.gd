@@ -20,6 +20,7 @@ func getLevels():
 	return rez
 func _ready() -> void:
 	Global.scene='coursebot'
+	Global.isMaker=false
 	i18n()
 	path_viewer.text=Global.getLevelsDir()
 	virtual_background.visible=false

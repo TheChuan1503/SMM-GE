@@ -7,6 +7,8 @@ func _ready() -> void:
 	Global.scene='game'
 	#Global.tilemap=$TileMapLayer
 	$AudioStreamPlayer.finished.connect(playMusic)
+	if Global.isMaker or get_parent() is Node2D:
+		return
 	var json:JSON=JSON.new()
 	json.parse(FileAccess.open(Global.getLevelsDir()+Global.level,FileAccess.READ).get_as_text())
 	var manifest:Dictionary=json.data['manifest']
@@ -50,6 +52,8 @@ func _ready() -> void:
 	add_child(mario)
 
 func  _process(delta: float) -> void:
+	if Global.isMaker:
+		return
 	if not PauseMenu.opened:
 		if Input.is_action_pressed("pause"):
 			get_tree().paused=true

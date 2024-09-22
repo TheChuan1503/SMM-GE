@@ -7,6 +7,7 @@ const COLOR_YELLOW = Color('fecc00')
 const COLOR_RED = Color('5a1010')
 
 var scene = 'start'
+var isMaker=false
 #var tilemap:TileMapLayer
 var level:String = ''
 
@@ -43,7 +44,7 @@ func i18n(label:Label):
 		else:
 			label.text=json.data[text]
 	else:
-		var defLang = FileAccess.open('res://lang/_default.json',FileAccess.READ).get_as_text()
+		var defLang = 'en'#FileAccess.open('res://lang/_default.json',FileAccess.READ).get_as_text()
 		var json=JSON.new()
 		json.parse(FileAccess.open('res://lang/'+defLang+'.json',FileAccess.READ).get_as_text())
 		if not json.data.has(text):

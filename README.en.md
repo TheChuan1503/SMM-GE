@@ -19,7 +19,7 @@ This project utilized resources from projects including `SMM: WE`
 
 ### Development Progress
 - [x] Development Initiated
-- [ ] Startup Animation
+- [x] Launching Animation
 - [x] "Start" Screen
 - [ ] Play Levels
   - [x] Load Level Files(Primarily)
