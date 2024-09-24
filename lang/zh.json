@@ -11,5 +11,7 @@
 	"text_level_name":"关卡名",
 	"text_level_desc":"关卡说明",
 	"text_disclaimer_title": "免责声明",
-	"text_disclaimer": "本游戏为同人游戏\n未获得任天堂授权\n资源版权归任天堂所有"
+	"text_disclaimer": "本游戏为同人游戏\n未获得任天堂授权\n资源版权归任天堂所有",
+	"text_settings":"设置",
+	"text_ok":"确定"
 }

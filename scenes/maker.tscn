@@ -7,3 +7,12 @@
 script = ExtResource("1_3jbi7")
 
 [node name="Game" parent="." instance=ExtResource("1_2a0o0")]
+
+[node name="Maker" type="CanvasLayer" parent="Game"]
+
+[node name="placer" type="TextureButton" parent="Game/Maker"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

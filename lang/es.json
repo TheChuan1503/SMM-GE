@@ -1,0 +1,17 @@
+{
+	"text_title_press_here":"Presione Aquí",
+	"text_make":"Crear",
+	"text_play":"Jugar",
+	"text_play_maker":"Creador de Niveles",
+	"text_play_challenge":"Desafío Infinito",
+	"text_play_world":"Mundo de Niveles",
+	"text_play_coursebot":"Generador de Niveles",
+	"text_coursebot_own":"Mis Niveles",
+	"text_upload_level":"Subir",
+	"text_level_name":"Nombre del Nivel",
+	"text_level_desc":"Descripción del Nivel",
+	"text_disclaimer_title": "Aviso Legal",
+	"text_disclaimer": "Este juego es un juego fan.\nNo está autorizado por Nintendo.\nLos recursos son\nde propiedad de Nintendo.\nEsta traducción no ha sido revisada manualmente.",
+	"text_settings":"Configuración",
+	"text_ok":"Aceptar"
+}

@@ -20,7 +20,7 @@ var isJumping=false
 var gravity=ProjectSettings.get('physics/2d/default_gravity')
 func _ready() -> void:
 	gravity=900
-	if Global.scene == 'game':
+	if Global.scene == 'game' and not Global.isMaker:
 		var json:JSON=JSON.new()
 		json.parse(FileAccess.open(Global.getLevelsDir()+Global.level,FileAccess.READ).get_as_text())
 		var manifest:Dictionary=json.data['manifest']

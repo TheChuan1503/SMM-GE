@@ -67,3 +67,21 @@ func onGameOver():
 	SceneChanger.gradient('res://scenes/game.tscn')
 func playMusic():
 	$AudioStreamPlayer.play()
+func place(x:float,y:float,id:String):
+	$TileMapLayer.set_cell(Vector2(x,y),Global.getTileClassId('smb'),Vector2(0,0),Global.getTileIndex('smb',id))
+func initMaker():
+	# init start soil
+	var startHeight=2
+	if startHeight<1:
+		startHeight=1
+	if startHeight>25:
+		startHeight=25
+	for i1 in range(startHeight):
+		for i2 in range(7):
+			$TileMapLayer.set_cell(Vector2(i2,0 - i1 - 1),Global.getTileClassId('smb'),Vector2(0,0),Global.getTileIndex('smb','block_soil'))
+	
+	# load mario
+	var mario
+	mario=preload("res://objects/players/smb/smb_0.tscn").instantiate()
+	mario.position=Vector2((3.5 + 0.5) * 16,0 - startHeight * 16 - 16)
+	add_child(mario)
