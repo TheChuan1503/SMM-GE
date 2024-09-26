@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://ftnl3w32hhqy"]
+[gd_scene load_steps=11 format=3 uid="uid://ftnl3w32hhqy"]
 
 [ext_resource type="Script" path="res://scripts/settings.gd" id="1_fk6cj"]
+[ext_resource type="FontFile" uid="uid://ddclxaa0c75i1" path="res://src/fonts/SuperMarioMaker2-Regular.ttf" id="3_3upy3"]
 [ext_resource type="PackedScene" uid="uid://dhvpspiyofi1x" path="res://components/btn.tscn" id="3_kvdbg"]
+[ext_resource type="Texture2D" uid="uid://c007xv1e6xa5a" path="res://src/images/github.svg" id="3_w0dqy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_db7hu"]
 font_size = 40
+font_color = Color(0.352941, 0.0627451, 0.0627451, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2q1ia"]
 bg_color = Color(0.988235, 0.819608, 0, 1)
@@ -18,10 +21,36 @@ shadow_offset = Vector2(0, 8)
 
 [sub_resource type="LabelSettings" id="LabelSettings_cqqws"]
 font_size = 40
-font_color = Color(0.121569, 0.164706, 0.270588, 1)
+font_color = Color(0.352941, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtpu0"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 8)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kiijd"]
+font = ExtResource("3_3upy3")
+font_size = 48
+font_color = Color(0.352941, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1irq6"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 8)
 
 [node name="Settings" type="CanvasLayer"]
 script = ExtResource("1_fk6cj")
+metadata/_edit_horizontal_guides_ = [1032.0]
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -73,4 +102,57 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2q1ia")
 text = "text_ok"
 label_settings = SubResource("LabelSettings_cqqws")
 
+[node name="ColorRect2" type="ColorRect" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 56.0
+offset_top = -152.0
+offset_right = 1344.0
+offset_bottom = -56.0
+grow_vertical = 0
+color = Color(1, 1, 1, 0)
+
+[node name="BtnCredits" parent="ColorRect2/ColorRect2" instance=ExtResource("3_kvdbg")]
+layout_mode = 0
+offset_right = 344.0
+offset_bottom = 96.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vtpu0")
+
+[node name="Label" parent="ColorRect2/ColorRect2/BtnCredits" index="0"]
+text = "text_credits_title"
+label_settings = SubResource("LabelSettings_kiijd")
+
+[node name="BtnGithub" parent="ColorRect2/ColorRect2" instance=ExtResource("3_kvdbg")]
+layout_mode = 0
+offset_left = 368.0
+offset_right = 464.0
+offset_bottom = 96.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1irq6")
+
+[node name="Label" parent="ColorRect2/ColorRect2/BtnGithub" index="0"]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect2/ColorRect2/BtnGithub"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_w0dqy")
+metadata/_edit_lock_ = true
+
+[node name="SelectableButton" parent="ColorRect2/ColorRect2/BtnGithub" index="2"]
+metadata/_edit_lock_ = true
+
 [editable path="ColorRect2/okBtn"]
+[editable path="ColorRect2/ColorRect2/BtnCredits"]
+[editable path="ColorRect2/ColorRect2/BtnGithub"]

@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://8xxeoam0malv"]
+
+[ext_resource type="Script" path="res://scripts/credits_scene.gd" id="1_3u5h8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p7ofn"]
+font_size = 40
+font_color = Color(0.988235, 0.819608, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sc8jh"]
+font_size = 40
+
+[node name="CreditsScene" type="CanvasLayer"]
+script = ExtResource("1_3u5h8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 128.0
+offset_bottom = 168.0
+grow_horizontal = 2
+text = "text_credits_programmers"
+label_settings = SubResource("LabelSettings_p7ofn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 192.0
+offset_bottom = 232.0
+grow_horizontal = 2
+text = "TheChuan1503"
+label_settings = SubResource("LabelSettings_sc8jh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

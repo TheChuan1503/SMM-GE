@@ -14,10 +14,10 @@ config/name="SMM: GE"
 run/main_scene="res://scenes/splash_scene.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-config/icon="res://icon.png"
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
+config/icon="res://icon.png"
 
 [autoload]
 
@@ -34,6 +34,8 @@ GameStatus="*res://scripts/_game_status.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/window_width_override=1024
+window/size/window_height_override=576
 window/stretch/mode="viewport"
 
 [gui]
@@ -71,3 +73,4 @@ locale/locale_filter_mode=0
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
+textures/vram_compression/import_s3tc_bptc=true

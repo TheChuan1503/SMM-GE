@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnmcf0bys2j8r"]
+
+[ext_resource type="PackedScene" uid="uid://dh101gml8kdi4" path="res://components/btn_menu.tscn" id="1_gcouj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ymly"]
+bg_color = Color(0.909804, 0.909804, 0.909804, 0.301961)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(1, 1, 1, 0.490196)
+border_blend = true
+corner_radius_top_left = 16
+
+[node name="MakerUi" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -152.0
+offset_top = 168.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ymly")
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 328.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0)
+
+[node name="BtnMenu" parent="Panel/ColorRect" instance=ExtResource("1_gcouj")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -44.0
+offset_top = 24.0
+offset_right = 44.0
+offset_bottom = 112.0
+grow_vertical = 1

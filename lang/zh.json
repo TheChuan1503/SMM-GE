@@ -13,5 +13,7 @@
 	"text_disclaimer_title": "免责声明",
 	"text_disclaimer": "本游戏为同人游戏\n未获得任天堂授权\n资源版权归任天堂所有",
 	"text_settings":"设置",
-	"text_ok":"确定"
+	"text_ok":"确定",
+	"text_credits_title":"开发人员名单",
+	"text_credits_programmers":"程序员"
 }

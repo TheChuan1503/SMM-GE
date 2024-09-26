@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://hnty0cjg1xo4"]
+[gd_scene load_steps=4 format=3 uid="uid://hnty0cjg1xo4"]
 
 [ext_resource type="PackedScene" uid="uid://dmeh1q8vu5bqh" path="res://scenes/game.tscn" id="1_2a0o0"]
 [ext_resource type="Script" path="res://scripts/maker.gd" id="1_3jbi7"]
+[ext_resource type="PackedScene" uid="uid://cnmcf0bys2j8r" path="res://scenes/maker_ui.tscn" id="3_1v2a4"]
 
 [node name="Maker" type="Node2D"]
 script = ExtResource("1_3jbi7")
@@ -16,3 +17,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MakerUi" parent="." instance=ExtResource("3_1v2a4")]

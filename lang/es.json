@@ -13,5 +13,7 @@
 	"text_disclaimer_title": "Aviso Legal",
 	"text_disclaimer": "Este juego es un juego fan.\nNo está autorizado por Nintendo.\nLos recursos son\nde propiedad de Nintendo.\nEsta traducción no ha sido revisada manualmente.",
 	"text_settings":"Configuración",
-	"text_ok":"Aceptar"
+	"text_ok":"Aceptar",
+	"text_credits_title":"CRÉDITOS",
+	"text_credits_programmers":"Programadoras"
 }
