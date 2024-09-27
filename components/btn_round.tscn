@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://t4wgekoi14r3"]
+
+[ext_resource type="Script" path="res://components/btn_round.gd" id="1_fbpni"]
+[ext_resource type="PackedScene" uid="uid://cm3c5o2l4s31x" path="res://components/addon_btn_selectable.tscn" id="2_bhine"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcal4"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 8)
+
+[node name="Btn" type="Panel"]
+offset_right = 88.0
+offset_bottom = 88.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mcal4")
+script = ExtResource("1_fbpni")
+
+[node name="icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -28.0
+offset_right = 28.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SelectableButton" parent="." instance=ExtResource("2_bhine")]
+layout_mode = 1

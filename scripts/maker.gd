@@ -9,5 +9,7 @@ func getMouseLocation():
 	return pos
 func place():
 	var pos = getMouseLocation()
-	print(pos)
-	$Game.place(pos.x,pos.y,'block_soil')
+	if MakerStatus.isEraser:
+		$Game.placeAir(pos.x,pos.y)
+	else:
+		$Game.place(pos.x,pos.y,'block_soil')

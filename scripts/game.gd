@@ -67,8 +67,10 @@ func onGameOver():
 	SceneChanger.gradient('res://scenes/game.tscn')
 func playMusic():
 	$AudioStreamPlayer.play()
-func place(x:float,y:float,id:String):
+func place(x:int,y:int,id:String):
 	$TileMapLayer.set_cell(Vector2(x,y),Global.getTileClassId('smb'),Vector2(0,0),Global.getTileIndex('smb',id))
+func placeAir(x:int,y:int):
+	$TileMapLayer.set_cell(Vector2(x,y),-1)
 func initMaker():
 	# init start soil
 	var startHeight=2

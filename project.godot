@@ -29,6 +29,7 @@ LevelInfo="*res://scenes/level_info.tscn"
 PauseMenu="*res://scenes/pause_menu.tscn"
 Settings="*res://scenes/settings.tscn"
 GameStatus="*res://scripts/_game_status.gd"
+MakerStatus="*res://scripts/maker_status.gd"
 
 [display]
 

@@ -50,6 +50,8 @@ font_color = Color(0.952941, 0.0823529, 0.12549, 1)
 font = ExtResource("4_1g4al")
 font_size = 72
 font_color = Color(0.278431, 0.54902, 0.74902, 1)
+shadow_color = Color(1, 1, 1, 1)
+shadow_offset = Vector2(2, 2)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qv3kb"]
 bg_color = Color(0.988235, 0.819608, 0, 1)

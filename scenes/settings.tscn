@@ -134,6 +134,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_1irq6")
 [node name="Label" parent="ColorRect2/ColorRect2/BtnGithub" index="0"]
 visible = false
 
+[node name="SelectableButton" parent="ColorRect2/ColorRect2/BtnGithub" index="1"]
+metadata/_edit_lock_ = true
+
 [node name="TextureRect" type="TextureRect" parent="ColorRect2/ColorRect2/BtnGithub"]
 layout_mode = 1
 anchors_preset = 8
@@ -148,9 +151,6 @@ offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_w0dqy")
-metadata/_edit_lock_ = true
-
-[node name="SelectableButton" parent="ColorRect2/ColorRect2/BtnGithub" index="2"]
 metadata/_edit_lock_ = true
 
 [editable path="ColorRect2/okBtn"]

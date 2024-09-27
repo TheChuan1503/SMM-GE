@@ -3,12 +3,15 @@
 [ext_resource type="Script" path="res://components/btn_menu.gd" id="1_qmgvt"]
 [ext_resource type="PackedScene" uid="uid://cm3c5o2l4s31x" path="res://components/addon_btn_selectable.tscn" id="2_dcdp1"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f81gd"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6odik"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 4)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm2u4"]
 bg_color = Color(1, 0.792157, 0, 1)
@@ -21,14 +24,9 @@ corner_radius_bottom_left = 12
 font_size = 131
 
 [node name="BtnMenu" type="Panel"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -284.0
-offset_bottom = -116.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_f81gd")
+offset_right = 100.0
+offset_bottom = 100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6odik")
 script = ExtResource("1_qmgvt")
 
 [node name="Panel" type="Panel" parent="."]
