@@ -8,6 +8,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func eraser():
+	get_parent().setState('eraser')
 	MakerStatus.isEraser = not MakerStatus.isEraser
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

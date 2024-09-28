@@ -2,7 +2,7 @@ extends Node
 
 @onready var lang=OS.get_locale_language()
 
-const isDebug = false
+const isDebug = true
 const COLOR_YELLOW = Color('fecc00')
 const COLOR_RED = Color('5a1010')
 

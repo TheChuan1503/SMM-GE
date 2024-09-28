@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://opk0f5cf831h"]
+
+[ext_resource type="Script" path="res://scripts/perfmon.gd" id="1_wr58y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g661y"]
+font_size = 32
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)
+
+[node name="Perfmon" type="CanvasLayer"]
+script = ExtResource("1_wr58y")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="fps" type="Label" parent="."]
+offset_right = 1.0
+offset_bottom = 16.0
+text = "FPS: 0"
+label_settings = SubResource("LabelSettings_g661y")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

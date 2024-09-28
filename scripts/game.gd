@@ -83,7 +83,15 @@ func initMaker():
 			$TileMapLayer.set_cell(Vector2(i2,0 - i1 - 1),Global.getTileClassId('smb'),Vector2(0,0),Global.getTileIndex('smb','block_soil'))
 	
 	# load mario
-	var mario
 	mario=preload("res://objects/players/smb/smb_0.tscn").instantiate()
 	mario.position=Vector2((3.5 + 0.5) * 16,0 - startHeight * 16 - 16)
 	add_child(mario)
+	stopGame()
+func startGame():
+	MakerStatus.isMaking=false
+	mario.gravity=900
+func stopGame():
+	MakerStatus.isMaking=true
+	mario.velocity.x=0
+	mario.velocity.y=0
+	mario.gravity=0

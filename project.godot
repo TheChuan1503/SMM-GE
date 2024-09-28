@@ -14,10 +14,10 @@ config/name="SMM: GE"
 run/main_scene="res://scenes/splash_scene.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
+config/icon="res://icon.png"
 boot_splash/show_image=false
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="res://icon.png"
 
 [autoload]
 
@@ -30,6 +30,7 @@ PauseMenu="*res://scenes/pause_menu.tscn"
 Settings="*res://scenes/settings.tscn"
 GameStatus="*res://scripts/_game_status.gd"
 MakerStatus="*res://scripts/maker_status.gd"
+Perfmon="*res://scenes/perfmon.tscn"
 
 [display]
 

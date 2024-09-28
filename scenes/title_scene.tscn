@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cveotyrw8n1ek"]
+[gd_scene load_steps=42 format=3 uid="uid://cveotyrw8n1ek"]
 
 [ext_resource type="Texture2D" uid="uid://1nt8twt0kewg" path="res://src/tiles/blocks_smb.png" id="1_2ttu2"]
 [ext_resource type="Script" path="res://scripts/title_scene.gd" id="1_gixyt"]
@@ -41,17 +41,37 @@ font = ExtResource("4_1g4al")
 font_size = 128
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_tm3y3"]
-font = ExtResource("4_1g4al")
-font_size = 72
-font_color = Color(0.952941, 0.0823529, 0.12549, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iku7j"]
+bg_color = Color(0, 0, 0, 0.12549)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrtib"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="LabelSettings" id="LabelSettings_0csm8"]
 font = ExtResource("4_1g4al")
-font_size = 72
+font_size = 40
 font_color = Color(0.278431, 0.54902, 0.74902, 1)
-shadow_color = Color(1, 1, 1, 1)
-shadow_offset = Vector2(2, 2)
+shadow_size = 0
+shadow_color = Color(0.952941, 0.0823529, 0.12549, 0)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tm3y3"]
+font = ExtResource("4_1g4al")
+font_size = 40
+font_color = Color(0.952941, 0.0823529, 0.12549, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qv3kb"]
 bg_color = Color(0.988235, 0.819608, 0, 1)
@@ -261,37 +281,64 @@ offset_bottom = 29.0
 text = "SUPER"
 label_settings = SubResource("LabelSettings_8fb8n")
 
-[node name="Label2" type="Label" parent="CanvasLayer/Label2"]
+[node name="Panel" type="Panel" parent="CanvasLayer/Label2"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -494.0
-offset_top = -20.0
-offset_right = -7.0
-offset_bottom = 62.0
+offset_left = -465.0
+offset_top = -11.0
+offset_right = -9.0
+offset_bottom = 60.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_iku7j")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Label2/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.0
+offset_top = -26.5
+offset_right = 12.0
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lrtib")
+
+[node name="Label3" type="Label" parent="CanvasLayer/Label2/Panel/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.5
+offset_top = -22.5
+offset_right = 304.5
+offset_bottom = 23.5
+grow_vertical = 2
+text = "GODOT                "
+label_settings = SubResource("LabelSettings_0csm8")
+
+[node name="Label2" type="Label" parent="CanvasLayer/Label2/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.5
+offset_top = -22.5
+offset_right = 147.5
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "                ENGINE"
 label_settings = SubResource("LabelSettings_tm3y3")
-
-[node name="Label3" type="Label" parent="CanvasLayer/Label2"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -494.0
-offset_top = -20.0
-offset_right = -7.0
-offset_bottom = 62.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "GODOT"
-label_settings = SubResource("LabelSettings_0csm8")
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
 anchors_preset = 7
