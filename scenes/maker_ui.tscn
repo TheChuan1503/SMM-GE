@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnmcf0bys2j8r"]
+[gd_scene load_steps=8 format=3 uid="uid://cnmcf0bys2j8r"]
 
 [ext_resource type="Script" path="res://scripts/maker_ui.gd" id="1_7uxlu"]
 [ext_resource type="PackedScene" uid="uid://dh101gml8kdi4" path="res://components/btn_menu.tscn" id="1_gcouj"]
 [ext_resource type="PackedScene" uid="uid://t4wgekoi14r3" path="res://components/btn_round.tscn" id="2_efdft"]
 [ext_resource type="PackedScene" uid="uid://7o4g22yl5e6r" path="res://components/item_card.tscn" id="4_arrk5"]
+[ext_resource type="Texture2D" uid="uid://u41p2r33vbxg" path="res://src/images/eraser.png" id="4_lxayw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ymly"]
 bg_color = Color(0.909804, 0.909804, 0.909804, 0.301961)
@@ -79,6 +80,9 @@ offset_right = 50.0
 offset_bottom = 132.0
 grow_horizontal = 2
 
+[node name="icon" parent="Panel/ColorRect2/BtnEraser" index="0"]
+texture = ExtResource("4_lxayw")
+
 [node name="Panel2" type="Panel" parent="."]
 anchors_preset = 10
 anchor_right = 1.0
@@ -93,9 +97,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -736.0
+offset_left = -780.0
 offset_top = -54.0
-offset_right = 736.0
+offset_right = 780.0
 offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -115,9 +119,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 124.0
+offset_left = 132.0
 offset_top = -54.0
-offset_right = 232.0
+offset_right = 240.0
 offset_bottom = 54.0
 grow_vertical = 2
 
@@ -126,9 +130,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 248.0
+offset_left = 264.0
 offset_top = -54.0
-offset_right = 356.0
+offset_right = 372.0
 offset_bottom = 54.0
 grow_vertical = 2
 
@@ -137,9 +141,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 372.0
+offset_left = 396.0
 offset_top = -54.0
-offset_right = 480.0
+offset_right = 504.0
 offset_bottom = 54.0
 grow_vertical = 2
 
@@ -148,9 +152,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 496.0
+offset_left = 528.0
 offset_top = -54.0
-offset_right = 604.0
+offset_right = 636.0
 offset_bottom = 54.0
 grow_vertical = 2
 
@@ -159,9 +163,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 620.0
+offset_left = 660.0
 offset_top = -54.0
-offset_right = 728.0
+offset_right = 768.0
 offset_bottom = 54.0
 grow_vertical = 2
 
@@ -170,9 +174,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 744.0
+offset_left = 792.0
 offset_top = -54.0
-offset_right = 852.0
+offset_right = 900.0
 offset_bottom = 54.0
 grow_vertical = 2
 
@@ -181,9 +185,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 868.0
+offset_left = 924.0
 offset_top = -54.0
-offset_right = 976.0
+offset_right = 1032.0
 offset_bottom = 54.0
 grow_vertical = 2
 
@@ -192,9 +196,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 992.0
+offset_left = 1056.0
 offset_top = -54.0
-offset_right = 1100.0
+offset_right = 1164.0
 offset_bottom = 54.0
 grow_vertical = 2
 
@@ -203,9 +207,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 1116.0
+offset_left = 1188.0
 offset_top = -54.0
-offset_right = 1224.0
+offset_right = 1296.0
 offset_bottom = 54.0
 grow_vertical = 2
 
@@ -214,9 +218,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 1240.0
+offset_left = 1320.0
 offset_top = -54.0
-offset_right = 1348.0
+offset_right = 1428.0
 offset_bottom = 54.0
 grow_vertical = 2
 
@@ -225,8 +229,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 1364.0
+offset_left = 1452.0
 offset_top = -54.0
-offset_right = 1472.0
+offset_right = 1560.0
 offset_bottom = 54.0
 grow_vertical = 2
+
+[editable path="Panel/ColorRect2/BtnEraser"]

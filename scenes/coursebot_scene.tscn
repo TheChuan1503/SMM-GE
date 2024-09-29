@@ -252,11 +252,18 @@ vertical_alignment = 1
 
 [node name="pathViewer" type="LineEdit" parent="."]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
-offset_right = -960.0
-offset_bottom = 40.0
+anchor_bottom = 1.0
+offset_top = -56.0
 grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 31
+text = "path"
+alignment = 1
 editable = false
+expand_to_text_length = true
+virtual_keyboard_enabled = false
 
 [connection signal="finished" from="bgm" to="." method="_on_bgm_finished"]

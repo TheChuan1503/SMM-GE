@@ -1,4 +1,5 @@
 # Super Mario Maker: Godot Engine
+[![Github](https://img.shields.io/badge/GITHUB-black.svg?logo=github)](https://github.com/TheChuan1503/SMM-GE) [![Gitee](https://img.shields.io/badge/GITEE-C71D23.svg?logo=gitee)](https://gitee.com/tc1503/SMM-GE)
 
 ### ↓ 在下方选择你的语言 ↓
 [简体中文](README.md) | [English](README.en.md) | español

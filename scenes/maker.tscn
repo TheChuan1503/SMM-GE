@@ -7,23 +7,6 @@
 [ext_resource type="AudioStream" uid="uid://dirqynd480xuy" path="res://src/musics/effect/eraser.ogg" id="5_gfv8i"]
 [ext_resource type="AudioStream" uid="uid://hthqgfxt2wo8" path="res://src/musics/effect/eraser_reverse.ogg" id="6_0wx5n"]
 
-[sub_resource type="Animation" id="Animation_30b8m"]
-resource_name = "slideOut"
-length = 0.05
-step = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("playAndMake:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(24, 936), Vector2(-200, 936)]
-}
-
 [sub_resource type="Animation" id="Animation_88kam"]
 length = 0.001
 tracks/0/type = "value"
@@ -56,6 +39,23 @@ tracks/0/keys = {
 "values": [Vector2(-200, 936), Vector2(24, 936)]
 }
 
+[sub_resource type="Animation" id="Animation_30b8m"]
+resource_name = "slideOut"
+length = 0.05
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("playAndMake:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(24, 936), Vector2(-200, 936)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dasto"]
 _data = {
 "RESET": SubResource("Animation_88kam"),
@@ -78,6 +78,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MakerUi" parent="." instance=ExtResource("3_1v2a4")]
+layer = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -152,3 +153,5 @@ libraries = {
 }
 
 [connection signal="pressed" from="CanvasLayer/playAndMake/TextureButton" to="." method="_on_playAndMake_pressed"]
+
+[editable path="Game"]

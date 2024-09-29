@@ -25,7 +25,8 @@ func place():
 	if MakerStatus.isEraser:
 		$Game.placeAir(pos.x,pos.y)
 	else:
-		$Game.place(pos.x,pos.y,'block_soil')
+		if not MakerStatus.selectedObjId == '':
+			$Game.place(pos.x,pos.y,MakerStatus.selectedObjId)
 func setState(s:String):
 	eraser_audio.stop()
 	eraser_reverse_audio.stop()
@@ -35,7 +36,7 @@ func setState(s:String):
 	else:
 		state=s
 	if state == 'eraser':
-		color=Color(0x00,0.3,0.9,0.5)
+		color=Color(0,0.3,0.7,0.5)
 		eraser_reverse_audio.play()
 	if state == 'none':
 		eraser_canvas.visible=false

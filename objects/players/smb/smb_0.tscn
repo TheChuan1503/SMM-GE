@@ -283,6 +283,7 @@ region_rect = Rect2(0, 0, 48, 16)
 position = Vector2(0, 8)
 zoom = Vector2(5, 5)
 limit_left = 0
+limit_top = -416
 limit_bottom = 0
 drag_vertical_enabled = true
 

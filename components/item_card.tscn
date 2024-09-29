@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://7o4g22yl5e6r"]
+[gd_scene load_steps=6 format=3 uid="uid://7o4g22yl5e6r"]
 
+[ext_resource type="Script" path="res://components/item_card.gd" id="1_ttk0u"]
 [ext_resource type="PackedScene" uid="uid://cm3c5o2l4s31x" path="res://components/addon_btn_selectable.tscn" id="2_gs63r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r46rw"]
@@ -28,6 +29,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 108.0
 offset_bottom = 108.0
+script = ExtResource("1_ttk0u")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -72,6 +74,9 @@ anchor_bottom = 1.0
 offset_top = 12.0
 grow_horizontal = 2
 grow_vertical = 2
+stretch_mode = 5
 
 [node name="SelectableButton" parent="Panel" instance=ExtResource("2_gs63r")]
 layout_mode = 1
+
+[connection signal="pressed" from="Panel/SelectableButton" to="." method="_on_selectable_button_pressed"]
