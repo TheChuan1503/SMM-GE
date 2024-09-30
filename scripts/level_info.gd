@@ -18,7 +18,6 @@ func close():
 func _ready() -> void:
 	i18n()
 	$ColorRect2/ColorRect/BtnClose.setOnClick(close)
-	btn.setDisabled(true)
 	btn_3.setDisabled(true)
 	btn_4.setDisabled(true)
 	btn_5.setDisabled(true)
@@ -27,6 +26,7 @@ func make(name:String,data:Dictionary):
 	$ColorRect2/ColorRect/title.text=data['title']
 	$ColorRect2/desc.text=data['desc']
 	btn_2.setOnClick(play.bind(name))
+	btn.setOnClick(edit.bind(name))
 	Global.level=name
 	level_icon.texture=load("res://src/images/game_bg/"+data['world']['type']+"_"+data['world']['world']+".png")
 	self.show()
@@ -35,3 +35,9 @@ func play(name:String):
 	$AudioSelect.play()
 	SceneChanger.gradient('res://scenes/level_preload.tscn')
 	self.hide()
+func edit(name):
+	Global.level=name
+	$AudioSelect.play()
+	SceneChanger.gradient('res://scenes/maker.tscn')
+	self.hide()
+	

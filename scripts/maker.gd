@@ -51,6 +51,7 @@ func make():
 	$Game.stopGame()
 	$MakerUi.visible=true
 	$Game/Maker.visible=true
+	GameStatus.initDead()
 func play():
 	setState('none')
 	$MakerUi.visible=false

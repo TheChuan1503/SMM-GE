@@ -68,6 +68,9 @@ script = ExtResource("1_3jbi7")
 
 [node name="Game" parent="." instance=ExtResource("1_2a0o0")]
 
+[node name="HudPad" parent="Game/Hud" index="0"]
+metadata/_edit_vertical_guides_ = [182.0, 314.0]
+
 [node name="Maker" type="CanvasLayer" parent="Game"]
 
 [node name="placer" type="TextureButton" parent="Game/Maker"]

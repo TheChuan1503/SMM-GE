@@ -7,7 +7,7 @@ func _ready() -> void:
 	Global.scene='game'
 	#Global.tilemap=$TileMapLayer
 	$AudioStreamPlayer.finished.connect(playMusic)
-	if Global.isMaker or get_parent() is Node2D:
+	if Global.level == '' and ( Global.isMaker or get_parent() is Node2D ):
 		return
 	var json:JSON=JSON.new()
 	json.parse(FileAccess.open(Global.getLevelsDir()+Global.level,FileAccess.READ).get_as_text())
@@ -72,6 +72,9 @@ func place(x:int,y:int,id:String):
 func placeAir(x:int,y:int):
 	$TileMapLayer.set_cell(Vector2(x,y),-1)
 func initMaker():
+	if not Global.level == '':
+		stopGame()
+		return
 	# init start soil
 	var startHeight=2
 	if startHeight<1:

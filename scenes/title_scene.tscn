@@ -725,7 +725,7 @@ offset_right = 45.0
 offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "ver. 24w39a"
+text = "ver. 24w40a"
 label_settings = SubResource("LabelSettings_h3gw1")
 
 [node name="autherText" type="Panel" parent="CanvasLayer/botomTexts"]

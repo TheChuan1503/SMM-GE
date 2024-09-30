@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://birqkw8tvucet"]
+[gd_scene load_steps=14 format=3 uid="uid://birqkw8tvucet"]
 
 [ext_resource type="Script" path="res://scripts/level_info.gd" id="1_er4oj"]
 [ext_resource type="PackedScene" uid="uid://bbwsxk7ees7pq" path="res://components/btn_close.tscn" id="2_epcqu"]
@@ -17,6 +17,16 @@ corner_radius_bottom_left = 1024
 [sub_resource type="LabelSettings" id="LabelSettings_tn5iv"]
 font_size = 48
 font_color = Color(0.121569, 0.164706, 0.270588, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wf61y"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 8)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7f12q"]
 bg_color = Color(1, 1, 1, 1)
@@ -126,6 +136,7 @@ color = Color(1, 1, 1, 0)
 [node name="Btn" parent="ColorRect2/buttons" instance=ExtResource("4_mb5xa")]
 layout_mode = 1
 offset_right = 761.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wf61y")
 
 [node name="Label" parent="ColorRect2/buttons/Btn" index="0"]
 text = "text_make"

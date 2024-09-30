@@ -14,6 +14,7 @@ func onStartClick  () -> void:
 	$CanvasLayer/TextureButton.visible=false
 	$CanvasLayer/TextureButton2.visible=true
 func onMakeClick():
+	Global.level=''
 	SceneChanger.gradient('res://scenes/maker.tscn')
 func onPlayClick():
 	$CanvasLayer/panelPlay.visible=true
