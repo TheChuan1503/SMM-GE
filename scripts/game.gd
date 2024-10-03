@@ -5,6 +5,8 @@ extends Node2D
 var mario:Node
 func _ready() -> void:
 	Global.scene='game'
+	if not get_parent() is Node2D:
+		Global.isMaker=false
 	#Global.tilemap=$TileMapLayer
 	$AudioStreamPlayer.finished.connect(playMusic)
 	if Global.level == '' and ( Global.isMaker or get_parent() is Node2D ):
@@ -52,19 +54,28 @@ func _ready() -> void:
 	add_child(mario)
 
 func  _process(delta: float) -> void:
+	if mario.position.y > 8 and gameover==false:
+		gameover=true
+		$AudioStreamPlayer.stop()
+		mario.die(onGameOver)
 	if Global.isMaker:
+		if MakerStatus.isMaking:
+			if Input.is_action_pressed("move_up"):
+				mario.position.y-=64*delta
+			if Input.is_action_pressed("move_down"):
+				mario.position.y+=64*delta
 		return
 	if not PauseMenu.opened:
 		if Input.is_action_pressed("pause"):
 			get_tree().paused=true
 			PauseMenu.make()
-	if $Player.position.y > -2 and gameover==false:
-		gameover=true
-		$AudioStreamPlayer.stop()
-		mario.die(onGameOver)
 
 func onGameOver():
-	SceneChanger.gradient('res://scenes/game.tscn')
+	print(Global.isMaker)
+	if not Global.isMaker:
+		SceneChanger.gradient('res://scenes/game.tscn',true)
+	else:
+		get_parent().make()
 func playMusic():
 	$AudioStreamPlayer.play()
 func place(x:int,y:int,id:String):
@@ -91,9 +102,11 @@ func initMaker():
 	add_child(mario)
 	stopGame()
 func startGame():
+	$AudioStreamPlayer.play()
 	MakerStatus.isMaking=false
 	mario.gravity=900
 func stopGame():
+	$AudioStreamPlayer.stop()
 	MakerStatus.isMaking=true
 	mario.velocity.x=0
 	mario.velocity.y=0

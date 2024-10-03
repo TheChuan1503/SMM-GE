@@ -32,9 +32,9 @@ Este proyecto utilizó recursos de proyectos que incluyen `SMM: WE`
   - [ ] ~~Batallas multijugador~~
 - [ ] Redactor
   - [ ] Editar el nivel
-  - [ ] Leer el fichero de nivel
+  - [x] Leer el fichero de nivel
   - [ ] Guarde el archivo de nivel
-  - [ ] Juega el nivel
+  - [x] Juega el nivel
 - [ ] Física de Mario
 - [ ] Tipo multimundo
 - [ ] Estilo multimundo

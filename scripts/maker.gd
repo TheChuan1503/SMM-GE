@@ -52,7 +52,9 @@ func make():
 	$MakerUi.visible=true
 	$Game/Maker.visible=true
 	GameStatus.initDead()
+	$AudioStreamPlayer.play()
 func play():
+	$AudioStreamPlayer.stop()
 	setState('none')
 	$MakerUi.visible=false
 	$Game/Maker.visible=false

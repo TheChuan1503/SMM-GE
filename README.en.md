@@ -30,9 +30,9 @@ This project utilized resources from projects including `SMM: WE`
   - [ ] ~~Multiplayer Battle~~
 - [ ] Maker
   - [ ] Edit Levels
-  - [ ] Load Level Files
+  - [x] Load Level Files
   - [ ] Save Level Files
-  - [ ] Play Levels
+  - [x] Play Levels
 - [ ] Mario Physics
 - [ ] Multi-world Type
 - [ ] Multi-world Style

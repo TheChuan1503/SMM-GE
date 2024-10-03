@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://objects/blocks/smm_block_hittable.gd" id="2_mj11b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v804d"]
-size = Vector2(16, 16)
+size = Vector2(16, 0)
 
 [sub_resource type="Animation" id="Animation_pnt5p"]
 length = 0.001
@@ -49,6 +49,7 @@ script = ExtResource("2_mj11b")
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_v804d")
 debug_color = Color(0.794326, 0.41422, 0.27002, 0.42)
 

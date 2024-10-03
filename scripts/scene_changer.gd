@@ -15,8 +15,8 @@ func init(path):
 	if MainMenu.opened and path == lastScene:
 		return true
 	lastScene=path
-func gradient (path):
-	if init(path):
+func gradient (path,boo=false):
+	if init(path) && not boo==true:
 		return
 	self.show()
 	self.set_layer(1503)
