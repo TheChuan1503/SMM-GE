@@ -33,6 +33,7 @@ Settings="*res://scenes/settings.tscn"
 GameStatus="*res://scripts/_game_status.gd"
 MakerStatus="*res://scripts/maker_status.gd"
 Perfmon="*res://scenes/perfmon.tscn"
+Encoder="*res://scripts/encoder.gd"
 
 [display]
 
@@ -41,7 +42,7 @@ window/size/viewport_height=1080
 window/size/window_width_override=1024
 window/size/window_height_override=576
 window/stretch/mode="viewport"
-mouse_cursor/custom_image="res://src/images/pointer/pointer_pressed.png"
+mouse_cursor/custom_image="res://src/images/pointer/pointer.png"
 
 [gui]
 

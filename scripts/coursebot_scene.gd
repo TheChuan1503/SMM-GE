@@ -25,6 +25,9 @@ func _ready() -> void:
 	path_viewer.text=Global.getLevelsDir()
 	virtual_background.visible=false
 	var levels:Array=getLevels()
+	for e in levels:
+		if not Global.isLevel(e):
+			levels.erase(e)
 	level_count.text=str(levels.size())
 	for e in levels:
 		var levelCard:=preload("res://components/levelCard.tscn").instantiate()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://birqkw8tvucet"]
+[gd_scene load_steps=15 format=3 uid="uid://birqkw8tvucet"]
 
 [ext_resource type="Script" path="res://scripts/level_info.gd" id="1_er4oj"]
 [ext_resource type="PackedScene" uid="uid://bbwsxk7ees7pq" path="res://components/btn_close.tscn" id="2_epcqu"]
@@ -17,6 +17,9 @@ corner_radius_bottom_left = 1024
 [sub_resource type="LabelSettings" id="LabelSettings_tn5iv"]
 font_size = 48
 font_color = Color(0.121569, 0.164706, 0.270588, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_17gsp"]
+font_size = 32
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wf61y"]
 bg_color = Color(1, 1, 1, 1)
@@ -124,6 +127,32 @@ offset_bottom = 525.5
 texture = ExtResource("3_0pl61")
 expand_mode = 1
 stretch_mode = 6
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect2/levelIcon"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -53.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.498039)
+
+[node name="date" type="Label" parent="ColorRect2/levelIcon/ColorRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_right = 178.0
+offset_bottom = 16.5
+grow_vertical = 2
+text = "0000-00-00"
+label_settings = SubResource("LabelSettings_17gsp")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="buttons" type="ColorRect" parent="ColorRect2"]
 layout_mode = 0

@@ -11,14 +11,13 @@ func _ready() -> void:
 	$AudioStreamPlayer.finished.connect(playMusic)
 	if Global.level == '' and ( Global.isMaker or get_parent() is Node2D ):
 		return
-	var json:JSON=JSON.new()
-	json.parse(FileAccess.open(Global.getLevelsDir()+Global.level,FileAccess.READ).get_as_text())
-	var manifest:Dictionary=json.data['manifest']
+	var json:Dictionary=Global.getLevelData(Global.level)
+	var manifest:Dictionary=json['manifest']
 	var world=manifest['world']
 	var worldType=world['type']
-	var data:Array=json.data['data']
+	var data:Array=json['data']
 	$ParallaxBackground/background/background.texture=load("res://src/images/game_bg/"+worldType+"_"+world['world']+".png")
-	for obj:Array in json.data['soil']:
+	for obj:Array in json['soil']:
 		$TileMapLayer.set_cell(Vector2(obj[0]-1,0 - obj[1]),Global.getTileClassId(worldType),Vector2(0,0),Global.getTileIndex(worldType,'block_soil'))
 	for obj:Dictionary in data:
 		$TileMapLayer.set_cell(Vector2(obj['pos'][0]-1,0 - obj['pos'][1]),Global.getTileClassId(worldType),Vector2(0,0),Global.getTileIndex(worldType,obj['object']))
@@ -50,7 +49,8 @@ func _ready() -> void:
 			mario=preload("res://objects/players/smb/smb_0.tscn").instantiate()
 		'smb3':
 			mario=preload("res://objects/players/smb3/smb3_0.tscn").instantiate()
-	mario.position=Vector2((3.5 + 0.5) * 16,0 - startHeight * 16 - 16)
+	mario.position=Vector2((3.5 + 0.5) * 16,0 - startHeight * 16)
+	$startArrow.position.y=-48 - startHeight * 16
 	add_child(mario)
 
 func  _process(delta: float) -> void:
@@ -98,7 +98,8 @@ func initMaker():
 	
 	# load mario
 	mario=preload("res://objects/players/smb/smb_0.tscn").instantiate()
-	mario.position=Vector2((3.5 + 0.5) * 16,0 - startHeight * 16 - 16)
+	mario.position=Vector2((3.5 + 0.5) * 16,0 - startHeight * 16)
+	$startArrow.position.y=-48 - startHeight * 16
 	add_child(mario)
 	stopGame()
 func startGame():

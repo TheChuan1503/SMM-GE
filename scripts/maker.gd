@@ -25,7 +25,7 @@ func place():
 	if MakerStatus.isEraser:
 		$Game.placeAir(pos.x,pos.y)
 	else:
-		if not MakerStatus.selectedObjId == '':
+		if not MakerStatus.selectedObjId == '' and $Game/TileMapLayer.get_cell_source_id(pos) == -1:
 			$Game.place(pos.x,pos.y,MakerStatus.selectedObjId)
 func setState(s:String):
 	eraser_audio.stop()

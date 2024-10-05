@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmeh1q8vu5bqh"]
+[gd_scene load_steps=8 format=3 uid="uid://dmeh1q8vu5bqh"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_053n3"]
 [ext_resource type="AudioStream" uid="uid://bpkvy3q3omk6v" path="res://src/musics/smb_ground.ogg" id="3_yccom"]
 [ext_resource type="TileSet" uid="uid://d1hn0ukr45bu1" path="res://tilesets/smb.tres" id="4_o7ybc"]
+[ext_resource type="Texture2D" uid="uid://c33wx301atvkl" path="res://objects/blocks/SMB/arrow_start/arrow_start.png" id="4_u63cd"]
 [ext_resource type="Texture2D" uid="uid://dxivnebfn0y1i" path="res://src/images/game_bg/smb_ground.png" id="5_avg5v"]
 [ext_resource type="PackedScene" uid="uid://bciu5xwyalhh0" path="res://components/hud_pad.tscn" id="5_j7ilm"]
 [ext_resource type="PackedScene" uid="uid://cem6x1cw1tkac" path="res://components/hud_game_status_bar.tscn" id="6_wt1s8"]
@@ -18,6 +19,16 @@ autoplay = true
 y_sort_enabled = true
 tile_set = ExtResource("4_o7ybc")
 collision_visibility_mode = 1
+
+[node name="startArrow" type="TextureRect" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -48.0
+offset_right = 64.0
+grow_vertical = 0
+texture = ExtResource("4_u63cd")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

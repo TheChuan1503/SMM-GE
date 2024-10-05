@@ -7,8 +7,7 @@ var data:Dictionary
 var changed=false
 
 func _ready() -> void:
-	json.parse(FileAccess.open(Global.getLevelsDir()+Global.level,FileAccess.READ).get_as_text())
-	data=json.data
+	data=Global.getLevelData(Global.level)
 	title.text=data['manifest']['title']
 	var type=data['manifest']['world']['type']
 	var mario:Node

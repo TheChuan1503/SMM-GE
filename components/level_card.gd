@@ -1,9 +1,7 @@
 extends Control
 
 func init(name:String):
-	var json:JSON = JSON.new()
-	json.parse(FileAccess.open(Global.getLevelsDir()+'/'+name,FileAccess.READ).get_as_text())
-	var data:Dictionary = json.data['manifest']
+	var data:Dictionary = Global.getLevelData(name)['manifest']
 	$Panel/TextureRect.texture=load("res://src/images/game_bg/"+data['world']['type']+"_"+data['world']['world']+".png")
 	$Panel/ColorRect/Label.text=data['title']
 	$SelectableButton.setOnClick(fun.bind(name,data))

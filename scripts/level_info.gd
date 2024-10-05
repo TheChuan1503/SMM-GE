@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var btn_4: Panel = $ColorRect2/buttons/Btn4
 @onready var btn_5: Panel = $ColorRect2/buttons/Btn5
 @onready var level_icon: TextureRect = $ColorRect2/levelIcon
+@onready var date: Label = $ColorRect2/levelIcon/ColorRect/date
 
 func i18n():
 	Global.i18n($ColorRect2/buttons/Btn/Label)
@@ -29,6 +30,7 @@ func make(name:String,data:Dictionary):
 	btn.setOnClick(edit.bind(name))
 	Global.level=name
 	level_icon.texture=load("res://src/images/game_bg/"+data['world']['type']+"_"+data['world']['world']+".png")
+	date.text=Global.timestampToDate(data['time'])
 	self.show()
 	self.set_layer(100)
 func play(name:String):
