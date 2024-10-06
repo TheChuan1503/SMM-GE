@@ -61,9 +61,9 @@ func  _process(delta: float) -> void:
 	if Global.isMaker:
 		if MakerStatus.isMaking:
 			if Input.is_action_pressed("move_up"):
-				mario.position.y-=64*delta
+				mario.position.y-=128*delta
 			if Input.is_action_pressed("move_down"):
-				mario.position.y+=64*delta
+				mario.position.y+=128*delta
 		return
 	if not PauseMenu.opened:
 		if Input.is_action_pressed("pause"):
@@ -112,3 +112,4 @@ func stopGame():
 	mario.velocity.x=0
 	mario.velocity.y=0
 	mario.gravity=0
+	mario.antiDie()

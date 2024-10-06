@@ -76,3 +76,6 @@ func die(cb):
 	await animationPlayer.animation_finished
 	if cb is Callable:
 		cb.call()
+func antiDie():
+	dead=false
+	animationPlayer.play('RESET')

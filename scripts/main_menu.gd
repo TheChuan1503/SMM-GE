@@ -44,6 +44,7 @@ func initDisabled():
 	willBeDisabled["theme_override_styles/panel"]["bg_color"]=Global.COLOR_RED
 
 func make():
+	LevelInfo.hide()
 	self.opened=true
 	$audioOpen.play()
 	initDisabled()

@@ -1,5 +1,6 @@
 {
 	"block_soil":1,
 	"block_brick":2,
-	"item_coin":3
+	"item_coin":3,
+	"block_ice":4
 }

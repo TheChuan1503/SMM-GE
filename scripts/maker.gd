@@ -23,6 +23,8 @@ func getMouseLocation():
 func place():
 	var pos = getMouseLocation()
 	if MakerStatus.isEraser:
+		$eraseAudio.stop()
+		$eraseAudio.play()
 		$Game.placeAir(pos.x,pos.y)
 	else:
 		if not MakerStatus.selectedObjId == '' and $Game/TileMapLayer.get_cell_source_id(pos) == -1:

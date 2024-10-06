@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsfaq0lqcbm7k"]
+
+[ext_resource type="PackedScene" uid="uid://bowm6yorakuv4" path="res://objects/blocks/smm_block_breakable.tscn" id="1_an5dl"]
+[ext_resource type="Texture2D" uid="uid://jl000ltpcnlj" path="res://objects/blocks/SMB/ice/ice.png" id="2_uss40"]
+
+[node name="SmmBlock" instance=ExtResource("1_an5dl")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_uss40")

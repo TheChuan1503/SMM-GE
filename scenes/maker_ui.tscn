@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnmcf0bys2j8r"]
+[gd_scene load_steps=20 format=3 uid="uid://cnmcf0bys2j8r"]
 
 [ext_resource type="Script" path="res://scripts/maker_ui.gd" id="1_7uxlu"]
 [ext_resource type="PackedScene" uid="uid://dh101gml8kdi4" path="res://components/btn_menu.tscn" id="1_gcouj"]
@@ -22,6 +22,126 @@ border_width_top = 6
 border_width_right = 6
 border_width_bottom = 6
 border_color = Color(1, 1, 1, 0.490196)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfrl7"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hc5ow"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ojoe"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hakol"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64i3p"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_veees"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pii0a"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2t85q"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_liiog"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jcp65"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pv5ut"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1dyf2"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
 
 [node name="MakerUi" type="CanvasLayer"]
 script = ExtResource("1_7uxlu")
@@ -107,130 +227,155 @@ color = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
+anchor_right = 0.0
 anchor_bottom = 0.5
 offset_top = -54.0
+offset_right = 108.0
 offset_bottom = 54.0
-grow_vertical = 2
+grow_horizontal = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_lfrl7")
 
 [node name="ItemCard2" parent="Panel2/ColorRect" instance=ExtResource("4_arrk5")]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
+anchor_right = 0.0
 anchor_bottom = 0.5
 offset_left = 132.0
 offset_top = -54.0
 offset_right = 240.0
 offset_bottom = 54.0
-grow_vertical = 2
+grow_horizontal = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_hc5ow")
 
 [node name="ItemCard3" parent="Panel2/ColorRect" instance=ExtResource("4_arrk5")]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
+anchor_right = 0.0
 anchor_bottom = 0.5
 offset_left = 264.0
 offset_top = -54.0
 offset_right = 372.0
 offset_bottom = 54.0
-grow_vertical = 2
+grow_horizontal = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ojoe")
 
 [node name="ItemCard4" parent="Panel2/ColorRect" instance=ExtResource("4_arrk5")]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
+anchor_right = 0.0
 anchor_bottom = 0.5
 offset_left = 396.0
 offset_top = -54.0
 offset_right = 504.0
 offset_bottom = 54.0
-grow_vertical = 2
+grow_horizontal = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_hakol")
 
 [node name="ItemCard5" parent="Panel2/ColorRect" instance=ExtResource("4_arrk5")]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
+anchor_right = 0.0
 anchor_bottom = 0.5
 offset_left = 528.0
 offset_top = -54.0
 offset_right = 636.0
 offset_bottom = 54.0
-grow_vertical = 2
+grow_horizontal = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_64i3p")
 
 [node name="ItemCard6" parent="Panel2/ColorRect" instance=ExtResource("4_arrk5")]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
+anchor_right = 0.0
 anchor_bottom = 0.5
 offset_left = 660.0
 offset_top = -54.0
 offset_right = 768.0
 offset_bottom = 54.0
-grow_vertical = 2
+grow_horizontal = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_veees")
 
 [node name="ItemCard7" parent="Panel2/ColorRect" instance=ExtResource("4_arrk5")]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
+anchor_right = 0.0
 anchor_bottom = 0.5
 offset_left = 792.0
 offset_top = -54.0
 offset_right = 900.0
 offset_bottom = 54.0
-grow_vertical = 2
+grow_horizontal = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_pii0a")
 
 [node name="ItemCard8" parent="Panel2/ColorRect" instance=ExtResource("4_arrk5")]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
+anchor_right = 0.0
 anchor_bottom = 0.5
 offset_left = 924.0
 offset_top = -54.0
 offset_right = 1032.0
 offset_bottom = 54.0
-grow_vertical = 2
+grow_horizontal = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_2t85q")
 
 [node name="ItemCard9" parent="Panel2/ColorRect" instance=ExtResource("4_arrk5")]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
+anchor_right = 0.0
 anchor_bottom = 0.5
 offset_left = 1056.0
 offset_top = -54.0
 offset_right = 1164.0
 offset_bottom = 54.0
-grow_vertical = 2
+grow_horizontal = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_liiog")
 
 [node name="ItemCard10" parent="Panel2/ColorRect" instance=ExtResource("4_arrk5")]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
+anchor_right = 0.0
 anchor_bottom = 0.5
 offset_left = 1188.0
 offset_top = -54.0
 offset_right = 1296.0
 offset_bottom = 54.0
-grow_vertical = 2
+grow_horizontal = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_jcp65")
 
 [node name="ItemCard11" parent="Panel2/ColorRect" instance=ExtResource("4_arrk5")]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
+anchor_right = 0.0
 anchor_bottom = 0.5
 offset_left = 1320.0
 offset_top = -54.0
 offset_right = 1428.0
 offset_bottom = 54.0
-grow_vertical = 2
+grow_horizontal = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_pv5ut")
 
 [node name="ItemCard12" parent="Panel2/ColorRect" instance=ExtResource("4_arrk5")]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
+anchor_right = 0.0
 anchor_bottom = 0.5
 offset_left = 1452.0
 offset_top = -54.0
 offset_right = 1560.0
 offset_bottom = 54.0
-grow_vertical = 2
+grow_horizontal = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_1dyf2")
 
 [editable path="Panel/ColorRect2/BtnEraser"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://hnty0cjg1xo4"]
+[gd_scene load_steps=13 format=3 uid="uid://hnty0cjg1xo4"]
 
 [ext_resource type="PackedScene" uid="uid://dmeh1q8vu5bqh" path="res://scenes/game.tscn" id="1_2a0o0"]
 [ext_resource type="Script" path="res://scripts/maker.gd" id="1_3jbi7"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dirqynd480xuy" path="res://src/musics/effect/eraser.ogg" id="5_gfv8i"]
 [ext_resource type="AudioStream" uid="uid://hthqgfxt2wo8" path="res://src/musics/effect/eraser_reverse.ogg" id="6_0wx5n"]
 [ext_resource type="AudioStream" uid="uid://ddx7uil6m4lfs" path="res://src/musics/smb_editor_ground.ogg" id="7_6gge4"]
+[ext_resource type="AudioStream" uid="uid://cgbyog5yoythh" path="res://src/musics/effect/erase.ogg" id="8_xe2fs"]
 
 [sub_resource type="Animation" id="Animation_88kam"]
 length = 0.001
@@ -160,6 +161,9 @@ libraries = {
 stream = ExtResource("7_6gge4")
 autoplay = true
 parameters/looping = true
+
+[node name="eraseAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_xe2fs")
 
 [connection signal="pressed" from="CanvasLayer/playAndMake/TextureButton" to="." method="_on_playAndMake_pressed"]
 

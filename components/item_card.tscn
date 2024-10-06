@@ -9,6 +9,9 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5jonp"]
 bg_color = Color(0.807843, 0.807843, 0.807843, 1)
@@ -24,23 +27,18 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="ItemCard" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 108.0
-offset_bottom = 108.0
-script = ExtResource("1_ttk0u")
-
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
+[node name="ItemCard" type="Panel"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1812.0
+offset_bottom = -972.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_r46rw")
+script = ExtResource("1_ttk0u")
 
-[node name="Panel" type="Panel" parent="Panel"]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -53,7 +51,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5jonp")
 
-[node name="Panel" type="Panel" parent="Panel/Panel"]
+[node name="Panel" type="Panel" parent="Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -66,7 +64,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6ef0s")
 
-[node name="icon" type="TextureRect" parent="Panel/Panel"]
+[node name="icon" type="TextureRect" parent="Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -76,7 +74,9 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch_mode = 5
 
-[node name="SelectableButton" parent="Panel" instance=ExtResource("2_gs63r")]
+[node name="SelectableButton" parent="." instance=ExtResource("2_gs63r")]
 layout_mode = 1
 
-[connection signal="pressed" from="Panel/SelectableButton" to="." method="_on_selectable_button_pressed"]
+[connection signal="mouse_entered" from="SelectableButton" to="." method="_on_selectable_button_mouse_entered"]
+[connection signal="mouse_exited" from="SelectableButton" to="." method="_on_selectable_button_mouse_exited"]
+[connection signal="pressed" from="SelectableButton" to="." method="_on_selectable_button_pressed"]
