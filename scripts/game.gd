@@ -32,7 +32,7 @@ func _ready() -> void:
 		for i2 in range(7):
 			$TileMapLayer.set_cell(Vector2(i2,0 - i1 - 1),Global.getTileClassId(worldType),Vector2(0,0),Global.getTileIndex(worldType,'block_soil'))
 	
-	# init start soil
+	# init end soil
 	var endHeight=world['end_height']
 	if endHeight<1:
 		endHeight=1
@@ -54,16 +54,20 @@ func _ready() -> void:
 	add_child(mario)
 
 func  _process(delta: float) -> void:
-	if mario.position.y > 8 and gameover==false:
+	if mario.position.x < 8:
+		mario.position.x=8
+	if mario.position.y > 8 and gameover==false and ( not Global.isMaker or not MakerStatus.isMaking ):
 		gameover=true
 		$AudioStreamPlayer.stop()
 		mario.die(onGameOver)
 	if Global.isMaker:
 		if MakerStatus.isMaking:
 			if Input.is_action_pressed("move_up"):
-				mario.position.y-=128*delta
+				mario.position.y-=192*delta
 			if Input.is_action_pressed("move_down"):
-				mario.position.y+=128*delta
+				mario.position.y+=192*delta
+				if mario.position.y > 0:
+					mario.position.y=0
 		return
 	if not PauseMenu.opened:
 		if Input.is_action_pressed("pause"):
@@ -75,6 +79,7 @@ func onGameOver():
 	if not Global.isMaker:
 		SceneChanger.gradient('res://scenes/game.tscn',true)
 	else:
+		mario.antiDie()
 		get_parent().make()
 func playMusic():
 	$AudioStreamPlayer.play()
@@ -106,6 +111,7 @@ func startGame():
 	$AudioStreamPlayer.play()
 	MakerStatus.isMaking=false
 	mario.gravity=900
+	mario.setCollisionEnable(true)
 func stopGame():
 	$AudioStreamPlayer.stop()
 	MakerStatus.isMaking=true
@@ -113,3 +119,6 @@ func stopGame():
 	mario.velocity.y=0
 	mario.gravity=0
 	mario.antiDie()
+	mario.setCollisionEnable(false)
+func getMario():
+	return mario

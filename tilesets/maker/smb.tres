@@ -1,0 +1,16 @@
+[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://bvf165mwa0mp1"]
+
+[ext_resource type="PackedScene" uid="uid://dblbl65qoxy8e" path="res://objects/blocks/SMB/soil/static.tscn" id="1_wjk3x"]
+[ext_resource type="PackedScene" uid="uid://jtbrte7xq42y" path="res://objects/blocks/SMB/brick/static.tscn" id="2_5k8qf"]
+[ext_resource type="PackedScene" uid="uid://5obaufbm008b" path="res://objects/blocks/SMB/coin/static.tscn" id="3_jk5ii"]
+[ext_resource type="PackedScene" uid="uid://s4jeg2binklk" path="res://objects/blocks/SMB/ice/static.tscn" id="4_aw8ha"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_3o6pk"]
+resource_name = "ground"
+scenes/1/scene = ExtResource("1_wjk3x")
+scenes/2/scene = ExtResource("2_5k8qf")
+scenes/3/scene = ExtResource("3_jk5ii")
+scenes/4/scene = ExtResource("4_aw8ha")
+
+[resource]
+sources/0 = SubResource("TileSetScenesCollectionSource_3o6pk")

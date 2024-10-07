@@ -9,8 +9,12 @@ extends Node2D
 @onready var eraser_reverse_audio: AudioStreamPlayer = $CanvasLayer/eraserCanvas/eraserReverseAudio
 
 var state
+var map:Dictionary
+var isPlacerDown=false
 
 func _ready() -> void:
+	for e in range(26):
+		map[e]={}
 	Global.isMaker=true
 	$Game.initMaker()
 	eraser_canvas.visible=false
@@ -22,25 +26,28 @@ func getMouseLocation():
 	return pos
 func place():
 	var pos = getMouseLocation()
-	if MakerStatus.isEraser:
+	if state=='eraser':
 		$eraseAudio.stop()
 		$eraseAudio.play()
-		$Game.placeAir(pos.x,pos.y)
+		placeAir(pos.x,pos.y)
 	else:
-		if not MakerStatus.selectedObjId == '' and $Game/TileMapLayer.get_cell_source_id(pos) == -1:
-			$Game.place(pos.x,pos.y,MakerStatus.selectedObjId)
+		if not MakerStatus.selectedObjId == '' and $TileMapLayer.get_cell_source_id(pos) == -1:
+			placeOn(pos.x,pos.y,MakerStatus.selectedObjId)
 func setState(s:String):
 	eraser_audio.stop()
 	eraser_reverse_audio.stop()
 	var color:Color = Color.WHITE
 	if s == state:
 		state='none'
+		MakerStatus.isEraser=false
 	else:
 		state=s
 	if state == 'eraser':
+		MakerStatus.isEraser=true
 		color=Color(0,0.3,0.7,0.5)
 		eraser_reverse_audio.play()
 	if state == 'none':
+		MakerStatus.isEraser=false
 		eraser_canvas.visible=false
 	else:
 		eraser_canvas.visible=true
@@ -50,20 +57,30 @@ func setState(s:String):
 		color_right.color=color
 		
 func make():
+	setState('none')
 	$Game.stopGame()
 	$MakerUi.visible=true
 	$Game/Maker.visible=true
 	GameStatus.initDead()
+	$Game/TileMapLayer.visible=false
+	$Game/TileMapLayer.clear()
+	$TileMapLayer.visible=true
 	$AudioStreamPlayer.play()
+	
 func play():
-	$AudioStreamPlayer.stop()
 	setState('none')
+	$AudioStreamPlayer.stop()
 	$MakerUi.visible=false
 	$Game/Maker.visible=false
+	for e in $TileMapLayer.get_used_cells():
+		$Game/TileMapLayer.set_cell(e, 0, Vector2(0,0),Global.getTileIndex('smb',map[0-e.y-1][e.x-1]))
 	$Game.startGame()
+	$Game/TileMapLayer.visible=true
+	$TileMapLayer.visible=false
 func _on_playAndMake_pressed() -> void:
 	$AnimationPlayer.play("slideOut")
 	await $AnimationPlayer.animation_finished
+	$CanvasLayer/playAndMake/AudioStreamPlayer.play()
 	MakerStatus.isMaking=not MakerStatus.isMaking
 	if MakerStatus.isMaking:
 		play_and_make.texture=load("res://src/images/action_play.png")
@@ -73,3 +90,30 @@ func _on_playAndMake_pressed() -> void:
 		play_and_make.texture=load("res://src/images/action_make.png")
 	$AnimationPlayer.play("slideIn")
 	pass # Replace with function body.
+func placeOn(x:int,y:int,id:String):
+	map[0-y-1][x-1]=id
+	$TileMapLayer.set_cell(Vector2(x,y),Global.getTileClassId('smb'),Vector2(0,0),Global.getTileIndex('smb',id))
+func placeAir(x:int,y:int):
+	map[-0-y-1][x-1]=''
+	$TileMapLayer.set_cell(Vector2(x,y),-1)
+
+
+func _on_placer_button_down() -> void:
+	isPlacerDown=true
+	pass # Replace with function body.
+
+
+func _on_placer_button_up() -> void:
+	isPlacerDown=false
+	pass # Replace with function body.
+func _process(delta: float) -> void:
+	if isPlacerDown:
+		var pos=get_global_mouse_position()
+		if pos.y>-170:
+			$Game.getMario().position.y+=192*delta
+		if pos.y<-20:
+			$Game.getMario().position.y-=192*delta
+		if pos.x<20:
+			$Game.getMario().position.x-=192*delta
+		if pos.x>340:
+			$Game.getMario().position.x+=192*delta

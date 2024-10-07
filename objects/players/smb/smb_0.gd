@@ -79,3 +79,6 @@ func die(cb):
 func antiDie():
 	dead=false
 	animationPlayer.play('RESET')
+func setCollisionEnable(boo):
+	$CollisionShape2D.disabled=!boo
+	$Area2D.monitorable=boo
