@@ -17,41 +17,42 @@ func _ready() -> void:
 	var worldType=world['type']
 	var data:Array=json['data']
 	$ParallaxBackground/background/background.texture=load("res://src/images/game_bg/"+worldType+"_"+world['world']+".png")
-	for obj:Array in json['soil']:
-		$TileMapLayer.set_cell(Vector2(obj[0]-1,0 - obj[1]),Global.getTileClassId(worldType),Vector2(0,0),Global.getTileIndex(worldType,'block_soil'))
-	for obj:Dictionary in data:
-		$TileMapLayer.set_cell(Vector2(obj['pos'][0]-1,0 - obj['pos'][1]),Global.getTileClassId(worldType),Vector2(0,0),Global.getTileIndex(worldType,obj['object']))
+	if not Global.isMaker:
+		for obj:Array in json['soil']:
+			$TileMapLayer.set_cell(Vector2(obj[0]-1,0 - obj[1]),Global.getTileClassId(worldType),Vector2(0,0),Global.getTileIndex(worldType,'block_soil'))
+		for obj:Dictionary in data:
+			$TileMapLayer.set_cell(Vector2(obj['pos'][0]-1,0 - obj['pos'][1]),Global.getTileClassId(worldType),Vector2(0,0),Global.getTileIndex(worldType,obj['object']))
+		
+		# init start soil
+		var startHeight=world['start_height']
+		if startHeight<1:
+			startHeight=1
+		if startHeight>25:
+			startHeight=25
+		for i1 in range(startHeight):
+			for i2 in range(7):
+				$TileMapLayer.set_cell(Vector2(i2,0 - i1 - 1),Global.getTileClassId(worldType),Vector2(0,0),Global.getTileIndex(worldType,'block_soil'))
 	
-	# init start soil
-	var startHeight=world['start_height']
-	if startHeight<1:
-		startHeight=1
-	if startHeight>25:
-		startHeight=25
-	for i1 in range(startHeight):
-		for i2 in range(7):
-			$TileMapLayer.set_cell(Vector2(i2,0 - i1 - 1),Global.getTileClassId(worldType),Vector2(0,0),Global.getTileIndex(worldType,'block_soil'))
+		# init end soil
+		var endHeight=world['end_height']
+		if endHeight<1:
+			endHeight=1
+		if endHeight>12:
+			endHeight=12
+		for i1 in range(endHeight):
+			for i2 in range(10):
+				$TileMapLayer.set_cell(Vector2(manifest['world']['width'] - i2,0 - i1 - 1),Global.getTileClassId(worldType),Vector2(0,0),Global.getTileIndex(worldType,'block_soil'))
 	
-	# init end soil
-	var endHeight=world['end_height']
-	if endHeight<1:
-		endHeight=1
-	if endHeight>12:
-		endHeight=12
-	for i1 in range(endHeight):
-		for i2 in range(10):
-			$TileMapLayer.set_cell(Vector2(manifest['world']['width'] - i2,0 - i1 - 1),Global.getTileClassId(worldType),Vector2(0,0),Global.getTileIndex(worldType,'block_soil'))
+		# load mario
 	
-	# load mario
-	
-	match worldType:
-		'smb':
-			mario=preload("res://objects/players/smb/smb_0.tscn").instantiate()
-		'smb3':
-			mario=preload("res://objects/players/smb3/smb3_0.tscn").instantiate()
-	mario.position=Vector2((3.5 + 0.5) * 16,0 - startHeight * 16)
-	$startArrow.position.y=-48 - startHeight * 16
-	add_child(mario)
+		match worldType:
+			'smb':
+				mario=preload("res://objects/players/smb/smb_0.tscn").instantiate()
+			'smb3':
+				mario=preload("res://objects/players/smb3/smb3_0.tscn").instantiate()
+		mario.position=Vector2((3.5 + 0.5) * 16,0 - startHeight * 16)
+		$startArrow.position.y=-48 - startHeight * 16
+		add_child(mario)
 
 func  _process(delta: float) -> void:
 	if mario.position.x < 8:
@@ -93,14 +94,14 @@ func initMaker():
 		return
 	# init start soil
 	var startHeight=2
-	if startHeight<1:
-		startHeight=1
-	if startHeight>25:
-		startHeight=25
-	for i1 in range(startHeight):
-		for i2 in range(7):
-			$TileMapLayer.set_cell(Vector2(i2,0 - i1 - 1),Global.getTileClassId('smb'),Vector2(0,0),Global.getTileIndex('smb','block_soil'))
-	
+	#if startHeight<1:
+		#startHeight=1
+	#if startHeight>25:
+		#startHeight=25
+	#for i1 in range(startHeight):
+		#for i2 in range(7):
+			#$TileMapLayer.set_cell(Vector2(i2,0 - i1 - 1),Global.getTileClassId('smb'),Vector2(0,0),Global.getTileIndex('smb','block_soil'))
+	#
 	# load mario
 	mario=preload("res://objects/players/smb/smb_0.tscn").instantiate()
 	mario.position=Vector2((3.5 + 0.5) * 16,0 - startHeight * 16)

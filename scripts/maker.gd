@@ -21,6 +21,27 @@ func _ready() -> void:
 	$Game/Maker/placer.pressed.connect(place)
 	eraser_audio.finished.connect(eraser_reverse_audio.play)
 	eraser_reverse_audio.finished.connect(eraser_audio.play)
+	
+	var startHeight=2
+	if Global.level!='':
+		var json:Dictionary=Global.getLevelData(Global.level)
+		var manifest:Dictionary=json['manifest']
+		var world=manifest['world']
+		var worldType=world['type']
+		var data:Array=json['data']
+		startHeight=world['start_height']
+		for obj:Array in json['soil']:
+			placeOn(obj[0]-1,0 - obj[1],'block_soil')
+		for obj:Dictionary in data:
+			placeOn(obj['pos'][0]-1,0 - obj['pos'][1],obj['object'])
+		
+	if startHeight<1:
+		startHeight=1
+	if startHeight>25:
+		startHeight=25
+	for i1 in range(startHeight):
+		for i2 in range(7):
+			placeOn(i2,0 - i1 - 1,'block_soil')
 func getMouseLocation():
 	var pos:Vector2 = $Game/TileMapLayer.local_to_map(get_global_mouse_position())
 	return pos
