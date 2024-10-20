@@ -89,6 +89,7 @@ func make():
 	$AudioStreamPlayer.play()
 	
 func play():
+	$Game/TileMapLayer.clear()
 	setState('none')
 	$AudioStreamPlayer.stop()
 	$MakerUi.visible=false
