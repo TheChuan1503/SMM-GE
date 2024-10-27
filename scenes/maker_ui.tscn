@@ -1,10 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://cnmcf0bys2j8r"]
+[gd_scene load_steps=24 format=3 uid="uid://cnmcf0bys2j8r"]
 
 [ext_resource type="Script" path="res://scripts/maker_ui.gd" id="1_7uxlu"]
 [ext_resource type="PackedScene" uid="uid://dh101gml8kdi4" path="res://components/btn_menu.tscn" id="1_gcouj"]
 [ext_resource type="PackedScene" uid="uid://t4wgekoi14r3" path="res://components/btn_round.tscn" id="2_efdft"]
+[ext_resource type="PackedScene" uid="uid://drvgkc8q6o2w" path="res://components/btn_round_half.tscn" id="3_ox6j3"]
 [ext_resource type="PackedScene" uid="uid://7o4g22yl5e6r" path="res://components/item_card.tscn" id="4_arrk5"]
+[ext_resource type="Texture2D" uid="uid://c2e350t5krr5w" path="res://src/images/coursebot.png" id="4_ciefi"]
 [ext_resource type="Texture2D" uid="uid://u41p2r33vbxg" path="res://src/images/eraser.png" id="4_lxayw"]
+[ext_resource type="AudioStream" uid="uid://dj5yf6m4yanft" path="res://src/musics/effect/coursebot_open.ogg" id="5_nbcbv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ymly"]
 bg_color = Color(0.909804, 0.909804, 0.909804, 0.301961)
@@ -143,6 +146,16 @@ shadow_color = Color(0, 0, 0, 0.12549)
 shadow_size = 1
 shadow_offset = Vector2(0, 5)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ou37v"]
+bg_color = Color(0.909804, 0.909804, 0.909804, 0.301961)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 0.490196)
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+
 [node name="MakerUi" type="CanvasLayer"]
 script = ExtResource("1_7uxlu")
 
@@ -175,6 +188,23 @@ offset_top = 24.0
 offset_right = 50.0
 offset_bottom = 124.0
 grow_horizontal = 2
+
+[node name="BtnCoursebot" parent="Panel/ColorRect" instance=ExtResource("3_ox6j3")]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 152.0
+offset_right = 126.0
+offset_bottom = 252.0
+
+[node name="icon" parent="Panel/ColorRect/BtnCoursebot" index="0"]
+offset_left = -38.0
+offset_top = -35.5
+offset_right = 38.0
+offset_bottom = 27.5
+texture = ExtResource("4_ciefi")
+
+[node name="audioOpen" type="AudioStreamPlayer" parent="Panel/ColorRect/BtnCoursebot"]
+stream = ExtResource("5_nbcbv")
 
 [node name="ColorRect2" type="ColorRect" parent="Panel"]
 layout_mode = 1
@@ -378,4 +408,15 @@ offset_bottom = 54.0
 grow_horizontal = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_1dyf2")
 
+[node name="Panel3" type="Panel" parent="."]
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_top = 184.0
+offset_right = 256.0
+offset_bottom = -152.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ou37v")
+
+[editable path="Panel/ColorRect/BtnCoursebot"]
 [editable path="Panel/ColorRect2/BtnEraser"]

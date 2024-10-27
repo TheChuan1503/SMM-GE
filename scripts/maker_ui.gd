@@ -1,5 +1,7 @@
 extends CanvasLayer
+@onready var btn_coursebot: Panel = $Panel/ColorRect/BtnCoursebot
 @onready var btn_eraser: Panel = $Panel/ColorRect2/BtnEraser
+@onready var coursebot_audio_open: AudioStreamPlayer = $Panel/ColorRect/BtnCoursebot/audioOpen
 @onready var item_card_1: Panel = $Panel2/ColorRect/ItemCard1
 @onready var item_card_2: Panel = $Panel2/ColorRect/ItemCard2
 @onready var item_card_3: Panel = $Panel2/ColorRect/ItemCard3
@@ -17,6 +19,7 @@ extends CanvasLayer
 func _ready() -> void:
 	MakerStatus.init()
 	btn_eraser.setOnClick(eraser)
+	btn_coursebot.setOnClick(coursebot)
 	item_card_1.setObject('block_soil')
 	item_card_2.setObject('block_brick')
 	item_card_3.setObject('item_coin')
@@ -26,6 +29,8 @@ func _ready() -> void:
 func eraser():
 	get_parent().setState('eraser')
 	MakerStatus.isEraser = not MakerStatus.isEraser
+func coursebot():
+	coursebot_audio_open.play()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
