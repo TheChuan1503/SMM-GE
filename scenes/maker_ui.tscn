@@ -409,7 +409,7 @@ grow_horizontal = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_1dyf2")
 
 [node name="Panel3" type="Panel" parent="."]
-anchors_preset = -1
+anchors_preset = 9
 anchor_bottom = 1.0
 offset_top = 184.0
 offset_right = 256.0

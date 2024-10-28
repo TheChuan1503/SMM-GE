@@ -73,10 +73,9 @@ func  _process(delta: float) -> void:
 	if not PauseMenu.opened:
 		if Input.is_action_pressed("pause"):
 			get_tree().paused=true
-			PauseMenu.make()
+			PauseMenu.make(mario)
 
 func onGameOver():
-	print(Global.isMaker)
 	if not Global.isMaker:
 		SceneChanger.gradient('res://scenes/game.tscn',true)
 	else:

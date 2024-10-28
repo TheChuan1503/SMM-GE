@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cem6x1cw1tkac"]
+[gd_scene load_steps=6 format=3 uid="uid://cem6x1cw1tkac"]
 
 [ext_resource type="Script" path="res://components/hud_game_status_bar.gd" id="1_piaat"]
 [ext_resource type="Texture2D" uid="uid://dn7ps0b2x144j" path="res://src/images/hud/coin_smb.png" id="1_tvife"]
 [ext_resource type="FontFile" uid="uid://cegx07o1gnrh4" path="res://src/fonts/PressStart2P.ttf" id="2_2k7do"]
+[ext_resource type="Texture2D" uid="uid://jfw4vgpspj2h" path="res://src/images/hud/timehud_smb.png" id="4_mliuh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a8ptb"]
 font = ExtResource("2_2k7do")
@@ -26,4 +27,25 @@ offset_left = 88.0
 offset_right = 184.0
 offset_bottom = 48.0
 text = "00"
+label_settings = SubResource("LabelSettings_a8ptb")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -336.0
+offset_top = 72.0
+offset_right = -288.0
+offset_bottom = 120.0
+grow_horizontal = 0
+texture = ExtResource("4_mliuh")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="coinLabel" type="Label" parent="TextureRect2"]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 160.0
+offset_bottom = 48.0
+text = "300"
 label_settings = SubResource("LabelSettings_a8ptb")

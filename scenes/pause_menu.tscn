@@ -1,10 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://bo75uet52yp5v"]
+[gd_scene load_steps=10 format=3 uid="uid://bo75uet52yp5v"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_3rol5"]
+[ext_resource type="PackedScene" uid="uid://b8c1q3ci0ia0s" path="res://components/btn_option.tscn" id="2_8aqr8"]
+[ext_resource type="Texture2D" uid="uid://cuxyhhv7ghgij" path="res://src/images/main_menu_settings.png" id="4_uwkde"]
 [ext_resource type="FontFile" uid="uid://ddclxaa0c75i1" path="res://src/fonts/SuperMarioMaker2-Regular.ttf" id="7_wk5vp"]
 [ext_resource type="PackedScene" uid="uid://fh36qkrougk0" path="res://components/btn_small.tscn" id="8_pm0x6"]
 [ext_resource type="AudioStream" uid="uid://che0yjkhhnjnp" path="res://src/musics/effect/menu_open.ogg" id="9_fkrlk"]
 [ext_resource type="AudioStream" uid="uid://bext1k2lwmj7m" path="res://src/musics/effect/menu_close.ogg" id="10_ia6ip"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wkar"]
+bg_color = Color(0.996078, 0.8, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 7.5)
 
 [sub_resource type="LabelSettings" id="LabelSettings_jg0fn"]
 font = ExtResource("7_wk5vp")
@@ -55,6 +67,28 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
+[node name="restartBtn" parent="ColorRect2/ColorRect3" instance=ExtResource("2_8aqr8")]
+layout_mode = 1
+offset_top = -46.5
+offset_bottom = 46.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_2wkar")
+
+[node name="icon" parent="ColorRect2/ColorRect3/restartBtn" index="0"]
+visible = false
+
+[node name="text" parent="ColorRect2/ColorRect3/restartBtn" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "text_restart"
+
 [node name="ColorRect4" type="ColorRect" parent="ColorRect2"]
 layout_mode = 1
 anchors_preset = 12
@@ -82,13 +116,40 @@ offset_bottom = -14.0
 grow_horizontal = 0
 grow_vertical = 0
 
+[node name="BtnSettings" parent="ColorRect2/ColorRect4" instance=ExtResource("8_pm0x6")]
+layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 472.0
+offset_top = -78.0
+offset_right = 536.0
+offset_bottom = -14.0
+grow_horizontal = 1
+grow_vertical = 0
+
+[node name="TextureRect" parent="ColorRect2/ColorRect4/BtnSettings" index="0"]
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+texture = ExtResource("4_uwkde")
+expand_mode = 4
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="SelectableButton" parent="ColorRect2/ColorRect4/BtnSettings" index="1"]
+metadata/_edit_lock_ = true
+
 [node name="ColorRect" type="ColorRect" parent="ColorRect2"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 158.0
 grow_horizontal = 2
-color = Color(0.996078, 0.8, 0, 1)
+color = Color(0.996078, 0.8, 0, 0.498039)
 
 [node name="Label" type="Label" parent="ColorRect2/ColorRect"]
 layout_mode = 1
@@ -112,3 +173,7 @@ stream = ExtResource("9_fkrlk")
 stream = ExtResource("10_ia6ip")
 
 [connection signal="pressed" from="ColorRect/TextureButton" to="." method="_on_texture_button_pressed"]
+
+[editable path="ColorRect2/ColorRect3/restartBtn"]
+[editable path="ColorRect2/ColorRect3/restartBtn/Play_Action1"]
+[editable path="ColorRect2/ColorRect4/BtnSettings"]

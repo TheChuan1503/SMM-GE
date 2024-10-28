@@ -49,6 +49,7 @@ shadow_size = 1
 shadow_offset = Vector2(0, 8)
 
 [node name="Settings" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_fk6cj")
 metadata/_edit_horizontal_guides_ = [1032.0]
 

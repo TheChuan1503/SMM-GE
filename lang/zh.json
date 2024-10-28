@@ -5,7 +5,7 @@
 	"text_play_maker":"创作关卡",
 	"text_play_challenge":"马力欧耐力挑战",
 	"text_play_world":"世界关卡",
-	"text_play_coursebot":"关卡机器人",
+	"text_play_coursebot":"请选择数据",
 	"text_coursebot_own":"自己的关卡",
 	"text_upload_level":"发表",
 	"text_level_name":"关卡名",
@@ -15,5 +15,6 @@
 	"text_settings":"设置",
 	"text_ok":"确定",
 	"text_credits_title":"开发人员名单",
-	"text_credits_programmers":"程序员"
+	"text_credits_programmers":"程序员",
+	"text_restart":"重新开始"
 }

@@ -67,7 +67,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		animationPlayer.play('jump')
 	move_and_slide()
-func die(cb):
+func die(cb=0):
 	dead=true
 	gravity=0
 	$deadAudio.play()
