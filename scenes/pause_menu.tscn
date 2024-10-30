@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bo75uet52yp5v"]
+[gd_scene load_steps=11 format=3 uid="uid://bo75uet52yp5v"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_3rol5"]
 [ext_resource type="PackedScene" uid="uid://b8c1q3ci0ia0s" path="res://components/btn_option.tscn" id="2_8aqr8"]
@@ -17,6 +17,10 @@ corner_radius_bottom_left = 16
 shadow_color = Color(0, 0, 0, 0.12549)
 shadow_size = 1
 shadow_offset = Vector2(0, 7.5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xs872"]
+font_size = 36
+font_color = Color(0.352941, 0.0627451, 0.0627451, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_jg0fn"]
 font = ExtResource("7_wk5vp")
@@ -88,6 +92,7 @@ offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "text_restart"
+label_settings = SubResource("LabelSettings_xs872")
 
 [node name="ColorRect4" type="ColorRect" parent="ColorRect2"]
 layout_mode = 1

@@ -200,13 +200,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -151.5
+offset_left = -159.5
 offset_top = 1.0
-offset_right = 152.5
+offset_right = 160.5
 offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "text_play_coursebot"
+text = "text_coursebot_title"
 label_settings = SubResource("LabelSettings_o2w3u")
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]

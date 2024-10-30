@@ -42,7 +42,7 @@ texture = ExtResource("4_mliuh")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="coinLabel" type="Label" parent="TextureRect2"]
+[node name="timeLabel" type="Label" parent="TextureRect2"]
 layout_mode = 0
 offset_left = 64.0
 offset_right = 160.0

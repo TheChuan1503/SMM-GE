@@ -133,9 +133,9 @@ func _process(delta: float) -> void:
 		var pos=get_global_mouse_position()
 		if pos.y>-170:
 			$Game.getMario().position.y+=192*delta
-		if pos.y<-20:
-			$Game.getMario().position.y-=192*delta
-		if pos.x<20:
+		if pos.x<70:
 			$Game.getMario().position.x-=192*delta
 		if pos.x>340:
 			$Game.getMario().position.x+=192*delta
+		if pos.y<-20:
+			$Game.getMario().position.y-=192*delta

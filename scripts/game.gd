@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var gameover=false
+@onready var time_timer: Timer = $timeTimer
 
 var mario:Node
 func _ready() -> void:
@@ -70,12 +71,14 @@ func  _process(delta: float) -> void:
 				if mario.position.y > 0:
 					mario.position.y=0
 		return
+	time_timer.start()
 	if not PauseMenu.opened:
 		if Input.is_action_pressed("pause"):
 			get_tree().paused=true
 			PauseMenu.make(mario)
 
 func onGameOver():
+	time_timer.stop()
 	if not Global.isMaker:
 		SceneChanger.gradient('res://scenes/game.tscn',true)
 	else:
@@ -112,7 +115,9 @@ func startGame():
 	MakerStatus.isMaking=false
 	mario.gravity=900
 	mario.setCollisionEnable(true)
+	time_timer.start()
 func stopGame():
+	time_timer.stop()
 	$AudioStreamPlayer.stop()
 	MakerStatus.isMaking=true
 	mario.velocity.x=0
@@ -122,3 +127,8 @@ func stopGame():
 	mario.setCollisionEnable(false)
 func getMario():
 	return mario
+
+
+func _on_time_timer_timeout() -> void:
+	GameStatus.time-=1
+	pass # Replace with function body.

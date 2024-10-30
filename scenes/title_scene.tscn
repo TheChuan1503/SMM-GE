@@ -156,7 +156,7 @@ corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrtib"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(1, 1, 1, 0)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -166,8 +166,8 @@ corner_radius_bottom_left = 8
 font = ExtResource("4_1g4al")
 font_size = 40
 font_color = Color(0.278431, 0.54902, 0.74902, 1)
-shadow_size = 0
-shadow_color = Color(0.952941, 0.0823529, 0.12549, 0)
+shadow_size = 12
+shadow_color = Color(1, 1, 1, 0.752941)
 shadow_offset = Vector2(0, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_tm3y3"]
@@ -738,7 +738,7 @@ offset_right = 45.0
 offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "ver. 24w41a"
+text = "ver. 24w44a"
 label_settings = SubResource("LabelSettings_h3gw1")
 
 [node name="autherText" type="Panel" parent="CanvasLayer/botomTexts"]

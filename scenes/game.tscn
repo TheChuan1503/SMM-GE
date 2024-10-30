@@ -44,3 +44,7 @@ texture = ExtResource("5_avg5v")
 [node name="HudPad" parent="Hud" instance=ExtResource("5_j7ilm")]
 
 [node name="HudGameStatusBar" parent="." instance=ExtResource("6_wt1s8")]
+
+[node name="timeTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="timeTimer" to="." method="_on_time_timer_timeout"]

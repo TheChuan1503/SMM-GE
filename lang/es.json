@@ -5,7 +5,7 @@
 	"text_play_maker":"Creador de Niveles",
 	"text_play_challenge":"Desafío Infinito",
 	"text_play_world":"Mundo de Niveles",
-	"text_play_coursebot":"Generador de Niveles",
+	"text_play_coursebot":"Guardabot",
 	"text_coursebot_own":"Mis Niveles",
 	"text_upload_level":"Subir",
 	"text_level_name":"Nombre del Nivel",
@@ -16,5 +16,6 @@
 	"text_ok":"Aceptar",
 	"text_credits_title":"CRÉDITOS",
 	"text_credits_programmers":"Programadoras",
-	"text_restart":"Reiniciar"
+	"text_restart":"Reiniciar",
+	"text_coursebot_title":"Guardabot"
 }
