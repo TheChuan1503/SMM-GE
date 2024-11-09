@@ -16,6 +16,9 @@
 	"text_ok":"OK",
 	"text_credits_title":"CREDITS",
 	"text_credits_programmers":"Programmers",
+	"text_credits_about_version":"About this version",
 	"text_restart":"Restart",
-	"text_coursebot_title":"Coursebot"
+	"text_coursebot_title":"Coursebot",
+	"text_save_or_load":"Save/Load",
+	"text_save_as":"Save As"
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cnmcf0bys2j8r"]
+[gd_scene load_steps=34 format=3 uid="uid://cnmcf0bys2j8r"]
 
 [ext_resource type="Script" path="res://scripts/maker_ui.gd" id="1_7uxlu"]
 [ext_resource type="PackedScene" uid="uid://dh101gml8kdi4" path="res://components/btn_menu.tscn" id="1_gcouj"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://c2e350t5krr5w" path="res://src/images/coursebot.png" id="4_ciefi"]
 [ext_resource type="Texture2D" uid="uid://u41p2r33vbxg" path="res://src/images/eraser.png" id="4_lxayw"]
 [ext_resource type="AudioStream" uid="uid://dj5yf6m4yanft" path="res://src/musics/effect/coursebot_open.ogg" id="5_nbcbv"]
+[ext_resource type="AudioStream" uid="uid://c1er4n6la2oqu" path="res://src/musics/effect/coursebot_close.ogg" id="6_1ehjy"]
+[ext_resource type="PackedScene" uid="uid://bb38ggj1a2tr0" path="res://components/btn_save_load.tscn" id="9_3ut6w"]
+[ext_resource type="Script" path="res://components/btn_save_load.gd" id="10_n81sq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ymly"]
 bg_color = Color(0.909804, 0.909804, 0.909804, 0.301961)
@@ -17,6 +20,16 @@ border_width_right = 6
 border_width_bottom = 6
 border_color = Color(1, 1, 1, 0.490196)
 corner_radius_top_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ys8sk"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.12549)
+shadow_size = 1
+shadow_offset = Vector2(0, 8)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ggoua"]
 bg_color = Color(0.909804, 0.909804, 0.909804, 0.301961)
@@ -156,6 +169,81 @@ border_color = Color(1, 1, 1, 0.490196)
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fn0y"]
+bg_color = Color(1, 1, 1, 0.752941)
+border_width_right = 8
+border_color = Color(0.388235, 0.109804, 0.129412, 1)
+corner_radius_top_left = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhtmx"]
+bg_color = Color(0.388235, 0.109804, 0.129412, 0.376471)
+corner_radius_top_left = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_570pl"]
+font_size = 36
+
+[sub_resource type="Animation" id="Animation_rkbsk"]
+resource_name = "slideOut"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(8, 288), Vector2(672, 288)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1768, 200), Vector2(1104, 200)]
+}
+
+[sub_resource type="Animation" id="Animation_1inu2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, 288)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1768, 200)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a7q0d"]
+_data = {
+"RESET": SubResource("Animation_1inu2"),
+"slideOut": SubResource("Animation_rkbsk")
+}
+
 [node name="MakerUi" type="CanvasLayer"]
 script = ExtResource("1_7uxlu")
 
@@ -195,6 +283,7 @@ offset_left = 26.0
 offset_top = 152.0
 offset_right = 126.0
 offset_bottom = 252.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ys8sk")
 
 [node name="icon" parent="Panel/ColorRect/BtnCoursebot" index="0"]
 offset_left = -38.0
@@ -205,6 +294,9 @@ texture = ExtResource("4_ciefi")
 
 [node name="audioOpen" type="AudioStreamPlayer" parent="Panel/ColorRect/BtnCoursebot"]
 stream = ExtResource("5_nbcbv")
+
+[node name="audioClose" type="AudioStreamPlayer" parent="Panel/ColorRect/BtnCoursebot"]
+stream = ExtResource("6_1ehjy")
 
 [node name="ColorRect2" type="ColorRect" parent="Panel"]
 layout_mode = 1
@@ -418,5 +510,66 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ou37v")
 
+[node name="coursebotPanel" type="Panel" parent="."]
+visible = false
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -152.0
+offset_top = 200.0
+offset_right = -144.0
+offset_bottom = -592.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6fn0y")
+
+[node name="header" type="Panel" parent="coursebotPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bhtmx")
+
+[node name="Label" type="Label" parent="coursebotPanel/header"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -8.0
+offset_right = 20.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "text_save_or_load"
+label_settings = SubResource("LabelSettings_570pl")
+
+[node name="saveAsBtn" parent="coursebotPanel" instance=ExtResource("9_3ut6w")]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 104.0
+offset_right = 632.0
+offset_bottom = 265.0
+script = ExtResource("10_n81sq")
+
+[node name="SelectableButton" parent="coursebotPanel/saveAsBtn" index="1"]
+layout_mode = 1
+anchors_preset = 15
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="coursebotPanel"]
+libraries = {
+"": SubResource("AnimationLibrary_a7q0d")
+}
+
 [editable path="Panel/ColorRect/BtnCoursebot"]
 [editable path="Panel/ColorRect2/BtnEraser"]
+[editable path="coursebotPanel/saveAsBtn"]

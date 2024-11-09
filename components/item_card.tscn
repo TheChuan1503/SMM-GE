@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://7o4g22yl5e6r"]
+[gd_scene load_steps=7 format=3 uid="uid://7o4g22yl5e6r"]
 
 [ext_resource type="Script" path="res://components/item_card.gd" id="1_ttk0u"]
 [ext_resource type="PackedScene" uid="uid://cm3c5o2l4s31x" path="res://components/addon_btn_selectable.tscn" id="2_gs63r"]
+[ext_resource type="AudioStream" uid="uid://dxidfyws4uq2i" path="res://src/musics/effect/select_tile.ogg" id="3_838kl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r46rw"]
 bg_color = Color(1, 1, 1, 1)
@@ -76,6 +77,9 @@ stretch_mode = 5
 
 [node name="SelectableButton" parent="." instance=ExtResource("2_gs63r")]
 layout_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_838kl")
 
 [connection signal="mouse_entered" from="SelectableButton" to="." method="_on_selectable_button_mouse_entered"]
 [connection signal="mouse_exited" from="SelectableButton" to="." method="_on_selectable_button_mouse_exited"]

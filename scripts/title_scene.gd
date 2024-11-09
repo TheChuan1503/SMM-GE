@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var audio_make: AudioStreamPlayer = $audioMake
+
 func i18n():
 	Global.i18n($CanvasLayer/TextureButton/ColorRect/Label)
 	Global.i18n($CanvasLayer/TextureButton2/ItemAction/Label)
@@ -14,6 +16,9 @@ func onStartClick  () -> void:
 	$CanvasLayer/TextureButton.visible=false
 	$CanvasLayer/TextureButton2.visible=true
 func onMakeClick():
+	$CanvasLayer/TextureButton2/ItemAction.pressed.disconnect(onMakeClick)
+	audio_make.play()
+	await audio_make.finished
 	Global.level=''
 	SceneChanger.gradient('res://scenes/maker.tscn')
 func onPlayClick():

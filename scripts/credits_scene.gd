@@ -2,6 +2,7 @@ extends CanvasLayer
 
 func i18n():
 	Global.i18n($ColorRect/Label)
+	Global.i18n($ColorRect/Label3)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	MainMenu.hide()

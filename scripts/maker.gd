@@ -7,6 +7,7 @@ extends Node2D
 @onready var color_right: ColorRect = $CanvasLayer/eraserCanvas/colorRight
 @onready var eraser_audio: AudioStreamPlayer = $CanvasLayer/eraserCanvas/eraserAudio
 @onready var eraser_reverse_audio: AudioStreamPlayer = $CanvasLayer/eraserCanvas/eraserReverseAudio
+@onready var audio_letsgo: AudioStreamPlayer = $CanvasLayer/playAndMake/audioLetsgo
 
 var state
 var map:Dictionary
@@ -49,7 +50,8 @@ func place():
 	var pos = getMouseLocation()
 	if state=='eraser':
 		$eraseAudio.stop()
-		$eraseAudio.play()
+		if not $TileMapLayer.get_cell_source_id(pos) == -1:
+			$eraseAudio.play()
 		placeAir(pos.x,pos.y)
 	else:
 		if not MakerStatus.selectedObjId == '' and $TileMapLayer.get_cell_source_id(pos) == -1:
@@ -89,6 +91,7 @@ func make():
 	$AudioStreamPlayer.play()
 	
 func play():
+	audio_letsgo.play()
 	$Game/TileMapLayer.clear()
 	setState('none')
 	$AudioStreamPlayer.stop()

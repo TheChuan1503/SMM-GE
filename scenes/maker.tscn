@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://hnty0cjg1xo4"]
+[gd_scene load_steps=16 format=3 uid="uid://hnty0cjg1xo4"]
 
 [ext_resource type="PackedScene" uid="uid://dmeh1q8vu5bqh" path="res://scenes/game.tscn" id="1_2a0o0"]
 [ext_resource type="Script" path="res://scripts/maker.gd" id="1_3jbi7"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dirqynd480xuy" path="res://src/musics/effect/eraser.ogg" id="5_gfv8i"]
 [ext_resource type="AudioStream" uid="uid://qpvwct0nmb67" path="res://src/musics/effect/action.ogg" id="5_iiej4"]
 [ext_resource type="AudioStream" uid="uid://hthqgfxt2wo8" path="res://src/musics/effect/eraser_reverse.ogg" id="6_0wx5n"]
+[ext_resource type="AudioStream" uid="uid://0ssxmmf0jmb6" path="res://src/musics/effect/letsgo_mario.ogg" id="7_0ygqe"]
 [ext_resource type="AudioStream" uid="uid://ddx7uil6m4lfs" path="res://src/musics/smb_editor_ground.ogg" id="7_6gge4"]
 [ext_resource type="AudioStream" uid="uid://cgbyog5yoythh" path="res://src/musics/effect/erase.ogg" id="8_xe2fs"]
 [ext_resource type="TileSet" uid="uid://bvf165mwa0mp1" path="res://tilesets/maker/smb.tres" id="10_qpgjm"]
@@ -120,6 +121,9 @@ grow_vertical = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/playAndMake"]
 stream = ExtResource("5_iiej4")
+
+[node name="audioLetsgo" type="AudioStreamPlayer" parent="CanvasLayer/playAndMake"]
+stream = ExtResource("7_0ygqe")
 
 [node name="eraserCanvas" type="CanvasLayer" parent="CanvasLayer"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cveotyrw8n1ek"]
+[gd_scene load_steps=44 format=3 uid="uid://cveotyrw8n1ek"]
 
 [ext_resource type="Texture2D" uid="uid://1nt8twt0kewg" path="res://src/tiles/blocks_smb.png" id="1_2ttu2"]
 [ext_resource type="Script" path="res://scripts/title_scene.gd" id="1_gixyt"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bg8vydrvhce4a" path="res://components/btn_back.tscn" id="11_4pflv"]
 [ext_resource type="Texture2D" uid="uid://0q8y01tqs3gk" path="res://objects/blocks/SMB/brick/brick.png" id="11_5w8tl"]
 [ext_resource type="Texture2D" uid="uid://c33wx301atvkl" path="res://objects/blocks/SMB/arrow_start/arrow_start.png" id="16_olcql"]
+[ext_resource type="AudioStream" uid="uid://c0e8obm84xkpj" path="res://src/musics/effect/title_drops.ogg" id="17_pos1h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rovh6"]
 texture = ExtResource("1_2ttu2")
@@ -738,7 +739,7 @@ offset_right = 45.0
 offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "ver. 24w44a"
+text = "ver. Alpha-1"
 label_settings = SubResource("LabelSettings_h3gw1")
 
 [node name="autherText" type="Panel" parent="CanvasLayer/botomTexts"]
@@ -774,6 +775,9 @@ label_settings = SubResource("LabelSettings_145b6")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_50ftw")
 autoplay = true
+
+[node name="audioMake" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_pos1h")
 
 [editable path="PlayerSmb0"]
 [editable path="CanvasLayer/panelPlay/Panel"]

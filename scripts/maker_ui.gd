@@ -1,4 +1,5 @@
 extends CanvasLayer
+
 @onready var btn_coursebot: Panel = $Panel/ColorRect/BtnCoursebot
 @onready var btn_eraser: Panel = $Panel/ColorRect2/BtnEraser
 @onready var coursebot_audio_open: AudioStreamPlayer = $Panel/ColorRect/BtnCoursebot/audioOpen
@@ -14,9 +15,17 @@ extends CanvasLayer
 @onready var item_card_10: Panel = $Panel2/ColorRect/ItemCard10
 @onready var item_card_11: Panel = $Panel2/ColorRect/ItemCard11
 @onready var item_card_12: Panel = $Panel2/ColorRect/ItemCard12
+@onready var coursebotPanelLabel: Label = $coursebotPanel/header/Label
+@onready var coursebot_panel: Panel = $coursebotPanel
+@onready var coursebotAnimationPlayer: AnimationPlayer = $coursebotPanel/AnimationPlayer
+@onready var coursebot_audio_close: AudioStreamPlayer = $Panel/ColorRect/BtnCoursebot/audioClose
 
+var coursebotOpened := false
 
+func i18n():
+	Global.i18n(coursebotPanelLabel)
 func _ready() -> void:
+	i18n()
 	MakerStatus.init()
 	btn_eraser.setOnClick(eraser)
 	btn_coursebot.setOnClick(coursebot)
@@ -30,7 +39,16 @@ func eraser():
 	get_parent().setState('eraser')
 	MakerStatus.isEraser = not MakerStatus.isEraser
 func coursebot():
-	coursebot_audio_open.play()
+	coursebotOpened=!coursebotOpened
+	coursebot_panel.visible=coursebotOpened
+	if coursebotOpened:
+		coursebot_audio_open.play()
+		coursebotAnimationPlayer.play('slideOut')
+		#btn_coursebot["theme_override_styles/panel"]["bg_color"]=Global.COLOR_RED
+	else:
+		coursebot_audio_close.play()
+		coursebotAnimationPlayer.play('RESET')
+		btn_coursebot["theme_override_styles/panel"]["bg_color"]=Color.WHITE
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

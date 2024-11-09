@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://ftnl3w32hhqy"]
+[gd_scene load_steps=12 format=3 uid="uid://ftnl3w32hhqy"]
 
 [ext_resource type="Script" path="res://scripts/settings.gd" id="1_fk6cj"]
 [ext_resource type="FontFile" uid="uid://ddclxaa0c75i1" path="res://src/fonts/SuperMarioMaker2-Regular.ttf" id="3_3upy3"]
 [ext_resource type="PackedScene" uid="uid://dhvpspiyofi1x" path="res://components/btn.tscn" id="3_kvdbg"]
 [ext_resource type="Texture2D" uid="uid://c007xv1e6xa5a" path="res://src/images/github.svg" id="3_w0dqy"]
+[ext_resource type="Texture2D" uid="uid://crwbvmuc0igpr" path="res://src/images/gitee.svg" id="5_tw6aw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_db7hu"]
 font_size = 40
@@ -135,9 +136,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_1irq6")
 [node name="Label" parent="ColorRect2/ColorRect2/BtnGithub" index="0"]
 visible = false
 
-[node name="SelectableButton" parent="ColorRect2/ColorRect2/BtnGithub" index="1"]
-metadata/_edit_lock_ = true
-
 [node name="TextureRect" type="TextureRect" parent="ColorRect2/ColorRect2/BtnGithub"]
 layout_mode = 1
 anchors_preset = 8
@@ -152,8 +150,45 @@ offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_w0dqy")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="SelectableButton" parent="ColorRect2/ColorRect2/BtnGithub" index="2"]
+z_index = 1
+metadata/_edit_lock_ = true
+
+[node name="BtnGitee" parent="ColorRect2/ColorRect2" instance=ExtResource("3_kvdbg")]
+layout_mode = 0
+offset_left = 488.0
+offset_right = 584.0
+offset_bottom = 96.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1irq6")
+
+[node name="Label" parent="ColorRect2/ColorRect2/BtnGitee" index="0"]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect2/ColorRect2/BtnGitee"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_tw6aw")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="SelectableButton" parent="ColorRect2/ColorRect2/BtnGitee" index="2"]
+z_index = 1
 metadata/_edit_lock_ = true
 
 [editable path="ColorRect2/okBtn"]
 [editable path="ColorRect2/ColorRect2/BtnCredits"]
 [editable path="ColorRect2/ColorRect2/BtnGithub"]
+[editable path="ColorRect2/ColorRect2/BtnGitee"]

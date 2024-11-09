@@ -44,11 +44,41 @@ label_settings = SubResource("LabelSettings_sc8jh")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label3" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 320.0
+offset_bottom = 360.0
+grow_horizontal = 2
+text = "text_credits_about_version"
+label_settings = SubResource("LabelSettings_p7ofn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 368.0
+offset_top = 384.0
+offset_right = -592.0
+offset_bottom = 510.0
+grow_horizontal = 2
+text = "Version_Code 4
+                 Release_Date 2024-11-09 (UTC+8)
+      Preview_Version beta-1.0.0"
+label_settings = SubResource("LabelSettings_sc8jh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TextureButton" type="TextureButton" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

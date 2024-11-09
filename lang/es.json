@@ -16,6 +16,9 @@
 	"text_ok":"Aceptar",
 	"text_credits_title":"CRÉDITOS",
 	"text_credits_programmers":"Programadoras",
+	"text_credits_about_version":"Acerca de esta versión",
 	"text_restart":"Reiniciar",
-	"text_coursebot_title":"Guardabot"
+	"text_coursebot_title":"Guardabot";,
+	"text_save_or_load":"Guardar/Cargar",
+	"text_save_as":"Guardar como"
 }

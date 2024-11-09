@@ -16,6 +16,9 @@
 	"text_ok":"确定",
 	"text_credits_title":"开发人员名单",
 	"text_credits_programmers":"程序员",
+	"text_credits_about_version":"关于此版本",
 	"text_restart":"重新开始",
-	"text_coursebot_title":"请选择数据"
+	"text_coursebot_title":"请选择数据",
+	"text_save_or_load":"保存/读取",
+	"text_save_as":"新数据"
 }

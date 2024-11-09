@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 	if MakerStatus.selectedObjId!=id:
 		self['theme_override_styles/panel']['bg_color']=Color.WHITE
 func _on_selectable_button_pressed() -> void:
+	$AudioStreamPlayer.play()
 	if MakerStatus.selectedObjId==id:
 		MakerStatus.selectedObjId=''
 		return
