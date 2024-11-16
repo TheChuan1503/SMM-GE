@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://d1hn0ukr45bu1"]
+[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://d1hn0ukr45bu1"]
 
 [ext_resource type="PackedScene" uid="uid://b47t06tq6h2i2" path="res://objects/blocks/SMB/soil/soil.tscn" id="1_3sq14"]
 [ext_resource type="PackedScene" uid="uid://cl81t8swjq1c7" path="res://objects/blocks/SMB/brick/brick.tscn" id="2_fpw0s"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bv84jyl0e2fb8" path="res://objects/blocks/SMB/coin/coin.tscn" id="4_2irql"]
 [ext_resource type="PackedScene" uid="uid://dp3182gp1ia14" path="res://objects/blocks/SMB3/soil/soil.tscn" id="4_f4qxt"]
 [ext_resource type="PackedScene" uid="uid://dsfaq0lqcbm7k" path="res://objects/blocks/SMB/ice/ice.tscn" id="4_y4t0i"]
+[ext_resource type="PackedScene" uid="uid://fiexny7fc5n1" path="res://objects/blocks/SMB/flagpole/flagpole.tscn" id="5_0ofhp"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_nxyvv"]
 resource_name = "SMB"
@@ -13,6 +14,7 @@ scenes/1/scene = ExtResource("1_3sq14")
 scenes/2/scene = ExtResource("2_fpw0s")
 scenes/3/scene = ExtResource("4_2irql")
 scenes/4/scene = ExtResource("4_y4t0i")
+scenes/5/scene = ExtResource("5_0ofhp")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_npljk"]
 resource_name = "SMB3"

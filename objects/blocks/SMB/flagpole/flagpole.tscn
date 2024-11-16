@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://fiexny7fc5n1"]
+
+[ext_resource type="PackedScene" uid="uid://dbof7g4ukol6q" path="res://objects/blocks/smm_block_soil.tscn" id="1_kq2dy"]
+[ext_resource type="Texture2D" uid="uid://b05pydo6ih8ay" path="res://objects/blocks/SMB/rock/rock.png" id="2_02li1"]
+[ext_resource type="Script" path="res://objects/blocks/SMB/flagpole/flagpole.gd" id="2_b77me"]
+[ext_resource type="Texture2D" uid="uid://1nsxf45dx56g" path="res://objects/blocks/SMB/flagpole/pole.png" id="3_sc85n"]
+[ext_resource type="Texture2D" uid="uid://dnwb543nypwi1" path="res://src/images/flags/smb/normal.png" id="4_vefbg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wgwm4"]
+size = Vector2(8, 152)
+
+[sub_resource type="Animation" id="Animation_tsrgp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteFlag:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-9, -144)]
+}
+
+[sub_resource type="Animation" id="Animation_6oohn"]
+resource_name = "flagPullDown"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteFlag:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-9, -144), Vector2(-9, -16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_le6vv"]
+_data = {
+"RESET": SubResource("Animation_tsrgp"),
+"flagPullDown": SubResource("Animation_6oohn")
+}
+
+[node name="SmmBlock" instance=ExtResource("1_kq2dy")]
+script = ExtResource("2_b77me")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_02li1")
+
+[node name="SpritePole" type="Sprite2D" parent="." index="2"]
+position = Vector2(0, -88)
+texture = ExtResource("3_sc85n")
+
+[node name="SpriteFlag" type="Sprite2D" parent="." index="3"]
+position = Vector2(-9, -144)
+texture = ExtResource("4_vefbg")
+
+[node name="Area2D" type="Area2D" parent="." index="4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, -84)
+shape = SubResource("RectangleShape2D_wgwm4")
+debug_color = Color(0.583867, 0.544734, 0.225912, 0.42)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+libraries = {
+"": SubResource("AnimationLibrary_le6vv")
+}
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

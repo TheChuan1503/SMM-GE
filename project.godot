@@ -34,6 +34,7 @@ GameStatus="*res://scripts/_game_status.gd"
 MakerStatus="*res://scripts/maker_status.gd"
 Perfmon="*res://scenes/perfmon.tscn"
 Encoder="*res://scripts/encoder.gd"
+LevelAccess="*res://scripts/_level_access.gd"
 
 [display]
 

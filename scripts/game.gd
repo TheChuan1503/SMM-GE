@@ -4,6 +4,8 @@ extends Node2D
 @onready var time_timer: Timer = $timeTimer
 
 var mario:Node
+var levelWidth:=0
+
 func _ready() -> void:
 	Global.scene='game'
 	if not get_parent() is Node2D:
@@ -43,7 +45,7 @@ func _ready() -> void:
 		for i1 in range(endHeight):
 			for i2 in range(10):
 				$TileMapLayer.set_cell(Vector2(manifest['world']['width'] - i2,0 - i1 - 1),Global.getTileClassId(worldType),Vector2(0,0),Global.getTileIndex(worldType,'block_soil'))
-	
+		levelWidth = manifest['world']['width']
 		# load mario
 	
 		match worldType:
@@ -53,11 +55,15 @@ func _ready() -> void:
 				mario=preload("res://objects/players/smb3/smb3_0.tscn").instantiate()
 		mario.position=Vector2((3.5 + 0.5) * 16,0 - startHeight * 16)
 		$startArrow.position.y=-48 - startHeight * 16
+		initFlagpole(manifest['world']['width'],endHeight)
 		add_child(mario)
-
+func initFlagpole(width,endHeight):
+	$TileMapLayer.set_cell(Vector2(width - 10 + 1,0 - endHeight - 1),Global.getTileClassId('smb'),Vector2(0,0),Global.getTileIndex('smb','block_flagpole'))
 func  _process(delta: float) -> void:
 	if mario.position.x < 8:
 		mario.position.x=8
+	if mario.position.x > levelWidth * 16 + 8:
+		mario.position.x=levelWidth * 16 + 8
 	if mario.position.y > 8 and gameover==false and ( not Global.isMaker or not MakerStatus.isMaking ):
 		gameover=true
 		$AudioStreamPlayer.stop()
@@ -127,8 +133,6 @@ func stopGame():
 	mario.setCollisionEnable(false)
 func getMario():
 	return mario
-
-
 func _on_time_timer_timeout() -> void:
 	GameStatus.time-=1
 	pass # Replace with function body.

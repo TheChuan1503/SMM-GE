@@ -136,6 +136,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_1irq6")
 [node name="Label" parent="ColorRect2/ColorRect2/BtnGithub" index="0"]
 visible = false
 
+[node name="SelectableButton" parent="ColorRect2/ColorRect2/BtnGithub" index="1"]
+z_index = 1
+metadata/_edit_lock_ = true
+
 [node name="TextureRect" type="TextureRect" parent="ColorRect2/ColorRect2/BtnGithub"]
 layout_mode = 1
 anchors_preset = 8
@@ -153,10 +157,6 @@ texture = ExtResource("3_w0dqy")
 expand_mode = 1
 metadata/_edit_lock_ = true
 
-[node name="SelectableButton" parent="ColorRect2/ColorRect2/BtnGithub" index="2"]
-z_index = 1
-metadata/_edit_lock_ = true
-
 [node name="BtnGitee" parent="ColorRect2/ColorRect2" instance=ExtResource("3_kvdbg")]
 layout_mode = 0
 offset_left = 488.0
@@ -166,6 +166,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_1irq6")
 
 [node name="Label" parent="ColorRect2/ColorRect2/BtnGitee" index="0"]
 visible = false
+
+[node name="SelectableButton" parent="ColorRect2/ColorRect2/BtnGitee" index="1"]
+z_index = 1
+metadata/_edit_lock_ = true
 
 [node name="TextureRect" type="TextureRect" parent="ColorRect2/ColorRect2/BtnGitee"]
 layout_mode = 1
@@ -182,10 +186,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_tw6aw")
 expand_mode = 1
-metadata/_edit_lock_ = true
-
-[node name="SelectableButton" parent="ColorRect2/ColorRect2/BtnGitee" index="2"]
-z_index = 1
 metadata/_edit_lock_ = true
 
 [editable path="ColorRect2/okBtn"]

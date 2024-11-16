@@ -18,6 +18,7 @@ func _ready() -> void:
 		map[e]={}
 	Global.isMaker=true
 	$Game.initMaker()
+	$Game.levelWidth=63
 	eraser_canvas.visible=false
 	$Game/Maker/placer.pressed.connect(place)
 	eraser_audio.finished.connect(eraser_reverse_audio.play)
